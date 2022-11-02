@@ -43,6 +43,10 @@
                 android:id="@+id/txtFirstRanking"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
+                android:text="Nom Jugador               Puntuació:X               Dificultat"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textColor="@color/black"
                 android:background="@drawable/rankinginfofirst"/>
         </LinearLayout>
         <LinearLayout
@@ -66,7 +70,11 @@
                 android:id="@+id/txtSecondRanking"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/rankinginfosecond"/>
+                android:background="@drawable/rankinginfosecond"
+                android:text="Nom Jugador               Puntuació:X               Dificultat"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textColor="@color/black"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -89,6 +97,10 @@
                 android:id="@+id/txtThirdRanking"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
+                android:text="Nom Jugador               Puntuació:X               Dificultat"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textColor="@color/black"
                 android:background="@drawable/rankinginfothird"/>
         </LinearLayout>
         <LinearLayout
@@ -112,7 +124,11 @@
                 android:id="@+id/txtFourthRanking"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/rankinginfoother"/>
+                android:background="@drawable/rankinginfoother"
+                android:text="Nom Jugador               Puntuació:X               Dificultat"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textColor="@color/black"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -135,10 +151,13 @@
                 android:id="@+id/txtFifthRanking"
                 android:layout_width="800dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/rankinginfoother"/>
+                android:background="@drawable/rankinginfoother"
+                android:text="Nom Jugador               Puntuació:X               Dificultat"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textColor="@color/black"/>
         </LinearLayout>
     </LinearLayout>
-
 
     <Button
         android:layout_width="240dp"
@@ -146,6 +165,7 @@
         android:text="CONTINUAR"
         android:textColor="@color/black"
         android:textSize="30sp"
+        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_redondejat"/>
 </LinearLayout>
