@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="220dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:orientation="vertical">
@@ -88,7 +88,7 @@
         android:layout_width="467dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="50dp">
 
         <Button
             android:id="@+id/BtnIniciarSessio"
@@ -106,13 +106,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encara no has iniciat sessió?"
+            android:text="Encara no tens cap compte?"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -123,10 +123,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/button_redondejat"
-            android:text="Registrar-se"
+            android:text="Registra't"
             android:textColor="@color/black"
             android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
 
     </LinearLayout>
 
