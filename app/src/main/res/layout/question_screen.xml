@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <TextView
         android:layout_width="244dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/num"
         android:gravity="center"
         android:text="7"
-        android:layout_marginBottom="20dp"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -28,11 +29,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/rpg2"
+            android:background="@drawable/border"
             android:layout_marginLeft="200dp"
             android:text="Karate kid"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:gravity="center"
             android:textStyle="bold"
 
@@ -46,11 +47,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/rpg2"
+            android:background="@drawable/border"
             android:layout_marginRight="200dp"
             android:text="Drama"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:gravity="center"
             android:textStyle="bold"
             />
@@ -58,21 +59,76 @@
     </LinearLayout>
     <FrameLayout
         android:layout_width="878dp"
-        android:layout_height="200dp"
-        android:background="@drawable/rectback"
+        android:layout_height="150dp"
+        android:background="@drawable/image"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         >
         <TextView
             android:layout_width="850dp"
-            android:layout_height="238dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="¿Que limpia LaRusso cuando el señor Miyagi le dice la famosa frase Dar cera, pulir cera?"
+            android:text="¿Que limpia LaRusso cuando el señor Miyagi le dice la famosa frase dar cera, pulir cera?"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
 
     </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        >
+    <Button
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Renai encontró un mensaje escrito con sangre en la hoja de Dalton."
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="23dp"
+
+        android:background="@drawable/boton_redondeado"
+
+        />
+
+    <Button
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Renai encontró una huella de una mano ensangrentada en la sábana de Dalton."
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="23dp"
+            android:background="@drawable/boton_redondselct"
+        />
+
+    <Button
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Renai encontró un oso de peluche destrozado debajo de las sábanas de Dalton."
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="23dp"
+        android:background="@drawable/boton_redondeado"
+        />
+    </LinearLayout>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/nextbut"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
