@@ -9,14 +9,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="100dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gràcies per jugar"
             android:textColor="@color/black"
-            android:textSize="60dp"
+            android:textSize="100dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -25,14 +25,18 @@
         android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="70dp">
 
         <Button
             android:layout_width="381dp"
             android:layout_height="wrap_content"
             android:text="Tornar a jugar"
             android:textSize="60dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@drawable/button_redondejat"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="20dp"/>
 
     </LinearLayout>
 
@@ -40,12 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:text="Sortir"
+            android:textStyle="bold"
+            android:textSize="60dp"
+            android:textColor="@color/black"
+            android:background="@drawable/button_redondejat"
+            android:paddingHorizontal="30dp"/>
 
     </LinearLayout>
 
