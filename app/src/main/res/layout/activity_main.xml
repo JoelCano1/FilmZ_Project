@@ -4,12 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
-    <TextView
+    android:background="@drawable/img">
+
+    <Button
+        android:id="@+id/btnGoIntro"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="01"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:text="Videogames"/>
+        android:layout_height="wrap_content"
+        android:text="intro"/>
+    <Button
+        android:id="@+id/btnGoDifficult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="difficult"/>
+    <Button
+        android:id="@+id/btnGoFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="final"/>
+    <Button
+        android:id="@+id/btnGoLenguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lenguage"/>
+    <Button
+        android:id="@+id/btnGoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"/>
+    <Button
+        android:id="@+id/btnGoLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logo"/>
+    <Button
+        android:id="@+id/btnGoQuestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questions"/>
+    <Button
+        android:id="@+id/btnGoRanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ranking"/>
+    <Button
+        android:id="@+id/btnGoRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="register"/>
+    <Button
+        android:id="@+id/btnGoResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="result"/>
+
 </LinearLayout>
