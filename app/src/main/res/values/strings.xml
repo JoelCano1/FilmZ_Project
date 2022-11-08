@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
-    <string name="facil">FACIL</string>
-    <string name="mitja">MITJA</string>
-    <string name="dificil">DIFICIL</string>
+    <string name="text_idioma">IDIOMA CATALA</string>
+    <string name="facil">FÀCIL</string>
+    <string name="mitja">MITJÀ</string>
+    <string name="dificil">DIFÍCIL</string>
 </resources>
