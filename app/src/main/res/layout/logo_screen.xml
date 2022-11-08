@@ -6,8 +6,10 @@
     android:orientation="vertical"
     android:background="@color/white">
     <ImageView
+        android:id="@+id/imgLogo"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
+        android:alpha="0"
         android:src="@drawable/logo" />
 </FrameLayout>
