@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/lblLenguaje"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -33,7 +34,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/spain1"
             android:clickable="true"
-            android:alpha="0"
+
             />
 
         <ImageView
