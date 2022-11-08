@@ -23,6 +23,7 @@
         android:padding="10dp"/>
 
     <Button
+        android:id="@+id/btnTempsRestant"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.8"
@@ -33,6 +34,7 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_redondejat"/>
+        android:background="@drawable/button_redondejat"
+        android:alpha="0.4"/>
 
 </LinearLayout>
