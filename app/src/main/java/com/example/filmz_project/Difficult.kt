@@ -1,15 +1,13 @@
 package com.example.filmz_project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.register_screen)
-        }*/
+class Difficult : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
@@ -21,18 +19,17 @@ class MainActivity : AppCompatActivity() {
 
         btnFacil.setOnClickListener()
         {
-            lblDesc.text =
+            lblDesc.text = "FACIL"
         }
 
         btnMitja.setOnClickListener()
         {
-            lblDesc.text = "@strings/mitja"
+            lblDesc.text = "MEDIUM"
         }
 
         btnDificil.setOnClickListener()
         {
-            lblDesc.text = "@strings/dificil"
+            lblDesc.text = "DIFICIL"
         }
     }
-
 }
