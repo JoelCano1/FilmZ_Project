@@ -42,10 +42,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
-        btnGoLogo.setOnClickListener(){
-            val intent = Intent(this,LogoActivity::class.java)
-            startActivity(intent)
-        }
         btnGoQuestions.setOnClickListener(){
             val intent = Intent(this,QuestionActivity::class.java)
             startActivity(intent)
@@ -60,6 +56,10 @@ class MainActivity : AppCompatActivity() {
         }
         btnGoResult.setOnClickListener(){
             val intent = Intent(this,ResultActivity::class.java)
+            startActivity(intent)
+        }
+        btnGoLogo.setOnClickListener(){
+            val intent = Intent(this,LogoActivity::class.java)
             startActivity(intent)
         }
 
