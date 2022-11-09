@@ -9,8 +9,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import java.util.*
 
 class LenguageActivity : AppCompatActivity() {
@@ -42,7 +40,7 @@ class LenguageActivity : AppCompatActivity() {
         val btnCat = findViewById<ImageView>(R.id.BtnCatala)
         val btnEsp = findViewById<ImageView>(R.id.BtnCastellano)
         val btnEng = findViewById<ImageView>(R.id.BtnEnglish)
-        val lblText = findViewById<TextView>(R.id.LblIdioma)
+        val lblText = findViewById<TextView>(R.id.lblLenguaje)
 
         btnCat.setOnClickListener()
         {
@@ -72,7 +70,7 @@ class LenguageActivity : AppCompatActivity() {
     }
 
     private fun continuar() {
-        val btnContinuar = findViewById<ImageButton>(R.id.BtnContinuarLanguage)
+        val btnContinuar = findViewById<ImageButton>(R.id.btonNextLeng)
 
         btnContinuar.setOnClickListener(){
             val intent = Intent(this, IntroActivity::class.java)
