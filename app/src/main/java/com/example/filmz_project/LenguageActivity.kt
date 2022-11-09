@@ -46,19 +46,30 @@ class LenguageActivity : AppCompatActivity() {
         {
             setLocale("ca", "ES")
             lblText.text = resources.getText(R.string.text_idioma)
+            catalanFlag.setImageResource(R.drawable.cat1)
+            englishFlag.setImageResource(R.drawable.eng1black)
+            spanishFlag.setImageResource(R.drawable.spain1black)
         }
         btnEsp.setOnClickListener()
         {
             setLocale("es", "ES")
             lblText.text = resources.getText(R.string.text_idioma)
+            spanishFlag.setImageResource(R.drawable.spain1)
+            catalanFlag.setImageResource(R.drawable.cat1black)
+            englishFlag.setImageResource(R.drawable.eng1black)
         }
         btnEng.setOnClickListener()
         {
             setLocale("en", "US")
             lblText.text = resources.getText(R.string.text_idioma)
+            englishFlag.setImageResource(R.drawable.eng1)
+            spanishFlag.setImageResource(R.drawable.spain1black)
+            catalanFlag.setImageResource(R.drawable.cat1black)
         }
 
-        continuar()
+        continuar(btnNext)
+
+
     }
 
     private fun setLocale(lang: String, loc: String)
@@ -69,12 +80,13 @@ class LenguageActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
     }
 
-    private fun continuar() {
-        val btnContinuar = findViewById<ImageButton>(R.id.btonNextLeng)
-
-        btnContinuar.setOnClickListener(){
+    private fun continuar(btnNext: ImageView ) {
+        btnNext.setOnClickListener(){
             val intent = Intent(this, IntroActivity::class.java)
             startActivity(intent)
         }
     }
+
+
+
 }
