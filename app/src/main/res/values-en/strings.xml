@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FilmZ_Project</string>
+    <string name="text_idioma">IDIOM ENGLISH</string>
+    <string name="facil">EASY</string>
+    <string name="mitja">MEDIUM</string>
+    <string name="dificil">DIFFICULT</string>
+</resources>
