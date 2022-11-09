@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         val btnGoRegister = findViewById<Button>(R.id.btnGoRegister)
         val btnGoResult = findViewById<Button>(R.id.btnGoResult)
 
+        /*------ POSEM L'IDIOMA DEFAULT COM A CATALÀ ------*/
+        val locale = Locale("ca", "ES")
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+        /*-------------------------------------------------*/
 
         btnGoIntro.setOnClickListener(){
             val intent = Intent(this,IntroActivity::class.java)
@@ -62,7 +69,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,LogoActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }
