@@ -4,4 +4,14 @@
     <string name="facil">FÁCIL</string>
     <string name="mitja">MEDIANO</string>
     <string name="dificil">DIFÍCIL</string>
+    <!-- Login -->
+    <string name="login_screen_nom">Nombre</string>
+    <string name="login_screen_contrasenya">Contraseña</string>
+    <string name="login_screen_buton_iniciar_sessió">Iniciar Sessión</string>
+    <string name="login_screen_text_iniciar_registre">¿Aún no tienes una cuenta?</string>
+    <string name="login_screen_btn_obrir_registre">Registrarse</string>
+    <!-- Pàgina Final -->
+    <string name="final_screen_nom">Gracias por jugar</string>
+    <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
+    <string name="final_screen_btn_sortir">Salir</string>
 </resources>

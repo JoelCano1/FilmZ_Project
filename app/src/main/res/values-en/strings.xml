@@ -4,4 +4,14 @@
     <string name="facil">EASY</string>
     <string name="mitja">MEDIUM</string>
     <string name="dificil">DIFFICULT</string>
+    <!-- Login -->
+    <string name="login_screen_nom">Name</string>
+    <string name="login_screen_contrasenya">Password</string>
+    <string name="login_screen_buton_iniciar_sessió">Log in</string>
+    <string name="login_screen_text_iniciar_registre">Do not have an account yet?</string>
+    <string name="login_screen_btn_obrir_registre">Sing in</string>
+    <!-- Pàgina Final -->
+    <string name="final_screen_nom">Thanks for playing</string>
+    <string name="final_screen_btn_tornar_a_jugar">Try again</string>
+    <string name="final_screen_btn_sortir">Exit</string>
 </resources>

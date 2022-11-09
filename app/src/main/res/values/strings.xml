@@ -1,7 +1,18 @@
 <resources>
+    <!-- -->
     <string name="app_name">FilmZ_Project</string>
     <string name="text_idioma">IDIOMA CATALA</string>
     <string name="facil">FÀCIL</string>
     <string name="mitja">MITJÀ</string>
     <string name="dificil">DIFÍCIL</string>
+    <!-- Login -->
+    <string name="login_screen_nom">Nom</string>
+    <string name="login_screen_contrasenya">Contrasenya</string>
+    <string name="login_screen_buton_iniciar_sessió">Iniciar Sessió</string>
+    <string name="login_screen_text_iniciar_registre">Encara no tens cap compte?</string>
+    <string name="login_screen_btn_obrir_registre">Registrar-se</string>
+    <!-- Pàgina Final -->
+    <string name="final_screen_nom">Gràcies per jugar</string>
+    <string name="final_screen_btn_tornar_a_jugar">Tornar a jugar</string>
+    <string name="final_screen_btn_sortir">Sortir</string>
 </resources>

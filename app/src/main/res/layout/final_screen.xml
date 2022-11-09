@@ -28,6 +28,7 @@
         android:layout_marginTop="70dp">
 
         <Button
+            android:id="@+id/BtnTornarJugar"
             android:layout_width="381dp"
             android:layout_height="wrap_content"
             android:text="Tornar a jugar"
@@ -47,6 +48,7 @@
         android:layout_marginTop="40dp">
 
         <Button
+            android:id="@+id/BtnSortirApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sortir"
