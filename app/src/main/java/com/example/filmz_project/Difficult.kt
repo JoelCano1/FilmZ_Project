@@ -15,7 +15,7 @@ class Difficult : AppCompatActivity(){
         val btnFacil = findViewById<Button>(R.id.BtnEasy)
         val btnMitja = findViewById<Button>(R.id.BtnMedium)
         val btnDificil = findViewById<Button>(R.id.BtnDificult)
-        val lblDesc = findViewById<TextView>(R.id.LblDesc)
+        val lblDesc = findViewById<TextView>(R.id.LblDescDif)
 
         btnFacil.setOnClickListener()
         {

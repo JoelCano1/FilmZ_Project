@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
-    <string name="text_idioma">IDIOM ENGLISH</string>
-    <string name="facil">EASY</string>
-    <string name="mitja">MEDIUM</string>
-    <string name="dificil">DIFFICULT</string>
+    <string name="lenguage_screen_textIdioma">ENGLISH</string>
+    <string name="difficult_screen_textTitol">CHOOSE DIFFICULTY</string>
+    <string name="difficult_screen_buttonTextFacil">EASY</string>
+    <string name="difficult_screen_buttonTextMitja">MEDIUM</string>
+    <string name="difficult_screen_buttonTextDificil">DIFFICULT</string>
+    <string name="difficult_screen_textDificultatFacil">DIFFICULTY EASY:\nRULES: \t20 seconds for question\n\t\t\t20 easy questions</string>
+    <string name="difficult_screen_textDificultatMitja">DIFFICULTY MEDIUM:\nRULES: \t15 seconds for question\n\t\t\t20 questions of medium level</string>
+    <string name="difficult_screen_textDificultatDificil">DIFFICULTY DIFFICULT:\nRULES: \t10 seconds for question\n\t\t\t20 difficult questions</string>
+    <string name="difficult_screen_buttonContinuar">PLAY</string>
 </resources>

@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
-    <string name="text_idioma">IDIOMA CATALA</string>
-    <string name="facil">FÀCIL</string>
-    <string name="mitja">MITJÀ</string>
-    <string name="dificil">DIFÍCIL</string>
+    <string name="lenguage_screen_textIdioma">CATALA</string>
+    <string name="difficult_screen_textTitol">ESCULL LA DIFICULTAT</string>
+    <string name="difficult_screen_buttonTextFacil">FÀCIL</string>
+    <string name="difficult_screen_buttonTextMitja">MITJÀ</string>
+    <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
+    <string name="difficult_screen_textDificultatFacil">DIFICULTAT FÀCIL: \nNORMES: \t20 segons per pregunta\n\t\t\t20 preguntes fàcils</string>
+    <string name="difficult_screen_textDificultatMitja">DIFICULTAT MITJÀ: \nNORMES: \t15 segons per pregunta\n\t\t\t20 preguntes de nivell intermig</string>
+    <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL: \nNORMES: \t10 segons per pregunta\n\t\t\t20 preguntes dificils</string>
+    <string name="difficult_screen_buttonContinuar">JUGAR</string>
 </resources>

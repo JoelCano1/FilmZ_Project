@@ -26,17 +26,17 @@ class LenguageActivity : AppCompatActivity() {
         btnCat.setOnClickListener()
         {
             setLocale("ca", "ES")
-            lblText.text = resources.getText(R.string.text_idioma)
+            lblText.text = resources.getText(R.string.lenguage_screen_textIdioma)
         }
         btnEsp.setOnClickListener()
         {
             setLocale("es", "ES")
-            lblText.text = resources.getText(R.string.text_idioma)
+            lblText.text = resources.getText(R.string.lenguage_screen_textIdioma)
         }
         btnEng.setOnClickListener()
         {
             setLocale("en", "US")
-            lblText.text = resources.getText(R.string.text_idioma)
+            lblText.text = resources.getText(R.string.lenguage_screen_textIdioma)
         }
 
         continuar()
@@ -54,7 +54,7 @@ class LenguageActivity : AppCompatActivity() {
         val btnContinuar = findViewById<ImageButton>(R.id.BtnContinuarLanguage)
 
         btnContinuar.setOnClickListener(){
-            val intent = Intent(this, IntroActivity::class.java)
+            val intent = Intent(this, DifficultActivity::class.java)
             startActivity(intent)
         }
     }

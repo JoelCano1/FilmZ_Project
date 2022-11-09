@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
-    <string name="text_idioma">IDIOMA CATSELLA</string>
-    <string name="facil">FÁCIL</string>
-    <string name="mitja">MEDIANO</string>
-    <string name="dificil">DIFÍCIL</string>
+    <string name="lenguage_screen_textIdioma">CATSELLANO</string>
+    <string name="difficult_screen_textTitol">ESCOGE LA DIFICULTAD</string>
+    <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
+    <string name="difficult_screen_buttonTextMitja">MEDIANO</string>
+    <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
+    <string name="difficult_screen_textDificultatFacil">DIFICULTAD FÁCIL:\nNORMAS: \t20 segundos por pregunta\n\t\t\t20 preguntas fáciles</string>
+    <string name="difficult_screen_textDificultatMitja">DIFICULTAD MEDIA:\nNORMAS: \t15 segundos por pregunta\n\t\t\t20 preguntas de nivel intermedio</string>
+    <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL:\nNORMAS: \t10 segundos por pregunta\n\t\t\t20 preguntas difíciles</string>
+    <string name="difficult_screen_buttonContinuar">JUGAR</string>
 </resources>
