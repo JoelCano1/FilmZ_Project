@@ -18,9 +18,9 @@ class QuestionActivity : AppCompatActivity() {
         timeBar.max = 75
         timeBar.progress = 0
 
-        object : CountDownTimer(15_000, 1){
+        object : CountDownTimer(75_000, 1_000){
             override fun onTick(remaining: Long) {
-                timeBar.progress = (timeBar.progress+1)
+                timeBar.progress = (timeBar.progress+5)
                 //pros.text = remaining.toString()
             }
 
