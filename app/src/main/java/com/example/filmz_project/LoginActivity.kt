@@ -7,6 +7,9 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.FileReader
 
 class LoginActivity : AppCompatActivity() {
 
@@ -40,8 +43,10 @@ class LoginActivity : AppCompatActivity() {
         val btnIniciarSessio = findViewById(R.id.BtnIniciarSessio) as Button
         val btnObrirRegistre = findViewById(R.id.BtnObrirRegistre) as Button
 
-        var show = true;
+        val usersList = getUsers()
 
+
+        var show = true;
         btnMostrarContraRegistre.setOnClickListener() {
 
             if (show) {
@@ -57,28 +62,61 @@ class LoginActivity : AppCompatActivity() {
 
         btnIniciarSessio.setOnClickListener() {
 
-            //if (txtNomRegistre.text.equals("a")) {
+            /*val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString())
 
-                val user = User(txtNomRegistre.text.toString(), 0, true, "g", 27, true)
+            if (x == true) {
+
+                val user = User(txtNomRegistre.text.toString(), txtContraRegistre.text.toString(),0, true, "g", 27, true)
 
                 val intent = Intent(this, DifficultActivity::class.java)
                 intent.putExtra("provisional", user)
 
                 startActivity(intent)
-            //} else {
+            } else {
 
-                Toast.makeText(applicationContext, "El usuario no existe", Toast.LENGTH_SHORT)
+                Toast.makeText(applicationContext, "Usruario o contrasnya incorrectos", Toast.LENGTH_SHORT).show()
 
-            //}
-
-        }
-
-        btnObrirRegistre.setOnClickListener() {
-
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            }*/
 
         }
+
+    btnObrirRegistre.setOnClickListener() {
+
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
 
     }
+
+}
+    fun getUsers(): MutableList<User> {
+
+        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_app.json"
+        val jsonFile = FileReader(jsonFilePath)
+        val listUsersType = object: TypeToken<MutableList<User>>() {}.type
+        val users: MutableList<User> =  Gson().fromJson(jsonFile, listUsersType)
+
+        return users
+    }
+
+    /*fun userExists(list: MutableList<User>, userName: String, password: String): Boolean {
+
+        var toReturn = false;
+
+        do {
+
+            var i = 0
+
+            if (userName == list[i].nom && password == list[i].contrasenya) {
+
+                toReturn = true;
+
+            }
+
+            i++
+
+        } while (i<list.count())
+
+        return  toReturn
+
+    }*/
 }
