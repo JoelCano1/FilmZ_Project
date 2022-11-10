@@ -1,13 +1,10 @@
 package com.example.filmz_project
 
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 
 class DifficultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
