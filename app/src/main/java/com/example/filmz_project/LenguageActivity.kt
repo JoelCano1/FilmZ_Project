@@ -84,6 +84,8 @@ class LenguageActivity : AppCompatActivity() {
         btnNext.setOnClickListener(){
             val intent = Intent(this, IntroActivity::class.java)
             startActivity(intent)
+            btnNext.setImageResource(R.drawable.nextbutclick)
+            
         }
     }
 
