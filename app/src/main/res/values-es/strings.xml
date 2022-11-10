@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
-    <string name="lenguage_screen_textIdioma">CATSELLANO</string>
+    <!--LENGUAGE_SCREEN-->
+    <string name="lenguage_screen_textIdioma">CASTELLANO</string>
+    <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">ESCOGE LA DIFICULTAD</string>
     <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
     <string name="difficult_screen_buttonTextMitja">MEDIANO</string>
@@ -9,4 +11,25 @@
     <string name="difficult_screen_textDificultatMitja">DIFICULTAD MEDIA:\nNORMAS: \t15 segundos por pregunta\n\t\t\t20 preguntas de nivel intermedio</string>
     <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL:\nNORMAS: \t10 segundos por pregunta\n\t\t\t20 preguntas difíciles</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
+    <!--REGISTER_SCREEN-->
+    <string name="register_screen_textRegistre">REGISTRO</string>
+    <string name="register_screen_nomCamp">Nombre</string>
+    <string name="register_screen_contrasenyaCamp">Contraseña</string>
+    <string name="register_screen_repetirContrasenyaCamp">Confirmar contraseña</string>
+    <string name="register_screen_edatCamp">Edad</string>
+    <string name="register_screen_sexeCamp">Sexo</string>
+    <string name="register_screen_sexeCampRadBtn3">Otro</string>
+    <string name="register_screen_estudiesCamp">Estudias?</string>
+    <string name="register_screen_estudiesCampRadBtn1">Sí</string>
+    <string name="register_screen_estudiesCampRadBtn2">No</string>
+    <string name="register_screen_robotCamp">No soy un robot</string>
+    <string name="register_screen_politicaCamp">Aceptar política de seguridad</string>
+    <string name="register_screen_btnCrear">CREAR</string>
+    <string name="register_screen_btnIniciSessio">INICIA SESIÓN</string>
+    <!--RESULT_SCREEN-->
+    <string name="result_screen_btnRanking">RANKING</string>
+    <string name="result_screen_btnContinuar">CONTINUAR</string>
+    <string name="result_screen_txtEstadistiques">ESTADÍSTICAS</string>
+    <string name="result_screen_txtCategoria">CATEGORÍA</string>
+    <string name="result_screen_txtEncerts">ACIERTOS</string>
 </resources>

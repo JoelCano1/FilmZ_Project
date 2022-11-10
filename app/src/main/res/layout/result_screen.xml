@@ -80,11 +80,11 @@
                 android:layout_weight="1"
                 android:gravity="center">
                 <Button
-                    android:id="@+id/BtnRanking"
+                    android:id="@+id/BtnRankingResult"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_redondejat"
-                    android:text="RANKING"
+                    android:text="@string/result_screen_btnRanking"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="30dp"/>
@@ -100,7 +100,7 @@
                     android:layout_width="300dp"
                     android:layout_height="60dp"
                     android:background="@drawable/button_redondejat"
-                    android:text="CONTINUAR"
+                    android:text="@string/result_screen_btnContinuar"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="30dp"/>
@@ -124,7 +124,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_marginTop="100dp"
-                android:text="ESTADÍSTIQUES"
+                android:text="@string/result_screen_txtEstadistiques"
                 android:textSize="40dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
@@ -156,7 +156,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="CATEGORIA"
+                android:text="@string/result_screen_txtCategoria"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"/>
@@ -165,7 +165,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="ENCERTS"
+                android:text="@string/result_screen_txtEncerts"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"/>

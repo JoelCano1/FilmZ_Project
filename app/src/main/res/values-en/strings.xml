@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
+    <!--LENGUAGE_SCREEN-->
     <string name="lenguage_screen_textIdioma">ENGLISH</string>
+    <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">CHOOSE DIFFICULTY</string>
     <string name="difficult_screen_buttonTextFacil">EASY</string>
     <string name="difficult_screen_buttonTextMitja">MEDIUM</string>
@@ -9,4 +11,25 @@
     <string name="difficult_screen_textDificultatMitja">DIFFICULTY MEDIUM:\nRULES: \t15 seconds for question\n\t\t\t20 questions of medium level</string>
     <string name="difficult_screen_textDificultatDificil">DIFFICULTY DIFFICULT:\nRULES: \t10 seconds for question\n\t\t\t20 difficult questions</string>
     <string name="difficult_screen_buttonContinuar">PLAY</string>
+    <!--REGISTER_SCREEN-->
+    <string name="register_screen_textRegistre">REGISTER</string>
+    <string name="register_screen_nomCamp">Name</string>
+    <string name="register_screen_contrasenyaCamp">Password</string>
+    <string name="register_screen_repetirContrasenyaCamp">Confirm password</string>
+    <string name="register_screen_edatCamp">Age</string>
+    <string name="register_screen_sexeCamp">Sex</string>
+    <string name="register_screen_sexeCampRadBtn3">Other</string>
+    <string name="register_screen_estudiesCamp">Are you studying?</string>
+    <string name="register_screen_estudiesCampRadBtn1">Yes</string>
+    <string name="register_screen_estudiesCampRadBtn2">No</string>
+    <string name="register_screen_robotCamp">Im not a robot</string>
+    <string name="register_screen_politicaCamp">Accept security policy</string>
+    <string name="register_screen_btnCrear">CREATE</string>
+    <string name="register_screen_btnIniciSessio">LOGIN</string>
+    <!--RESULT_SCREEN-->
+    <string name="result_screen_btnRanking">RANKING</string>
+    <string name="result_screen_btnContinuar">CONTINUE</string>
+    <string name="result_screen_txtEstadistiques">STATS</string>
+    <string name="result_screen_txtCategoria">CATEGORY</string>
+    <string name="result_screen_txtEncerts">HITS</string>
 </resources>

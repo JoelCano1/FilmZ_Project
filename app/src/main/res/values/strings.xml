@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FilmZ_Project</string>
+    <!--LENGUAGE_SCREEN-->
     <string name="lenguage_screen_textIdioma">CATALA</string>
+    <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">ESCULL LA DIFICULTAT</string>
     <string name="difficult_screen_buttonTextFacil">FÀCIL</string>
     <string name="difficult_screen_buttonTextMitja">MITJÀ</string>
@@ -9,4 +11,25 @@
     <string name="difficult_screen_textDificultatMitja">DIFICULTAT MITJÀ: \nNORMES: \t15 segons per pregunta\n\t\t\t20 preguntes de nivell intermig</string>
     <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL: \nNORMES: \t10 segons per pregunta\n\t\t\t20 preguntes dificils</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
+    <!--REGISTER_SCREEN-->
+    <string name="register_screen_textRegistre">REGISTRE</string>
+    <string name="register_screen_nomCamp">Nom</string>
+    <string name="register_screen_contrasenyaCamp">Contrasenya</string>
+    <string name="register_screen_repetirContrasenyaCamp">Confirmar contrasenya</string>
+    <string name="register_screen_edatCamp">Edat</string>
+    <string name="register_screen_sexeCamp">Sexe</string>
+    <string name="register_screen_sexeCampRadBtn3">Altre</string>
+    <string name="register_screen_estudiesCamp">Estudies?</string>
+    <string name="register_screen_estudiesCampRadBtn1">Sí</string>
+    <string name="register_screen_estudiesCampRadBtn2">No</string>
+    <string name="register_screen_robotCamp">No soc un robot</string>
+    <string name="register_screen_politicaCamp">Accepar política de seguretat</string>
+    <string name="register_screen_btnCrear">CREAR</string>
+    <string name="register_screen_btnIniciSessio">INICIA SESSIÓ</string>
+    <!--RESULT_SCREEN-->
+    <string name="result_screen_btnRanking">RANKING</string>
+    <string name="result_screen_btnContinuar">CONTINUAR</string>
+    <string name="result_screen_txtEstadistiques">ESTADÍSTIQUES</string>
+    <string name="result_screen_txtCategoria">CATEGORIA</string>
+    <string name="result_screen_txtEncerts">ENCERTS</string>
 </resources>

@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="REGISTRE"
+            android:text="@string/register_screen_textRegistre"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="50dp"
@@ -49,7 +49,7 @@
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:paddingLeft="30dp"
-                        android:text="Nom"
+                        android:text="@string/register_screen_nomCamp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
@@ -84,7 +84,7 @@
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:paddingLeft="30dp"
-                        android:text="Contrasenya"
+                        android:text="@string/register_screen_contrasenyaCamp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
@@ -120,7 +120,7 @@
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:paddingLeft="30dp"
-                        android:text="Confirmar contrasenya"
+                        android:text="@string/register_screen_repetirContrasenyaCamp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
@@ -163,7 +163,7 @@
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:paddingLeft="50dp"
-                        android:text="Edat"
+                        android:text="@string/register_screen_edatCamp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
@@ -176,7 +176,6 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="5dp"
                         android:background="#DCDCDC"
-                        android:inputType="textPassword"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -206,7 +205,7 @@
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:paddingLeft="50dp"
-                            android:text="Sexe"
+                            android:text="@string/register_screen_sexeCamp"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="30dp"/>
@@ -253,7 +252,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:paddingLeft="10dp"
-                            android:text="Altre"
+                            android:text="@string/register_screen_sexeCampRadBtn3"
                             android:textSize="30dp"
                             android:textColor="@color/black"
                             android:textStyle="bold"
@@ -278,7 +277,7 @@
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:paddingLeft="50dp"
-                            android:text="Estudies?"
+                            android:text="@string/register_screen_estudiesCamp"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="30dp"/>
@@ -304,7 +303,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:paddingLeft="10dp"
-                            android:text="Sí"
+                            android:text="@string/register_screen_estudiesCampRadBtn1"
                             android:textSize="30dp"
                             android:textColor="@color/black"
                             android:textStyle="bold"
@@ -314,7 +313,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:paddingLeft="10dp"
-                            android:text="No"
+                            android:text="@string/register_screen_estudiesCampRadBtn2"
                             android:textSize="30dp"
                             android:textColor="@color/black"
                             android:textStyle="bold"
@@ -344,7 +343,7 @@
                     android:layout_marginRight="170dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
-                    android:text="No soc un robot"
+                    android:text="@string/register_screen_robotCamp"
                     android:textSize="30dp"
                     android:textColor="@color/black"
                     android:buttonTint="@color/black"/>
@@ -365,7 +364,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
-                    android:text="Accepar política de seguretat"
+                    android:text="@string/register_screen_politicaCamp"
                     android:textColor="@color/black"
                     android:textSize="30dp" />
             </LinearLayout>
@@ -382,7 +381,7 @@
             android:layout_width="300dp"
             android:layout_height="75dp"
             android:background="@drawable/button_redondejat"
-            android:text="CREAR"
+            android:text="@string/register_screen_btnCrear"
             android:textSize="45dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
@@ -391,7 +390,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_redondejat"
-            android:text="Inicia Sessió"
+            android:text="@string/register_screen_btnIniciSessio"
             android:textSize="30dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>

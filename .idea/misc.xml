@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/final_screen.xml" value="0.11922442244224422" />
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/login_screen.xml" value="0.4" />
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/logo_screen.xml" value="0.18333333333333332" />
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/ranking_screen.xml" value="0.1" />
@@ -13,16 +14,17 @@
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/difficult_screen.xml" value="0.33" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/final_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/intro_screen.xml" value="0.18802083333333333" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/lenguage_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/login_screen.xml" value="0.21388888888888888" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/logo_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/register_screen.xml" value="0.36666666666666664" />
-        <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.21388888888888888" />
+        <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.5" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/difficult_screen.xml" value="0.75" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/final_screen.xml" value="0.75" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/intro_screen.xml" value="0.35280797101449274" />
-        <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/lenguage_screen.xml" value="0.5" />
+        <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/lenguage_screen.xml" value="0.266051912568306" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/login_screen.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/logo_screen.xml" value="0.266051912568306" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/question_screen.xml" value="0.67" />
@@ -31,6 +33,7 @@
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/rigster_screen.xml" value="0.2965811965811966" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_redondejat.xml" value="0.1" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_saltar_intro.xml" value="0.1925" />
+        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_difficult.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/difficult_screen.xml" value="0.4" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/final_screen.xml" value="0.4" />
