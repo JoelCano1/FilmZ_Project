@@ -62,9 +62,9 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
         val rankingDificultat= view.findViewById<TextView>(id.txtDificultatRanking)
         when(user.difficult)
         {
-            1 -> rankingDificultat.text = context.getString(R.string.facil)
-            2 -> rankingDificultat.text = context.getString(R.string.mitja)
-            3 -> rankingDificultat.text = context.getString(R.string.dificil)
+            1 -> rankingDificultat.text = context.getString(R.string.difficult_screen_buttonTextFacil)
+            2 -> rankingDificultat.text = context.getString(R.string.difficult_screen_buttonTextMitja)
+            3 -> rankingDificultat.text = context.getString(R.string.difficult_screen_buttonTextDificil)
         }
     }
 }

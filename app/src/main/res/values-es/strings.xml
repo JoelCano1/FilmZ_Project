@@ -32,4 +32,7 @@
     <string name="result_screen_txtEstadistiques">ESTADÍSTICAS</string>
     <string name="result_screen_txtCategoria">CATEGORÍA</string>
     <string name="result_screen_txtEncerts">ACIERTOS</string>
+    <!--INTRO_SCREEN-->
+    <string name="intro_screen_skip">Saltar en </string>
+    <string name="intro_screen_continuar">Continuar</string>
 </resources>
