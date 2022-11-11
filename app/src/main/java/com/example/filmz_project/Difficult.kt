@@ -19,6 +19,7 @@ class Difficult : AppCompatActivity(){
 
         btnFacil.setOnClickListener()
         {
+
             lblDesc.text = "FACIL"
         }
 
