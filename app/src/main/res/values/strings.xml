@@ -4,4 +4,7 @@
     <string name="facil">FÀCIL</string>
     <string name="mitja">MITJÀ</string>
     <string name="dificil">DIFÍCIL</string>
+    <!--intro_screen-->
+    <string name="intro_screen_skip">Saltar en </string>
+    <string name="intro_screen_continuar">Continuar</string>
 </resources>
