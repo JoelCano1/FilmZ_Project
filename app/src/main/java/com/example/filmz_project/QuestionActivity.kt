@@ -1,5 +1,6 @@
 package com.example.filmz_project
 
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -14,22 +15,31 @@ class QuestionActivity : AppCompatActivity() {
         setContentView(R.layout.question_screen)
 
         val timeBar = findViewById(R.id.ProgressBar) as ProgressBar
-        val pros = findViewById<TextView>(R.id.NumPreg)
-        timeBar.max = 75
-        timeBar.progress = 0
+        val time = findViewById(R.id.timePreg) as TextView
 
-        object : CountDownTimer(75_000, 1_000){
-            override fun onTick(remaining: Long) {
-                timeBar.progress = (timeBar.progress+5)
-                //pros.text = remaining.toString()
+
+        //Progres bar
+        val currentProgressBar = 1000
+        timeBar.max = 1000
+
+        ObjectAnimator.ofInt(timeBar, "progress", currentProgressBar)
+            .setDuration(21500)
+            .start()
+
+        //temporizador
+        var seconds = 21
+        object : CountDownTimer(21000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                seconds = seconds - 1
+                time.text = seconds.toString()
+
             }
 
             override fun onFinish() {
 
             }
+
+
         }.start()
-
-
-
     }
 }
