@@ -54,6 +54,7 @@
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
                     <EditText
+                        android:id="@+id/EdtTxtNomRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
@@ -89,6 +90,7 @@
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
                     <EditText
+                        android:id="@+id/EdtTxtContrasenyaRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
@@ -125,6 +127,7 @@
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
                     <EditText
+                        android:id="@+id/EdtTxtRepetirContrasenyaRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
@@ -168,6 +171,7 @@
                         android:textColor="@color/black"
                         android:textSize="30dp"/>
                     <EditText
+                        android:id="@+id/EdtTxtEdatRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
@@ -228,6 +232,7 @@
                         android:layout_marginBottom="20dp"
                         android:orientation="horizontal">
                         <RadioButton
+                            android:id="@+id/RdBtnMaleRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -238,6 +243,7 @@
                             android:textStyle="bold"
                             android:buttonTint="@color/black"/>
                         <RadioButton
+                            android:id="@+id/RdBtnFemaleRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -248,6 +254,7 @@
                             android:textStyle="bold"
                             android:buttonTint="@color/black"/>
                         <RadioButton
+                            android:id="@+id/RdBtnAltreRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -299,6 +306,7 @@
                         android:layout_marginBottom="20dp"
                         android:orientation="horizontal">
                         <RadioButton
+                            android:id="@+id/RdBtnEstudiaRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -309,6 +317,7 @@
                             android:textStyle="bold"
                             android:buttonTint="@color/black"/>
                         <RadioButton
+                            android:id="@+id/RdBtnNoEstudiaRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -336,6 +345,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <CheckBox
+                    android:id="@+id/CkBoxRobotRegistre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_checkbox"
@@ -356,6 +366,7 @@
                 android:gravity="center">
 
                 <CheckBox
+                    android:id="@+id/CkBoxPolicyRegistre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_checkbox"
@@ -378,6 +389,7 @@
         android:gravity="center"
         android:orientation="vertical">
         <Button
+            android:id="@+id/BtnCrearUsuari"
             android:layout_width="300dp"
             android:layout_height="75dp"
             android:background="@drawable/button_redondejat"
@@ -386,6 +398,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"/>
         <Button
+            android:id="@+id/BtnIniciarSessioRegistre"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
