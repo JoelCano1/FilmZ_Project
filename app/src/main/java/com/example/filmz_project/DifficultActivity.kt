@@ -45,7 +45,8 @@ class DifficultActivity : AppCompatActivity() {
     }
     private fun continuar(nivell: Int) {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
-        //PASAR NIVELL AMB PUTEXTRA
+        //PASAR NIVELL AMB PUT_EXTRA
+
         btnContinuar.setOnClickListener() {
             val intent = Intent(this, QuestionActivity::class.java)
             startActivity(intent)

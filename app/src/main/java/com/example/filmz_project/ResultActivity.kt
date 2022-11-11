@@ -1,23 +1,27 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.ConfigurationCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
-import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_screen)
 
+        // ↓ SABER EL CURRENT LANGUAGE DE LA APP ↓ //
+        var lang = resources.getConfiguration().locale.getLanguage()
+        //=========================================//
         val personatges: MutableList<Personatge>
-        var lang = "ca"
+
         if(lang == "ca") {
             personatges = getPersonatgesCatala()
         } else if (lang == "es") {
