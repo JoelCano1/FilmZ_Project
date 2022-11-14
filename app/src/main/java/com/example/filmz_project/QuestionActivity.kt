@@ -7,6 +7,9 @@ import android.os.CountDownTimer
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.FileReader
 
 class QuestionActivity : AppCompatActivity() {
 
@@ -37,6 +40,21 @@ class QuestionActivity : AppCompatActivity() {
             }
         }.start()
     }
+    fun selectJson(): String
+    {
+        return "s"
+    }
+
+    //carga el json de preguntas
+    fun loadQuestions() :MutableList<Questions>
+    {
+        //getFilesDir() -> crea un objeto que hace referencia a la carpeta files donde se guardan los jsons
+        val jsonFilePath = getFilesDir().toString() +"/JSONS/CASTELLANO_DIFICIL.json"
+        val jsonFiles = FileReader(jsonFilePath)
+        val questionsList = object: TypeToken<MutableList<Questions>>() {}.type
+        val questions: MutableList<Questions> = Gson().fromJson(jsonFiles, questionsList)
+        return questions
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,5 +66,9 @@ class QuestionActivity : AppCompatActivity() {
 
         //temporizador
         timeQuestion()
+
+        val question = findViewById(R.id.question) as TextView
+        question.text = loadQuestions()[0].pregunta
+
     }
 }

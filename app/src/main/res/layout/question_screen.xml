@@ -91,6 +91,7 @@
         android:layout_marginTop="25dp"
         >
         <TextView
+            android:id="@+id/question"
             android:layout_width="850dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
