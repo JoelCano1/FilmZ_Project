@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import RankingAdapter
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,10 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ListView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.FileReader
+import java.io.FileWriter
 
 class RankingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,12 +23,13 @@ class RankingActivity : AppCompatActivity() {
         val btnContinuarRanking = findViewById<Button>(R.id.btnContinuarRanking)
 
         val user = User("jugador actual",null,19,true,'h',1500,true,2,null);
-        var ranking = getRanking()
+        var ranking = getRanking(this)
         ranking.add(user)
-        ranking = orderRanking(ranking)
+        ranking.sortByDescending { it.puntuacio }
+        val finalRanking = formattingRanking(ranking)
 
 
-        val adapter = RankingAdapter(this,R.layout.ranking_item,ranking)
+        val adapter = RankingAdapter(this,R.layout.ranking_item,finalRanking)
         lstRanking.adapter=adapter;
         val animation : Animation = AnimationUtils.loadAnimation(this,R.anim.move_down)
         lstRanking.startAnimation(animation)
@@ -31,26 +37,30 @@ class RankingActivity : AppCompatActivity() {
 
         btnContinuarRanking.setOnClickListener(){
             ranking=resetRankingPlayer(ranking)
+            saveRanking(this,ranking)
             val intent = Intent(this,FinalActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 
+    fun getRanking(context: Context): MutableList<User>{
 
-    fun getRanking(): MutableList<User>{
-        return mutableListOf<User>(
-            User("prueba",null,19,true,'h',1000,false,1,null),
-            User("prueba2",null,20,true,'h',1200,false,2,null),
-            User("prueba3",null,19,true,'h',1300,false,3,null),
-            User("prueba4",null,19,true,'d',1400,false,3,null),
-            User("prueba4",null,19,true,'d',1500,false,3,null),
-            User("prueba4",null,19,true,'h',1600,false,3,null)
-        )
+        val jsonFilePath = context.getFilesDir().toString() + "/JSONS/ranking.json"
+        val jsonFile = FileReader(jsonFilePath)
+        val listRankingType = object: TypeToken<MutableList<User>>() {}.type
+        val ranking: MutableList<User> = Gson().fromJson(jsonFile, listRankingType)
+        return ranking
+    }
+    fun saveRanking(context: Context, ranking: List<User>){
+        val jsonFilePath = context.getFilesDir().toString() + "/JSONS/ranking.json"
+        val jsonFile = FileWriter(jsonFilePath)
+        var gson = Gson()
+        var jsonElement = gson.toJson(ranking)
+        jsonFile.write(jsonElement)
+        jsonFile.close()
     }
 
-    fun orderRanking(rankingParameter: MutableList<User>): MutableList<User> {
+    fun formattingRanking(rankingParameter: MutableList<User>): MutableList<User> {
         var ranking = rankingParameter
         ranking.sortByDescending { it.puntuacio }
         ranking = asignarPosicio(ranking)
