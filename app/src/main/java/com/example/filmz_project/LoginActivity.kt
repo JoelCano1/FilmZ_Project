@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private val getResult = registerForActivityResult(
+   private val getResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     )
     {
@@ -62,21 +62,22 @@ class LoginActivity : AppCompatActivity() {
 
         btnIniciarSessio.setOnClickListener() {
 
-            /*val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString())
+            val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString())
 
-            if (x == true) {
+            if (x >= 0) {
 
-                val user = User(txtNomRegistre.text.toString(), txtContraRegistre.text.toString(),0, true, "g", 27, true)
+                val user = usersList[x]
+                user.jugadorActual = true;
 
                 val intent = Intent(this, DifficultActivity::class.java)
-                intent.putExtra("provisional", user)
 
                 startActivity(intent)
+
             } else {
 
-                Toast.makeText(applicationContext, "Usruario o contrasnya incorrectos", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, "Usruario o contrasnya incorrectos", Toast.LENGTH_SHORT).show()
 
-            }*/
+            }
 
         }
 
@@ -98,25 +99,26 @@ class LoginActivity : AppCompatActivity() {
         return users
     }
 
-    /*fun userExists(list: MutableList<User>, userName: String, password: String): Boolean {
+    fun userExists(list: MutableList<User>, userName: String, password: String): Int {
 
-        var toReturn = false;
+        var toReturn = -1
+        var cont = true
+        var i = 0
 
         do {
 
-            var i = 0
-
             if (userName == list[i].nom && password == list[i].contrasenya) {
 
-                toReturn = true;
+                toReturn = i;
+                cont = false
 
             }
 
-            i++
+            i++;
 
-        } while (i<list.count())
+        } while (i<list.count() || cont)
 
         return  toReturn
 
-    }*/
+    }
 }
