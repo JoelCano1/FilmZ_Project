@@ -1,17 +1,38 @@
 <resources>
-    <string name="app_name">FilmZ_Project</string>
-    <string name="text_idioma">IDIOMA CATSELLA</string>
-    <string name="facil">FÁCIL</string>
-    <string name="mitja">MEDIANO</string>
-    <string name="dificil">DIFÍCIL</string>
-    <!-- Login -->
-    <string name="login_screen_nom">Nombre</string>
-    <string name="login_screen_contrasenya">Contraseña</string>
-    <string name="login_screen_buton_iniciar_sessió">Iniciar Sessión</string>
-    <string name="login_screen_text_iniciar_registre">¿Aún no tienes una cuenta?</string>
-    <string name="login_screen_btn_obrir_registre">Registrarse</string>
-    <!-- Pàgina Final -->
-    <string name="final_screen_nom">Gracias por jugar</string>
-    <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
-    <string name="final_screen_btn_sortir">Salir</string>
+    <string name="app_name">FilmZ</string>
+    <!--LENGUAGE_SCREEN-->
+    <string name="lenguage_screen_textIdioma">CASTELLANO</string>
+    <!--DIFFICULT_SCREEN-->
+    <string name="difficult_screen_textTitol">ESCOGE LA DIFICULTAD</string>
+    <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
+    <string name="difficult_screen_buttonTextMitja">MEDIANO</string>
+    <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
+    <string name="difficult_screen_textDificultatFacil">DIFICULTAD FÁCIL:\nNORMAS: \t20 segundos por pregunta\n\t\t\t20 preguntas fáciles</string>
+    <string name="difficult_screen_textDificultatMitja">DIFICULTAD MEDIA:\nNORMAS: \t15 segundos por pregunta\n\t\t\t20 preguntas de nivel intermedio</string>
+    <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL:\nNORMAS: \t10 segundos por pregunta\n\t\t\t20 preguntas difíciles</string>
+    <string name="difficult_screen_buttonContinuar">JUGAR</string>
+    <!--REGISTER_SCREEN-->
+    <string name="register_screen_textRegistre">REGISTRO</string>
+    <string name="register_screen_nomCamp">Nombre</string>
+    <string name="register_screen_contrasenyaCamp">Contraseña</string>
+    <string name="register_screen_repetirContrasenyaCamp">Confirmar contraseña</string>
+    <string name="register_screen_edatCamp">Edad</string>
+    <string name="register_screen_sexeCamp">Sexo</string>
+    <string name="register_screen_sexeCampRadBtn3">Otro</string>
+    <string name="register_screen_estudiesCamp">Estudias?</string>
+    <string name="register_screen_estudiesCampRadBtn1">Sí</string>
+    <string name="register_screen_estudiesCampRadBtn2">No</string>
+    <string name="register_screen_robotCamp">No soy un robot</string>
+    <string name="register_screen_politicaCamp">Aceptar política de seguridad</string>
+    <string name="register_screen_btnCrear">CREAR</string>
+    <string name="register_screen_btnIniciSessio">INICIA SESIÓN</string>
+    <!--RESULT_SCREEN-->
+    <string name="result_screen_btnRanking">RANKING</string>
+    <string name="result_screen_btnContinuar">CONTINUAR</string>
+    <string name="result_screen_txtEstadistiques">ESTADÍSTICAS</string>
+    <string name="result_screen_txtCategoria">CATEGORÍA</string>
+    <string name="result_screen_txtEncerts">ACIERTOS</string>
+    <!--INTRO_SCREEN-->
+    <string name="intro_screen_skip">Saltar en </string>
+    <string name="intro_screen_continuar">Continuar</string>
 </resources>

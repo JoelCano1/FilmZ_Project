@@ -24,12 +24,14 @@ class IntroActivity() : AppCompatActivity() {
       object: CountDownTimer(tempsMilisegons, 1000){
           override fun onTick(millisUntilFinished: Long) {
               val tempsSegons = (millisUntilFinished/1000).toInt()+1
-              btnTempsRestant.text = "Saltar en  "+tempsSegons.toString()
+              val string: String = getString(R.string.intro_screen_skip)
+              btnTempsRestant.text = string +" "+ tempsSegons.toString()+"''"
           }
 
           override fun onFinish() {
               btnTempsRestant.alpha= 1F
-              btnTempsRestant.text = "CONTINUAR"
+              val string: String = getString(R.string.intro_screen_continuar)
+              btnTempsRestant.text = string
 
               btnTempsRestant.setOnClickListener(){
                   startActivity(intent)
