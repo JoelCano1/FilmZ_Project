@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         val btnGoRegister = findViewById<Button>(R.id.btnGoRegister)
         val btnGoResult = findViewById<Button>(R.id.btnGoResult)
 
+
+
         /*------ POSEM L'IDIOMA DEFAULT COM A CATALÀ ------*/
         val locale = Locale("ca", "ES")
         val config = resources.configuration
