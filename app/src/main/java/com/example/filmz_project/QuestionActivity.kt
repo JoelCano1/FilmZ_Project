@@ -40,8 +40,23 @@ class QuestionActivity : AppCompatActivity() {
             }
         }.start()
     }
+
     fun selectJson(): String
-    {
+    {   var language = resources.getConfiguration().locale.getLanguage()
+        var idiom = null as String
+        var difficulty = null as String
+        when (language) {
+            "CA" -> {
+                idiom = "CATALA_"
+            }
+            "ES" -> {
+                idiom = "CASTELLANO_"
+            }
+            "EN" -> {
+                idiom = "ENGLISH_"
+            }
+        }
+
         return "s"
     }
 
