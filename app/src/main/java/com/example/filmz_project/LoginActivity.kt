@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-   private val getResult = registerForActivityResult(
+    private val getResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     )
     {
@@ -62,7 +62,8 @@ class LoginActivity : AppCompatActivity() {
 
         btnIniciarSessio.setOnClickListener() {
 
-            val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString())
+            val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString()
+            )
 
             if (x >= 0) {
 
@@ -75,26 +76,31 @@ class LoginActivity : AppCompatActivity() {
 
             } else {
 
-                //Toast.makeText(applicationContext, "Usruario o contrasnya incorrectos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Usruario o contrasnya incorrectos",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             }
 
         }
 
-    btnObrirRegistre.setOnClickListener() {
+        btnObrirRegistre.setOnClickListener() {
 
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+
+        }
 
     }
 
-}
     fun getUsers(): MutableList<User> {
 
         val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_app.json"
         val jsonFile = FileReader(jsonFilePath)
-        val listUsersType = object: TypeToken<MutableList<User>>() {}.type
-        val users: MutableList<User> =  Gson().fromJson(jsonFile, listUsersType)
+        val listUsersType = object : TypeToken<MutableList<User>>() {}.type
+        val users: MutableList<User> = Gson().fromJson(jsonFile, listUsersType)
 
         return users
     }
@@ -114,11 +120,11 @@ class LoginActivity : AppCompatActivity() {
 
             }
 
-            i++;
+            i++
 
-        } while (i<list.count() || cont)
+        } while (i < list.count() && cont)
 
-        return  toReturn
+        return toReturn
 
     }
 }

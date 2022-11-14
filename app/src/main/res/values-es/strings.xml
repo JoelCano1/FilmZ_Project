@@ -2,6 +2,12 @@
     <string name="app_name">FilmZ</string>
     <!--LENGUAGE_SCREEN-->
     <string name="lenguage_screen_textIdioma">CASTELLANO</string>
+    <!--LOGIN_SCREEN-->
+    <string name="login_screen_nom">Nombre</string>
+    <string name="login_screen_contrasenya">Contraseña</string>
+    <string name="login_screen_buton_iniciar_sessió">Iniciar Sessión</string>
+    <string name="login_screen_text_iniciar_registre">¿Aún no tienes una cuenta?</string>
+    <string name="login_screen_btn_obrir_registre">Registrarse</string>
     <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">ESCOGE LA DIFICULTAD</string>
     <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
@@ -35,4 +41,8 @@
     <!--INTRO_SCREEN-->
     <string name="intro_screen_skip">Saltar en </string>
     <string name="intro_screen_continuar">Continuar</string>
+    <!--FINAL_SCREEN-->
+    <string name="final_screen_nom">Gracias por jugar</string>
+    <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
+    <string name="final_screen_btn_sortir">Salir</string>
 </resources>
