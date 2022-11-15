@@ -29,13 +29,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nom"
+            android:text="@string/login_screen_nom"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/TXTNomRegistre"
+            android:id="@+id/TxtNomRegistre"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -48,10 +48,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contrasenya"
+            android:text="@string/login_screen_contrasenya"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -85,19 +86,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="467dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="80dp">
 
         <Button
             android:id="@+id/BtnIniciarSessio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_redondejat"
-            android:text="Iniciar Sessió"
+            android:text="@string/login_screen_buton_iniciar_sessió"
             android:textColor="@color/black"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -106,16 +107,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encara no tens cap compte?"
+            android:text="@string/login_screen_text_iniciar_registre"
             android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/BtnObrirRegistre"
@@ -123,11 +125,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/button_redondejat"
-            android:text="Registra't"
+            android:text="@string/login_screen_btn_obrir_registre"
             android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp"/>
+            android:textSize="15dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
