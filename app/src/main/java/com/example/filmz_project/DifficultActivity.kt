@@ -15,11 +15,11 @@ class DifficultActivity : AppCompatActivity() {
 
         var user = intent.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
 
-        user.difficult = eleccioNivell()
+        seleccioNivell(user)
 
-        continuar(user)
+
     }
-    private fun eleccioNivell(): Int {
+    private fun seleccioNivell(user:User) {
         var nivell = -1
         val btnFacil = findViewById<Button>(R.id.BtnEasy)
         val btnMitja = findViewById<Button>(R.id.BtnMedium)
@@ -31,25 +31,32 @@ class DifficultActivity : AppCompatActivity() {
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnFacil.backgroundTintList = this.getColorStateList(R.color.verd)
             nivell = 1
+            user.difficult = 1
+            continuar(user)
         }
         btnMitja.setOnClickListener() {
             lblDescripcioDificultat.text = resources.getText(R.string.difficult_screen_textDificultatMitja)
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnMitja.backgroundTintList = this.getColorStateList(R.color.taronja)
             nivell = 2
+            user.difficult = 2
+            continuar(user)
         }
         btnDificil.setOnClickListener() {
             lblDescripcioDificultat.text = resources.getText((R.string.difficult_screen_textDificultatDificil))
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnDificil.backgroundTintList = this.getColorStateList(R.color.vermell)
             nivell = 3
+            user.difficult = 3
+            continuar(user)
         }
-        return nivell
+
     }
     private fun continuar(user: User) {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
 
         btnContinuar.setOnClickListener() {
+            //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
             val intent = Intent(this, QuestionActivity::class.java)
             intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
             startActivity(intent)
