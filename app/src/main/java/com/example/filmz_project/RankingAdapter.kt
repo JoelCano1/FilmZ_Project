@@ -36,7 +36,7 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
 
         if(user.jugadorActual)
         {
-            rankingElement.setBackgroundColor(Color.parseColor("#FFF9AD"));
+            rankingElement.setBackgroundColor(Color.parseColor("#E34C42"));
         }
         else
         {

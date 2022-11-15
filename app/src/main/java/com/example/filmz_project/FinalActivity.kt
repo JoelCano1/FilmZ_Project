@@ -12,10 +12,8 @@ class FinalActivity : AppCompatActivity() {
 
         val btnTornarJugar = findViewById(R.id.BtnTornarJugar) as Button
         val btnSortirApp = findViewById(R.id.BtnSortirApp) as Button
-
+        
         btnTornarJugar.setOnClickListener() {
-
-            val user = "a"
 
             val intent =  Intent(this, DifficultActivity::class.java)
 

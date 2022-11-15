@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gràcies per jugar"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="100dp"
             android:textStyle="bold"/>
 
@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:text="Tornar a jugar"
             android:textSize="60dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"
             android:paddingHorizontal="30dp"
@@ -52,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sortir"
-            android:textStyle="bold"
             android:textSize="60dp"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"

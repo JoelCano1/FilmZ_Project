@@ -1,21 +1,37 @@
 package com.example.filmz_project
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.FileUtils
 import android.text.TextUtils
 import android.widget.*
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.FileReader
+import java.io.FileWriter
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_screen)
 
-        crearUsuari()
+        var usuaris = getUsers()
+
+        crearUsuari(usuaris)
         iniciarSessio()
     }
 
-    private fun crearUsuari() {
+    private fun getUsers(): MutableList<User> {
+        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_app.json"
+        val jsonFile = FileReader(jsonFilePath)
+        val listUsuaris = object: TypeToken<MutableList<User>>() {}.type
+        val usuaris: MutableList<User> = Gson().fromJson(jsonFile, listUsuaris)
+        return usuaris
+    }
+
+    private fun crearUsuari(usuaris: MutableList<User>) {
         val campNom = findViewById<EditText>(R.id.EdtTxtNomRegistre)
         val campContra = findViewById<EditText>(R.id.EdtTxtContrasenyaRegistre)
         val campRepeatContra = findViewById<EditText>(R.id.EdtTxtRepetirContrasenyaRegistre)
@@ -40,11 +56,45 @@ class RegisterActivity : AppCompatActivity() {
                         if(revisarContrasenyaIguals(campContra, campRepeatContra) == false) {
                             Toast.makeText(this, "Les contrasenyes no coincideixen", Toast.LENGTH_LONG).show()
                         } else {
-                            btnCrearUsuari.setOnClickListener() {
-                                //Guardar Objecte d'usuari en el JSON
+                            var usuariRepetit = false
+                            var count = 0
+                            while (usuariRepetit == false && count < usuaris.size) {
+                                if (campNom.text.toString() == usuaris.get(count).nom) {
+                                    usuariRepetit = true
+                                }
+                                count++
+                            }
+                            if (usuariRepetit == true) {
+                                Toast.makeText(this, "JA EXISTEIX UN USUARI AMB AQUEST NOM", Toast.LENGTH_LONG).show()
+                            } else {
+                                btnCrearUsuari.setOnClickListener() {
+                                    //ESTUDIS
+                                    var estudia = true
+                                    if (campEstudia.isChecked) {
+                                        estudia
+                                    } else if (campNoEstudia.isChecked) {
+                                        estudia = false
+                                    }
+                                    //SEXE
+                                    var sexe = 'H'
+                                    if (campSexeHome.isChecked) {
+                                        sexe
+                                    } else if (campSexeDona.isChecked) {
+                                        sexe = 'M'
+                                    } else if (campSexeAltre.isChecked) {
+                                        sexe = 'A'
+                                    }
+                                    //Guardar Objecte d'usuari en el JSON
+                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, null, null))
 
-                                val intent = Intent(this, LoginActivity::class.java)
-                                startActivity(intent)
+                                    saveUser(this, usuaris)
+
+                                    val intent = Intent(this, LoginActivity::class.java)
+                                    //Pasar usuari a IniciSessio
+                                    //intent.putExtra(Keys.constKeys.REGISTER_TO_LOGIN, usuaris)
+
+                                    startActivity(intent)
+                                }
                             }
                         }
                     }
@@ -96,9 +146,18 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
     private fun revisarContrasenyaIguals(campContra: EditText, campRepeatContra: EditText): Boolean {
-        if (campContra.text == campRepeatContra.text) return true
+        if (campContra.text.toString() == campRepeatContra.text.toString()) return true
 
         return false
+    }
+
+    private fun saveUser(context: Context, usuaris: MutableList<User>) {
+        val jsonFilePath = context.getFilesDir().toString() + "//JSONS/USUARIS_app.json"
+        val jsonFile = FileWriter(jsonFilePath)
+        var gson = Gson()
+        var jsonElement = gson.toJson(usuaris)
+        jsonFile.write(jsonElement)
+        jsonFile.close()
     }
 
     private fun iniciarSessio() {

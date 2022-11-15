@@ -13,7 +13,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:layout_weight="0.75"
-        android:text="@string/lenguage_screen_textIdioma"
         android:textColor="@color/white"
         android:textSize="80sp"
         android:textStyle="bold" />
