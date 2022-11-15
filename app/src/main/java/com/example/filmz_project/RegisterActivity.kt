@@ -1,13 +1,16 @@
 package com.example.filmz_project
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.FileUtils
 import android.text.TextUtils
 import android.widget.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
+import java.io.FileWriter
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,20 +72,22 @@ class RegisterActivity : AppCompatActivity() {
                                     var estudia = true
                                     if (campEstudia.isChecked) {
                                         estudia
-                                    } else {
+                                    } else if (campNoEstudia.isChecked) {
                                         estudia = false
                                     }
                                     //SEXE
-                                    var sexe: Char
+                                    var sexe = 'H'
                                     if (campSexeHome.isChecked) {
-                                        sexe = 'H'
+                                        sexe
                                     } else if (campSexeDona.isChecked) {
                                         sexe = 'M'
-                                    } else {
+                                    } else if (campSexeAltre.isChecked) {
                                         sexe = 'A'
                                     }
                                     //Guardar Objecte d'usuari en el JSON
                                     usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, -1, null))
+
+                                    saveUser(this, usuaris)
 
                                     val intent = Intent(this, LoginActivity::class.java)
                                     //Pasar usuari a IniciSessio
@@ -144,6 +149,15 @@ class RegisterActivity : AppCompatActivity() {
         if (campContra.text.toString() == campRepeatContra.text.toString()) return true
 
         return false
+    }
+
+    private fun saveUser(context: Context, usuaris: MutableList<User>) {
+        val jsonFilePath = context.getFilesDir().toString() + "//JSONS/USUARIS_app.json"
+        val jsonFile = FileWriter(jsonFilePath)
+        var gson = Gson()
+        var jsonElement = gson.toJson(usuaris)
+        jsonFile.write(jsonElement)
+        jsonFile.close()
     }
 
     private fun iniciarSessio() {
