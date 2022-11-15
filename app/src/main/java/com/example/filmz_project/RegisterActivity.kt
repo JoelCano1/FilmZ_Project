@@ -65,12 +65,29 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.makeText(this, "JA EXISTEIX UN USUARI AMB AQUEST NOM", Toast.LENGTH_LONG).show()
                             } else {
                                 btnCrearUsuari.setOnClickListener() {
-                                    //Si el check box estudia esta checked --> estudia es igual true...
+                                    //ESTUDIS
+                                    var estudia = true
+                                    if (campEstudia.isChecked) {
+                                        estudia
+                                    } else {
+                                        estudia = false
+                                    }
+                                    //SEXE
+                                    var sexe: Char
+                                    if (campSexeHome.isChecked) {
+                                        sexe = 'H'
+                                    } else if (campSexeDona.isChecked) {
+                                        sexe = 'M'
+                                    } else {
+                                        sexe = 'A'
+                                    }
                                     //Guardar Objecte d'usuari en el JSON
-                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia))
+                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, -1, null))
 
                                     val intent = Intent(this, LoginActivity::class.java)
-                                    //Pasar llista usuaris
+                                    //Pasar usuari a IniciSessio
+                                    //intent.putExtra(Keys.constKeys.REGISTER_TO_LOGIN, usuaris)
+
                                     startActivity(intent)
                                 }
                             }
