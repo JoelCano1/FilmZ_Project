@@ -8,6 +8,8 @@ class User(
     val edat: Int,
     val estudia: Boolean,
     val sexe: Char,
-    var puntuacio: Int, var jugadorActual: Boolean, var difficult: Int,
+    var puntuacio: Int,
+    var jugadorActual: Boolean,
+    var difficult: Int?,
     var posicionRanking: Int?
 ): Serializable

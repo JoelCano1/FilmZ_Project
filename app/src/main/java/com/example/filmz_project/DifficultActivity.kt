@@ -10,14 +10,17 @@ class DifficultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
-        val nivell : Int
 
-        nivell = eleccioNivell()
+        val intent = getIntent()
 
-        continuar(nivell)
+        var user = intent.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
+
+        user.difficult = eleccioNivell()
+
+        continuar(user)
     }
     private fun eleccioNivell(): Int {
-        var nivell : Int = 2
+        var nivell = -1
         val btnFacil = findViewById<Button>(R.id.BtnEasy)
         val btnMitja = findViewById<Button>(R.id.BtnMedium)
         val btnDificil = findViewById<Button>(R.id.BtnDificult)
@@ -43,12 +46,12 @@ class DifficultActivity : AppCompatActivity() {
         }
         return nivell
     }
-    private fun continuar(nivell: Int) {
+    private fun continuar(user: User) {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
-        //PASAR NIVELL AMB PUT_EXTRA
 
         btnContinuar.setOnClickListener() {
             val intent = Intent(this, QuestionActivity::class.java)
+            intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
             startActivity(intent)
         }
     }
