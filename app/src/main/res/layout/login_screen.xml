@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nom"
+            android:text="@string/login_screen_nom"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -48,10 +48,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contrasenya"
+            android:text="@string/login_screen_contrasenya"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -95,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_redondejat"
-            android:text="Iniciar Sessió"
+            android:text="@string/login_screen_buton_iniciar_sessió"
             android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold" />
@@ -112,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encara no tens cap compte?"
+            android:text="@string/login_screen_text_iniciar_registre"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"
@@ -124,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/button_redondejat"
-            android:text="Registrar-se"
+            android:text="@string/login_screen_btn_obrir_registre"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"/>
