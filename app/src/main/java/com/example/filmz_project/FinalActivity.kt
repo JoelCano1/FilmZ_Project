@@ -13,12 +13,12 @@ class FinalActivity : AppCompatActivity() {
         val btnTornarJugar = findViewById(R.id.BtnTornarJugar) as Button
         val btnSortirApp = findViewById(R.id.BtnSortirApp) as Button
 
-        //getIntent()
+        val intent = getIntent()
         
         btnTornarJugar.setOnClickListener() {
 
-            /*val user = User()
-            user.puntuacio = 0;*/
+            val user = intent.getSerializableExtra(Keys.constKeys.RANKING_TO_FINAL) as User
+            user.puntuacio = 0;
 
             val intent =  Intent(this, DifficultActivity::class.java)
 
