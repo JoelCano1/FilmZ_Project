@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -41,30 +42,43 @@ class QuestionActivity : AppCompatActivity() {
         }.start()
     }
 
-    fun selectJson(): String
+    fun selectJson(usuarioActial:User): String
     {   var language = resources.getConfiguration().locale.getLanguage()
-        var idiom = null as String
-        var difficulty = null as String
+        var idiom = "a" as String
+        var difficulty = "as" as String
+
         when (language) {
-            "CA" -> {
+            "ca" -> {
                 idiom = "CATALA_"
             }
-            "ES" -> {
+            "es" -> {
                 idiom = "CASTELLANO_"
             }
-            "EN" -> {
+            "en" -> {
                 idiom = "ENGLISH_"
             }
         }
+        when (usuarioActial.difficult)
+        {
+            1 -> {
+                difficulty = "FACIL"
+            }
+            2 -> {
+                difficulty = "MEDIANO"
+            }
+            3 -> {
+                difficulty="DIFICIL"
+            }
+        }
 
-        return "s"
+        return "/JSONS/" + idiom + difficulty + ".json"
     }
 
     //carga el json de preguntas
-    fun loadQuestions() :MutableList<Questions>
+    fun loadQuestions(usuarioActial:User) :MutableList<Questions>
     {
         //getFilesDir() -> crea un objeto que hace referencia a la carpeta files donde se guardan los jsons
-        val jsonFilePath = getFilesDir().toString() +"/JSONS/CASTELLANO_DIFICIL.json"
+        val jsonFilePath = getFilesDir().toString() + selectJson(usuarioActial)
         val jsonFiles = FileReader(jsonFilePath)
         val questionsList = object: TypeToken<MutableList<Questions>>() {}.type
         val questions: MutableList<Questions> = Gson().fromJson(jsonFiles, questionsList)
@@ -82,8 +96,19 @@ class QuestionActivity : AppCompatActivity() {
         //temporizador
         timeQuestion()
 
-        val question = findViewById(R.id.question) as TextView
-        question.text = loadQuestions()[0].pregunta
+        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
+        val question = findViewById(R.id.question) as TextView
+        val respuesta1 = findViewById(R.id.respuesta1) as Button
+        val respuesta2 = findViewById(R.id.respuesta2) as Button
+        val respuesta3 = findViewById(R.id.respuesta3) as Button
+        val nombrePeli = findViewById(R.id.nombrePeli) as TextView
+        val categoria = findViewById(R.id.categoria) as TextView
+        question.text = loadQuestions(jugadorActual)[0].pregunta
+        respuesta1.text = loadQuestions(jugadorActual)[0].resposta1
+        respuesta2.text = loadQuestions(jugadorActual)[0].resposta2
+        respuesta3.text = loadQuestions(jugadorActual)[0].resposta3
+        nombrePeli.text = loadQuestions(jugadorActual)[0].película
+        categoria.text = loadQuestions(jugadorActual)[0].categoria
     }
 }

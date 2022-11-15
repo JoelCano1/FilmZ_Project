@@ -26,6 +26,7 @@
 
         >
         <TextView
+            android:id="@+id/nombrePeli"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -70,6 +71,7 @@
 
 
         <TextView
+            android:id="@+id/categoria"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -110,6 +112,7 @@
         android:layout_marginTop="30dp"
         >
     <Button
+        android:id="@+id/respuesta1"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="20dp"
         android:layout_width="0dp"
@@ -125,6 +128,7 @@
         />
 
     <Button
+        android:id="@+id/respuesta2"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
             android:layout_width="0dp"
@@ -138,6 +142,7 @@
         />
 
     <Button
+        android:id="@+id/respuesta3"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="10dp"
         android:layout_width="0dp"
