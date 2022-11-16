@@ -38,6 +38,11 @@
     <string name="result_screen_txtEstadistiques">ESTADÍSTICAS</string>
     <string name="result_screen_txtCategoria">CATEGORÍA</string>
     <string name="result_screen_txtEncerts">ACIERTOS</string>
+    <string name="result_screen_txtGenereDrama">DRAMA</string>
+    <string name="result_screen_txtGenereTerror">TERROR</string>
+    <string name="result_screen_txtGenereAnimacio">ANIMACIÓN</string>
+    <string name="result_screen_txtGenereAccio">ACCIÓN</string>
+    <string name="result_screen_txtGenereCienciaFiccio">CIENCIA FICCIÓN</string>
     <!--INTRO_SCREEN-->
     <string name="intro_screen_skip">Saltar en </string>
     <string name="intro_screen_continuar">Continuar</string>
