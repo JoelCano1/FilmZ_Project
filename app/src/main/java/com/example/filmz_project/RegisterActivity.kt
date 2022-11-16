@@ -85,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
                                         sexe = 'A'
                                     }
                                     //Guardar Objecte d'usuari en el JSON
-                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, null, null))
+                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, 2, null))
 
                                     saveUser(this, usuaris)
 
