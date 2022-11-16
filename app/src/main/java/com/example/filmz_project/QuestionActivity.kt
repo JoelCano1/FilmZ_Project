@@ -90,7 +90,7 @@ class QuestionActivity : AppCompatActivity() {
         setContentView(R.layout.question_screen)
 
         val intent = getIntent()
-        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
 
         //Progres bar
         progressBar()
@@ -98,7 +98,7 @@ class QuestionActivity : AppCompatActivity() {
         //temporizador
         timeQuestion()
 
-        //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
+        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
 
 
