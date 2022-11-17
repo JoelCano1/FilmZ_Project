@@ -34,7 +34,7 @@
         android:layout_height="80dp"
         android:text="@string/intro_screen_continuar"
         android:textColor="@color/black"
-        android:fontFamily="@font/manrope"
+        android:fontFamily="@font/robotoslab"
         android:textSize="30sp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_redondejat"/>

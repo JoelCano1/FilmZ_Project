@@ -33,11 +33,12 @@
             android:layout_height="wrap_content"
             android:text="Tornar a jugar"
             android:fontFamily="@font/robotoslab"
+            android:textStyle="bold"
             android:textSize="60dp"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"
             android:paddingHorizontal="30dp"
-            android:paddingVertical="20dp"/>
+            android:paddingVertical="15dp"/>
 
     </LinearLayout>
 
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:text="Sortir"
             android:textSize="60dp"
+            android:paddingVertical="15dp"
             android:fontFamily="@font/robotoslab"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"
