@@ -202,12 +202,5 @@ class QuestionActivity : AppCompatActivity() {
                 showRandomQuestion(loadedJSON)
             }
         }
-
-
-
-
-
-
-
     }
 }
