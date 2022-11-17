@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import androidx.core.os.ConfigurationCompat
 import com.google.gson.Gson
@@ -16,6 +17,9 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_screen)
+
+        val intent = getIntent()
+        //var jugadorActual = intent.getSerializableExtra()
 
         // ↓ SABER EL CURRENT LANGUAGE DE LA APP ↓ //
         var lang = resources.getConfiguration().locale.getLanguage()
@@ -29,6 +33,13 @@ class ResultActivity : AppCompatActivity() {
         } else {
             personatges = getPersonatgesAngles()
         }
+
+
+
+        val lstEncerts = findViewById<ListView>(R.id.LstStats)
+
+        // val adapter = ResultAdapter(this, R.layout.result_item, )
+        // lstEncerts.adapter = adapter
 
         posarPersonatge(personatges)
         veureRanking()
@@ -61,6 +72,7 @@ class ResultActivity : AppCompatActivity() {
         val lblDescripcioPersonatge = findViewById<TextView>(R.id.LblDescPersonatge)
         //Saber resultats dusuari (CATEGORIA I ENCERTS) --> Agafar de la llista personatges
 
+        //imgPersonatgeImatge.drawable = getFilesDir().toString() + ""
         lblDescripcioPersonatge.text = personatgesCatala.get(1).descripcioPers
     }
 
