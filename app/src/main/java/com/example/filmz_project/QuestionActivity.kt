@@ -12,14 +12,18 @@ import java.io.FileReader
 import kotlin.random.Random
 
 class QuestionActivity : AppCompatActivity() {
-    private lateinit var timer : CountDownTimer
+    private lateinit var timer: CountDownTimer
 
     companion object {
-        var dramaCounter = 0; var terrorCounter = 0; var animationCounter = 0; var sfCounter = 0; var actionCounter = 0;
+        var dramaCounter = 0;
+        var terrorCounter = 0;
+        var animationCounter = 0;
+        var sfCounter = 0;
+        var actionCounter = 0;
         var numQuestion = 1
     }
 
-    fun  progressBar(){
+    fun progressBar() {
         val timeBar = findViewById(R.id.ProgressBar) as ProgressBar
         val currentProgressBar = 1000
         timeBar.progress = 0
@@ -30,7 +34,7 @@ class QuestionActivity : AppCompatActivity() {
             .start()
     }
 
-    fun timeQuestion(){
+    fun timeQuestion() {
 
         var time = findViewById(R.id.timePreg) as TextView
         var seconds = 21
@@ -49,8 +53,8 @@ class QuestionActivity : AppCompatActivity() {
         }.start()
     }
 
-    fun selectJson(usuarioActial:User): String
-    {   var language = resources.getConfiguration().locale.getLanguage()
+    fun selectJson(usuarioActial: User): String {
+        var language = resources.getConfiguration().locale.getLanguage()
         var idiom = "x"
         var difficulty = "x"
 
@@ -65,8 +69,7 @@ class QuestionActivity : AppCompatActivity() {
                 idiom = "ENGLISH_"
             }
         }
-        when (usuarioActial.difficult)
-        {
+        when (usuarioActial.difficult) {
             1 -> {
                 difficulty = "FACIL"
             }
@@ -74,7 +77,7 @@ class QuestionActivity : AppCompatActivity() {
                 difficulty = "MEDIANO"
             }
             3 -> {
-                difficulty="DIFICIL"
+                difficulty = "DIFICIL"
             }
         }
 
@@ -82,94 +85,94 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     //carga el json de preguntas
-    fun loadQuestions(usuarioActial:User) :MutableList<Questions>
-    {
+    fun loadQuestions(usuarioActial: User): MutableList<Questions> {
         //getFilesDir() -> crea un objeto que hace referencia a la carpeta files donde se guardan los jsons
         val jsonFilePath = getFilesDir().toString() + selectJson(usuarioActial)
         val jsonFiles = FileReader(jsonFilePath)
-        val questionsList = object: TypeToken<MutableList<Questions>>() {}.type
+        val questionsList = object : TypeToken<MutableList<Questions>>() {}.type
         val questions: MutableList<Questions> = Gson().fromJson(jsonFiles, questionsList)
         return questions
     }
-    fun showQuestions(questionToShow : Questions){
+
+    fun showQuestions(questionToShow: Questions) {
 
 
+        val question = findViewById(R.id.question) as TextView
+        val respuesta1 = findViewById(R.id.respuesta1) as Button
+        val respuesta2 = findViewById(R.id.respuesta2) as Button
+        val respuesta3 = findViewById(R.id.respuesta3) as Button
+        val nombrePeli = findViewById(R.id.nombrePeli) as TextView
+        val categoria = findViewById(R.id.categoria) as TextView
+        val numPregunta = findViewById(R.id.NumPreg) as TextView
 
-            val question = findViewById(R.id.question) as TextView
-            val respuesta1 = findViewById(R.id.respuesta1) as Button
-            val respuesta2 = findViewById(R.id.respuesta2) as Button
-            val respuesta3 = findViewById(R.id.respuesta3) as Button
-            val nombrePeli = findViewById(R.id.nombrePeli) as TextView
-            val categoria = findViewById(R.id.categoria) as TextView
-            val numPregunta = findViewById(R.id.NumPreg) as TextView
-
-            question.text = questionToShow.pregunta
-            respuesta1.text = questionToShow.resposta1
-            respuesta2.text = questionToShow.resposta2
-            respuesta3.text = questionToShow.resposta3
-            nombrePeli.text = questionToShow.película
-            categoria.text = questionToShow.categoria
-            numPregunta.text = numQuestion.toString()
+        question.text = questionToShow.pregunta
+        respuesta1.text = questionToShow.resposta1
+        respuesta2.text = questionToShow.resposta2
+        respuesta3.text = questionToShow.resposta3
+        nombrePeli.text = questionToShow.película
+        categoria.text = questionToShow.categoria
+        numPregunta.text = numQuestion.toString()
 
 
     }
-    fun clasifyQuestions(questionShowed: Questions) : Boolean
-    {
-        var fullQuestion = false
-            when (questionShowed.categoria) {
-                "Drama" -> {
-                   dramaCounter++
-                    if (dramaCounter > 4){
-                        fullQuestion = true
-                    }
-                }
-                "Terror" -> {
-                    terrorCounter++
-                    if (terrorCounter > 4){
-                        fullQuestion = true
-                    }
-                }
-                "Animación" -> {
-                       animationCounter++
-                    if (animationCounter > 4){
-                        fullQuestion = true
-                    }
-                }
-                "Ciencia Ficción" -> {
-                        sfCounter++
-                    if (sfCounter > 4){
-                        fullQuestion = true
-                    }
-                }
-                "Acción" -> {
-                        actionCounter++
-                    if (actionCounter > 4){
-                        fullQuestion = true
-                    }
-                }
 
-             }
+    fun clasifyQuestions(questionShowed: Questions): Boolean {
+        var fullQuestion = false
+        when (questionShowed.categoria) {
+            "Drama" -> {
+                dramaCounter++
+                if (dramaCounter > 4) {
+                    fullQuestion = true
+                }
+            }
+            "Terror" -> {
+                terrorCounter++
+                if (terrorCounter > 4) {
+                    fullQuestion = true
+                }
+            }
+            "Animación" -> {
+                animationCounter++
+                if (animationCounter > 4) {
+                    fullQuestion = true
+                }
+            }
+            "Ciencia Ficción" -> {
+                sfCounter++
+                if (sfCounter > 4) {
+                    fullQuestion = true
+                }
+            }
+            "Acción" -> {
+                actionCounter++
+                if (actionCounter > 4) {
+                    fullQuestion = true
+                }
+            }
+
+        }
         return fullQuestion
     }
-    fun showRandomQuestion(questions: MutableList<Questions>)
-    {
+
+    fun showRandomQuestion(questions: MutableList<Questions>) {
         var max = questions.size
         var random = 0
-            do{
+        do {
 
-                 random =   Random.nextInt(0, max)
+            random = Random.nextInt(0, max)
 
-            }while (clasifyQuestions(questions[random]) && numQuestion < 20)
-            //muestra la pregutnta
-            showQuestions(questions[random])
+        } while (clasifyQuestions(questions[random]) && numQuestion < 20)
+        //muestra la pregutnta
+        showQuestions(questions[random])
 
-            //iniciamos contador y barra
-            progressBar()
-            timeQuestion()
-            //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
-            questions.removeAt(random)
-            max--
+        //iniciamos contador y barra
+        progressBar()
+        timeQuestion()
+        //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
+        questions.removeAt(random)
+        max--
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
@@ -193,12 +196,11 @@ class QuestionActivity : AppCompatActivity() {
             timer.cancel()
             numQuestion++
 
-            if (numQuestion > 20 ){
+            if (numQuestion > 20) {
                 val intent = Intent(this, ResultActivity::class.java)
                 //intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
                 startActivity(intent)
-            }else
-            {
+            } else {
                 showRandomQuestion(loadedJSON)
             }
         }
