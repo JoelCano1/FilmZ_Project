@@ -3,7 +3,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
     android:orientation="vertical">
 
     <TextView
@@ -12,6 +11,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
+        android:fontFamily="@font/lora"
         android:layout_weight="0.75"
         android:textColor="@color/white"
         android:textSize="80sp"

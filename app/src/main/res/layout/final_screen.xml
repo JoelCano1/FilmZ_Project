@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,6 +11,7 @@
         android:layout_marginTop="100dp">
 
         <TextView
+            android:fontFamily="@font/lora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gràcies per jugar"
@@ -32,6 +32,7 @@
             android:layout_width="381dp"
             android:layout_height="wrap_content"
             android:text="Tornar a jugar"
+            android:fontFamily="@font/robotoslab"
             android:textSize="60dp"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Sortir"
             android:textSize="60dp"
+            android:fontFamily="@font/robotoslab"
             android:textColor="@color/black"
             android:background="@drawable/button_redondejat"
             android:paddingHorizontal="30dp"/>

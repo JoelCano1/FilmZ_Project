@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
     android:orientation="vertical">
 
     <!-- TEXT SUPERIOR -->
@@ -17,7 +16,8 @@
             android:gravity="center"
             android:text="@string/difficult_screen_textTitol"
             android:textSize="40dp"
-            android:textColor="@color/black"
+            android:fontFamily="@font/lora"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/difficult_screen_buttonTextFacil"
+            android:fontFamily="@font/robotoslab"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="30dp"
@@ -53,6 +54,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="30dp"
+            android:fontFamily="@font/robotoslab"
             android:background="@drawable/button_redondejat"
             android:backgroundTint="#FF8000"
             android:layout_marginTop="20dp"
@@ -68,6 +70,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="30dp"
+            android:fontFamily="@font/robotoslab"
             android:background="@drawable/button_redondejat"
             android:backgroundTint="#B5B2B2"
             android:layout_marginTop="20dp"
@@ -85,12 +88,14 @@
             android:id="@+id/LblDescDif"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:layout_margin="40dp"
             android:padding="15dp"
-            android:background="@drawable/button_redondejat"
+
+            android:background="@drawable/boton_redondselct"
             android:text="@string/difficult_screen_textDificultatMitja"
             android:textColor="@color/black"
+            android:fontFamily="@font/quicksand"
             android:textSize="20dp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -111,6 +116,7 @@
             android:background="@drawable/button_redondejat"
             android:text="@string/difficult_screen_buttonContinuar"
             android:textSize="40dp"
+            android:fontFamily="@font/robotoslab"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>
