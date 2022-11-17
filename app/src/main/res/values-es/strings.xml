@@ -13,9 +13,9 @@
     <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
     <string name="difficult_screen_buttonTextMitja">MEDIANO</string>
     <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
-    <string name="difficult_screen_textDificultatFacil">DIFICULTAD FÁCIL:\nNORMAS: \t20 segundos por pregunta\n\t\t\t20 preguntas fáciles</string>
-    <string name="difficult_screen_textDificultatMitja">DIFICULTAD MEDIA:\nNORMAS: \t15 segundos por pregunta\n\t\t\t20 preguntas de nivel intermedio</string>
-    <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL:\nNORMAS: \t10 segundos por pregunta\n\t\t\t20 preguntas difíciles</string>
+    <string name="difficult_screen_textDificultatFacil">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *1</string>
+    <string name="difficult_screen_textDificultatMitja">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *1.5</string>
+    <string name="difficult_screen_textDificultatDificil">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *2</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTRO</string>
@@ -44,6 +44,7 @@
     <string name="result_screen_txtGenereAccio">ACCIÓN</string>
     <string name="result_screen_txtGenereCienciaFiccio">CIENCIA FICCIÓN</string>
     <!--INTRO_SCREEN-->
+    <string name="intro_screen_textIntroduccio"><b>Bienvinidos a FilmZ</b>\n\nUna empresa que te harà destacar en el mundo de la película con la ayuda de juegos dinàmicos y divertidos.\nAdentrate en este Juego Quiz y aprende y presume a tus amigos de los conocimientos sobre las películas.\n¿Te atreves a iniciar un camino que te puede llevar a la victoria?</string>
     <string name="intro_screen_skip">Saltar en </string>
     <string name="intro_screen_continuar">Continuar</string>
     <!--FINAL_SCREEN-->

@@ -39,12 +39,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:text="NOM USUARI"
-                    android:fontFamily="@font/mavenpro"
-                    android:textSize="25dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    style="@style/resultScreenSubtitolsNom"/>
             </LinearLayout>
             <!--DESCRIPCIO-->
             <LinearLayout
@@ -85,12 +81,8 @@
                     android:id="@+id/BtnRankingResult"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/button_redondejat"
                     android:text="@string/result_screen_btnRanking"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/robotoslab"
-                    android:textSize="30dp"/>
+                    style="@style/resultScreenButtons"/>
             </LinearLayout>
             <!--BUTTON CONTINUE-->
             <LinearLayout
@@ -102,12 +94,9 @@
                     android:id="@+id/BtnContinuarResult"
                     android:layout_width="300dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/button_redondejat"
                     android:text="@string/result_screen_btnContinuar"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/robotoslab"
-                    android:textSize="30dp"/>
+                    style="@style/resultScreenButtons"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -122,12 +111,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3">
+            android:layout_weight="2">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/result_screen_txtEstadistiques"
                 android:textSize="40dp"
                 android:textColor="@color/white"
@@ -160,28 +149,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/result_screen_txtCategoria"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:fontFamily="@font/mavenpro"
-                android:textSize="20dp"/>
+                style="@style/resultScreenSubtitolsNom"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/result_screen_txtEncerts"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:fontFamily="@font/mavenpro"
-                android:textSize="20dp"/>
+                style="@style/resultScreenSubtitolsNom"/>
         </LinearLayout>
         <!--LLISTA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
+            android:layout_weight="4"
+            android:layout_marginBottom="50dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -189,31 +171,31 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <TextView
-                    style="@style/textGeneres"
+                    style="@style/resultScreenTextGeneres"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/result_screen_txtGenereDrama"/>
                 <TextView
-                    style="@style/textGeneres"
+                    style="@style/resultScreenTextGeneres"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/result_screen_txtGenereTerror"/>
                 <TextView
-                    style="@style/textGeneres"
+                    style="@style/resultScreenTextGeneres"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/result_screen_txtGenereAnimacio"/>
                 <TextView
-                    style="@style/textGeneres"
+                    style="@style/resultScreenTextGeneres"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="@string/result_screen_txtGenereAccio"/>
                 <TextView
-                    style="@style/textGeneres"
+                    style="@style/resultScreenTextGeneres"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"

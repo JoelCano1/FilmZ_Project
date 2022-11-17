@@ -8,5 +8,5 @@
         android:id="@+id/LblEncerts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/textGeneres"/>
+        style="@style/resultScreenTextGeneres"/>
 </LinearLayout>

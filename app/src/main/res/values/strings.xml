@@ -44,6 +44,7 @@
     <string name="result_screen_txtGenereAccio">ACCIÓ</string>
     <string name="result_screen_txtGenereCienciaFiccio">CIENCIA FICCIÓ</string>
     <!--INTRO_SCREEN-->
+    <string name="intro_screen_textIntroduccio"><b>Benvinguts a FilmZ</b>\n\nUna empresa que et farà destacar en el món de la pel·lícula amb lajuda de jocs dinàmics i divertits.\nEndinsat en aquest Joc Quiz i aprén i presum als teus amics dels coneixements sobre les pel·lícules.\nTatraveixes a iniciar un camí que et pot portar a la victòria?</string>
     <string name="intro_screen_skip">Saltar en </string>
     <string name="intro_screen_continuar">Continuar</string>
     <!--FINAL_SCREEN-->

@@ -3,8 +3,23 @@
     <style name="textDefault">
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="textGeneres">
+    <style name="resultScreenTextGeneres">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">25dp</item>
+        <item name="android:textSize">20dp</item>
     </style>
+    <style name="resultScreenSubtitolsNom">
+        <item name="android:textSize">25dp</item>
+        <item name="android:color">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/mavenpro</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="resultScreenButtons">
+        <item name="android:background">@drawable/button_redondejat</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/robotoslab</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
 </resources>
