@@ -14,6 +14,10 @@ import java.io.FileReader
 
 class QuestionActivity : AppCompatActivity() {
 
+    companion object {
+        var dramaCounter = 0; var terrorCounter = 0; var animationCounter = 0; var sfCounter = 0; var actionCounter = 0;
+    }
+
     fun  progressBar(){
         val timeBar = findViewById(R.id.ProgressBar) as ProgressBar
         val currentProgressBar = 1000
@@ -84,14 +88,9 @@ class QuestionActivity : AppCompatActivity() {
         val questions: MutableList<Questions> = Gson().fromJson(jsonFiles, questionsList)
         return questions
     }
-    fun showQuestions(questions : MutableList<Questions>){
+    fun showQuestions(questionToShow : Questions){
 
-        var numero = 0
-        var max = questions.size
 
-        while (numero > 4)
-        {
-            var random = (0..max).random()
 
             val question = findViewById(R.id.question) as TextView
             val respuesta1 = findViewById(R.id.respuesta1) as Button
@@ -100,51 +99,76 @@ class QuestionActivity : AppCompatActivity() {
             val nombrePeli = findViewById(R.id.nombrePeli) as TextView
             val categoria = findViewById(R.id.categoria) as TextView
 
-            question.text = questions[random].pregunta
-            respuesta1.text = questions[random].resposta1
-            respuesta2.text = questions[random].resposta2
-            respuesta3.text = questions[random].resposta3
-            nombrePeli.text = questions[random].película
-            categoria.text = questions[random].categoria
-            questions.removeAt(random)
-            max--
-            numero++
-        }
+            question.text = questionToShow.pregunta
+            respuesta1.text = questionToShow.resposta1
+            respuesta2.text = questionToShow.resposta2
+            respuesta3.text = questionToShow.resposta3
+            nombrePeli.text = questionToShow.película
+            categoria.text = questionToShow.categoria
+
+
     }
-    fun clasifyQuestions
-                (
-        questions: MutableList<Questions>, dramaList: MutableList<Questions>,
-        terrorList: MutableList<Questions>,animationList: MutableList<Questions>,
-        scienceFList: MutableList<Questions> ,actionList: MutableList<Questions>
-    )
-
+    fun clasifyQuestions(questionShowed: Questions) : Boolean
     {
-        for (question in questions) {
-
-            when (question.categoria) {
+        var fullQuestion = false
+            when (questionShowed.categoria) {
                 "Drama" -> {
-                    dramaList.add(question)
+                   dramaCounter++
+                    if (dramaCounter > 4){
+                        fullQuestion = true
+                    }
                 }
                 "Terror" -> {
-                    terrorList.add(question)
+                    terrorCounter++
                 }
                 "Animación" -> {
-                    animationList.add(question)
+                       animationCounter++
                 }
                 "Ciencia Ficción" -> {
-                    scienceFList.add(question)
+                        sfCounter++
                 }
                 "Acción" -> {
-                    actionList.add(question)
+                        actionCounter++
                 }
-            }
-        }
-    }
 
+             }
+        return fullQuestion
+    }
+    fun showRandomQuestion(questions: MutableList<Questions>)
+    {
+
+        var numero = 0
+        var max = questions.size
+
+        while(numero < 20)
+        {
+            //calculamos un random
+            var random = (0..max).random()
+
+            //muestra la pregutnta
+            showQuestions(questions[random])
+
+            //miramos de que catgoria es la pregunta, solo tenemos que mostrar 4 por categoria
+            clasifyQuestions(questions[random])
+
+            //iniciamos contador y barra
+            progressBar()
+            timeQuestion()
+
+            //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
+            questions.removeAt(random)
+            max--
+
+            numero++
+        }
+
+
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
-
+        var pito = 1
         val intent = getIntent()
         //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
 
@@ -161,17 +185,6 @@ class QuestionActivity : AppCompatActivity() {
 
         loadQuestions(jugadorActual)
 
-        val question = findViewById(R.id.question) as TextView
-        val respuesta1 = findViewById(R.id.respuesta1) as Button
-        val respuesta2 = findViewById(R.id.respuesta2) as Button
-        val respuesta3 = findViewById(R.id.respuesta3) as Button
-        val nombrePeli = findViewById(R.id.nombrePeli) as TextView
-        val categoria = findViewById(R.id.categoria) as TextView
-        question.text = loadQuestions(jugadorActual)[0].pregunta
-        respuesta1.text = loadQuestions(jugadorActual)[0].resposta1
-        respuesta2.text = loadQuestions(jugadorActual)[0].resposta2
-        respuesta3.text = loadQuestions(jugadorActual)[0].resposta3
-        nombrePeli.text = loadQuestions(jugadorActual)[0].película
-        categoria.text = loadQuestions(jugadorActual)[0].categoria
+
     }
 }
