@@ -13,9 +13,9 @@
     <string name="difficult_screen_buttonTextFacil">FÀCIL</string>
     <string name="difficult_screen_buttonTextMitja">MITJÀ</string>
     <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
-    <string name="difficult_screen_textDificultatFacil">DIFICULTAT FÀCIL: \nNORMES: \t20 segons per pregunta\n\t\t\t20 preguntes fàcils</string>
-    <string name="difficult_screen_textDificultatMitja">DIFICULTAT MITJÀ: \nNORMES: \t15 segons per pregunta\n\t\t\t20 preguntes de nivell intermig</string>
-    <string name="difficult_screen_textDificultatDificil">DIFICULTAT DIFÍCIL: \nNORMES: \t10 segons per pregunta\n\t\t\t20 preguntes dificils</string>
+    <string name="difficult_screen_textDificultatFacil">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *1</string>
+    <string name="difficult_screen_textDificultatMitja">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *1.5</string>
+    <string name="difficult_screen_textDificultatDificil">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *2</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTRE</string>
