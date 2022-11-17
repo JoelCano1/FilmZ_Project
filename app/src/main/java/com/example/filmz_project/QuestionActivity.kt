@@ -84,6 +84,33 @@ class QuestionActivity : AppCompatActivity() {
         val questions: MutableList<Questions> = Gson().fromJson(jsonFiles, questionsList)
         return questions
     }
+    fun showQuestions(questions : MutableList<Questions>){
+
+        var numero = 0
+        var max = questions.size
+
+        while (numero > 4)
+        {
+            var random = (0..max).random()
+
+            val question = findViewById(R.id.question) as TextView
+            val respuesta1 = findViewById(R.id.respuesta1) as Button
+            val respuesta2 = findViewById(R.id.respuesta2) as Button
+            val respuesta3 = findViewById(R.id.respuesta3) as Button
+            val nombrePeli = findViewById(R.id.nombrePeli) as TextView
+            val categoria = findViewById(R.id.categoria) as TextView
+
+            question.text = questions[random].pregunta
+            respuesta1.text = questions[random].resposta1
+            respuesta2.text = questions[random].resposta2
+            respuesta3.text = questions[random].resposta3
+            nombrePeli.text = questions[random].película
+            categoria.text = questions[random].categoria
+            questions.removeAt(random)
+            max--
+            numero++
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
