@@ -111,6 +111,35 @@ class QuestionActivity : AppCompatActivity() {
             numero++
         }
     }
+    fun clasifyQuestions
+                (
+        questions: MutableList<Questions>, dramaList: MutableList<Questions>,
+        terrorList: MutableList<Questions>,animationList: MutableList<Questions>,
+        scienceFList: MutableList<Questions> ,actionList: MutableList<Questions>
+    )
+
+    {
+        for (question in questions) {
+
+            when (question.categoria) {
+                "Drama" -> {
+                    dramaList.add(question)
+                }
+                "Terror" -> {
+                    terrorList.add(question)
+                }
+                "Animación" -> {
+                    animationList.add(question)
+                }
+                "Ciencia Ficción" -> {
+                    scienceFList.add(question)
+                }
+                "Acción" -> {
+                    actionList.add(question)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
