@@ -153,47 +153,35 @@ class QuestionActivity : AppCompatActivity() {
     }
     fun showRandomQuestion(questions: MutableList<Questions>)
     {
-
-        var numero = 0
         var max = questions.size
         var random = 0
-
-
-
             do{
 
                  random =   Random.nextInt(0, max)
 
             }while (clasifyQuestions(questions[random]) && numQuestion < 20)
-
-
-
-
             //muestra la pregutnta
             showQuestions(questions[random])
-
 
             //iniciamos contador y barra
             progressBar()
             timeQuestion()
-
             //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
             questions.removeAt(random)
-
             max--
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
-        var pito = 1
+
+
         val intent = getIntent()
         var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
 
 
-
         //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
-        //cargamos ekl json una vez
+        //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
 
         showRandomQuestion(loadedJSON)
