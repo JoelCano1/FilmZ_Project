@@ -10,7 +10,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:text="RANKING"
-        android:fontFamily="@font/loravariablefontwght"
+        android:fontFamily="@font/lora"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -25,7 +25,8 @@
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="100dp"
         android:divider="@android:color/transparent"
-        android:dividerHeight="30.0dp" />
+        android:dividerHeight="30.0dp"
+        android:listSelector="@android:color/transparent"/>
 
     <Button
         android:id="@+id/btnContinuarRanking"
@@ -33,8 +34,8 @@
         android:layout_height="80dp"
         android:text="@string/intro_screen_continuar"
         android:textColor="@color/black"
+        android:fontFamily="@font/robotoslab"
         android:textSize="30sp"
-        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_redondejat"/>
 </LinearLayout>
