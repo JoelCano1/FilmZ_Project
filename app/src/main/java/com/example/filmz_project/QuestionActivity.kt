@@ -92,6 +92,7 @@ class QuestionActivity : AppCompatActivity() {
 
     //carga el json de preguntas
     fun loadQuestions(usuarioActial: User): MutableList<Questions> {
+
         //getFilesDir() -> crea un objeto que hace referencia a la carpeta files donde se guardan los jsons
         val jsonFilePath = getFilesDir().toString() + selectJson(usuarioActial)
         val jsonFiles = FileReader(jsonFilePath)
@@ -101,7 +102,6 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun showQuestions(questionToShow: Questions) {
-
 
         val question = findViewById(R.id.question) as TextView
         val respuesta1 = findViewById(R.id.respuesta1) as Button
@@ -122,6 +122,7 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun clasifyQuestions(questionShowed: Questions): Boolean {
+
         var fullQuestion = false
         when (questionShowed.categoria) {
             "Drama" -> {
@@ -253,6 +254,7 @@ class QuestionActivity : AppCompatActivity() {
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
 
+
         showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
 
 
@@ -287,7 +289,6 @@ class QuestionActivity : AppCompatActivity() {
         }
 
         //pasamos de pregunta
-
         nextQuestion.setOnClickListener()
         {
             //reseteamos valores
