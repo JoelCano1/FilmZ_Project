@@ -25,7 +25,8 @@ class QuestionActivity : AppCompatActivity() {
 
         var numQuestion = 1
 
-        var correctQuestion = 0
+        var yourCorrectQuestion = 0
+        var correctAnswer = false
     }
 
     fun progressBar() {
@@ -181,7 +182,13 @@ class QuestionActivity : AppCompatActivity() {
 
     }
     fun checkCorrectAnswer(questionToCheck :Questions) {
-        questionToCheck.resposta_correcte
+
+        if (questionToCheck.resposta_correcte == yourCorrectQuestion)
+        {
+            correctAnswer = true
+        }
+
+
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -206,7 +213,7 @@ class QuestionActivity : AppCompatActivity() {
 
         button1.setOnClickListener()
         {
-            correctQuestion = 1
+            yourCorrectQuestion = 1
             button1.setBackgroundResource(R.drawable.boton_redondselct)
             button2.setBackgroundResource(R.drawable.boton_redondeado)
             button3.setBackgroundResource(R.drawable.boton_redondeado)
@@ -214,14 +221,14 @@ class QuestionActivity : AppCompatActivity() {
         }
         button2.setOnClickListener()
         {
-            correctQuestion = 2
+            yourCorrectQuestion = 2
             button1.setBackgroundResource(R.drawable.boton_redondeado)
             button2.setBackgroundResource(R.drawable.boton_redondselct)
             button3.setBackgroundResource(R.drawable.boton_redondeado)
         }
         button3.setOnClickListener()
         {
-            correctQuestion = 3
+            yourCorrectQuestion = 3
             button1.setBackgroundResource(R.drawable.boton_redondeado)
             button2.setBackgroundResource(R.drawable.boton_redondeado)
             button3.setBackgroundResource(R.drawable.boton_redondselct)
@@ -233,12 +240,29 @@ class QuestionActivity : AppCompatActivity() {
         valideteQuestion.setOnClickListener()
         {
             valideteQuestion.visibility = View.INVISIBLE
+            if (correctAnswer)
+            {
+                when (yourCorrectQuestion)
+                {
+                    1 -> {
+                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    2 -> {
+                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    3 -> {
+                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                }
+            }
         }
 
         //nextquestion
         val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
         nextQuestion.setOnClickListener()
         {
+            valideteQuestion.visibility = View.VISIBLE
+            correctAnswer = false
             timer.cancel()
             numQuestion++
 
@@ -249,9 +273,6 @@ class QuestionActivity : AppCompatActivity() {
             } else {
                 showRandomQuestion(loadedJSON)
             }
-
-
-
 
         }
     }
