@@ -94,6 +94,7 @@
         android:fontFamily="@font/lora"
         android:textStyle="bold"
 
+
         android:background="@drawable/boton_redondeado"
 
         />
@@ -109,7 +110,7 @@
             android:textColor="@color/black"
             android:textAllCaps="false"
             android:textSize="23dp"
-            android:background="@drawable/boton_redondselct"
+            android:background="@drawable/boton_redondeado"
             android:fontFamily="@font/lora"
             android:textStyle="bold"
         />
@@ -130,11 +131,11 @@
         android:textStyle="bold"
         />
     </LinearLayout>
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:orientation="horizontal">
-    
+
 <TextView
     android:id="@+id/numPreg"
     android:layout_width="200dp"
@@ -156,10 +157,19 @@
         android:background="@android:color/transparent"
         android:src="@drawable/nextbut"
         android:layout_marginTop="19dp"
-        android:layout_marginLeft="378dp"
+        android:layout_marginLeft="596dp"
         />
-    
-</LinearLayout>
+
+    <ImageButton
+        android:id="@+id/validateQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="596dp"
+        android:layout_marginTop="19dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/validarbut2" />
+
+</RelativeLayout>
     
 
 </LinearLayout>

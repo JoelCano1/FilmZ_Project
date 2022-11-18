@@ -2,9 +2,11 @@ package com.example.filmz_project
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.widget.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -20,7 +22,10 @@ class QuestionActivity : AppCompatActivity() {
         var animationCounter = 0;
         var sfCounter = 0;
         var actionCounter = 0;
+
         var numQuestion = 1
+
+        var correctQuestion = 0
     }
 
     fun progressBar() {
@@ -167,11 +172,18 @@ class QuestionActivity : AppCompatActivity() {
         //iniciamos contador y barra
         progressBar()
         timeQuestion()
+
+        //guardamos que respuesta es correcta
+        checkCorrectAnswer(questions[random])
         //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
         questions.removeAt(random)
         max--
-    }
 
+    }
+    fun checkCorrectAnswer(questionToCheck :Questions) {
+        questionToCheck.resposta_correcte
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
@@ -187,8 +199,43 @@ class QuestionActivity : AppCompatActivity() {
         val loadedJSON = loadQuestions(jugadorActual)
 
         showRandomQuestion(loadedJSON)
+        //botones
+        val button1 = findViewById(R.id.respuesta1) as Button
+        val button2 = findViewById(R.id.respuesta2) as Button
+        val button3 = findViewById(R.id.respuesta3) as Button
 
+        button1.setOnClickListener()
+        {
+            correctQuestion = 1
+            button1.setBackgroundResource(R.drawable.boton_redondselct)
+            button2.setBackgroundResource(R.drawable.boton_redondeado)
+            button3.setBackgroundResource(R.drawable.boton_redondeado)
 
+        }
+        button2.setOnClickListener()
+        {
+            correctQuestion = 2
+            button1.setBackgroundResource(R.drawable.boton_redondeado)
+            button2.setBackgroundResource(R.drawable.boton_redondselct)
+            button3.setBackgroundResource(R.drawable.boton_redondeado)
+        }
+        button3.setOnClickListener()
+        {
+            correctQuestion = 3
+            button1.setBackgroundResource(R.drawable.boton_redondeado)
+            button2.setBackgroundResource(R.drawable.boton_redondeado)
+            button3.setBackgroundResource(R.drawable.boton_redondselct)
+        }
+
+        //validar
+        val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
+
+        valideteQuestion.setOnClickListener()
+        {
+            valideteQuestion.visibility = View.INVISIBLE
+        }
+
+        //nextquestion
         val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
         nextQuestion.setOnClickListener()
         {
@@ -202,6 +249,10 @@ class QuestionActivity : AppCompatActivity() {
             } else {
                 showRandomQuestion(loadedJSON)
             }
+
+
+
+
         }
     }
 }
