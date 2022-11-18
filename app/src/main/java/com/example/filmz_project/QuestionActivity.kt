@@ -103,14 +103,14 @@ class QuestionActivity : AppCompatActivity() {
         val respuesta3 = findViewById(R.id.respuesta3) as Button
         val categoria = findViewById(R.id.categoria) as TextView
 
-        //val numPregunta = findViewById(R.id.NumPreg) as TextView
+        val numPregunta = findViewById(R.id.numPreg) as TextView
 
         question.text = questionToShow.pregunta
         respuesta1.text = questionToShow.resposta1
         respuesta2.text = questionToShow.resposta2
         respuesta3.text = questionToShow.resposta3
         categoria.text = questionToShow.categoria
-        //numPregunta.text = numQuestion.toString()
+        numPregunta.text = numQuestion.toString()+"/20"
 
 
     }
