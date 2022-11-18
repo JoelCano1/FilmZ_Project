@@ -13,26 +13,6 @@ import java.io.FileReader
 
 class LoginActivity : AppCompatActivity() {
 
-    object constRegister {
-
-        const val NOMUSER = "NOM"
-        const val CONTRAUSER = "Contra"
-
-    }
-
-    private val getResult = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    )
-    {
-        val txtNomRegitre = findViewById(R.id.TxtNomRegistre) as EditText
-        if (it.resultCode == RESULT_OK) {
-
-            val name = it.data?.getStringExtra(constRegister.NOMUSER)
-            //txtNomRegitre.text = name;
-
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)

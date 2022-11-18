@@ -3,24 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+
     android:orientation="vertical">
 
     <TextView
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginRight="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_weight="3"
         android:layout_height="0dp"
-        android:background="@drawable/button_redondejat"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,  nostrud exercitation ullamco lar in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        android:background="@drawable/boton_redondselct"
+        android:text="@string/intro_screen_textIntroduccio"
         android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textSize="30sp"
+        android:fontFamily="@font/quicksand"
         android:gravity="center"
-        android:textStyle="italic"
-        android:padding="50dp"/>
+        android:textStyle="bold"
+        android:padding="40dp"/>
 
     <Button
         android:id="@+id/btnTempsRestant"
@@ -29,7 +30,7 @@
         android:layout_weight="0.8"
         android:padding="20dp"
         android:text="@string/intro_screen_skip"
-        android:textStyle="bold"
+        android:fontFamily="@font/robotoslab"
         android:layout_marginBottom="100dp"
         android:textColor="@color/black"
         android:textSize="30sp"

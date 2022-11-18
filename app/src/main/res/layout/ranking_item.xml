@@ -7,18 +7,27 @@
     android:padding="5dp"
     android:orientation="horizontal"
     android:layout_gravity="center_horizontal">
-    <TextView
-        android:id="@+id/rankingPosition"
+
+    <LinearLayout
         android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:layout_height="62dp"
         android:background="@drawable/rankingpos"
-        android:gravity="center"
-        android:text="1"
-        android:paddingBottom="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="46sp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="46dp">
+
+        <TextView
+            android:id="@+id/rankingPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="0dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="46sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/txtRanking"
         android:layout_width="800dp"
@@ -33,7 +42,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Nom Jugador"
+            android:fontFamily="@font/quicksand"
             android:padding="10dp"
+            android:textStyle="bold"
             android:gravity="center"
             android:layout_gravity="center_vertical"
             android:textSize="28sp"
@@ -44,7 +55,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Puntuacio"
+            android:textStyle="bold"
             android:gravity="center"
+            android:fontFamily="@font/quicksand"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
             android:textSize="28sp"
@@ -56,6 +69,8 @@
             android:layout_height="wrap_content"
             android:text="Dificultat"
             android:gravity="center"
+            android:fontFamily="@font/quicksand"
+            android:textStyle="bold"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
             android:textSize="28sp"

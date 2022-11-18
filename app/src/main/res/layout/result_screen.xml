@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
     android:orientation="horizontal">
 
     <!--PERSONATGE QUE ETS + BUTTONS-->
@@ -40,11 +39,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:text="NOM USUARI"
-                    android:textSize="25dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    style="@style/resultScreenSubtitolsNom"/>
             </LinearLayout>
             <!--DESCRIPCIO-->
             <LinearLayout
@@ -60,7 +56,8 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:padding="30dp"
-                    android:background="@drawable/button_redondejat"
+                    android:background="@drawable/boton_redondselct"
+                    android:fontFamily="@font/quicksand"
                     android:text="Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor \nquis n AAHAJSDAJSHDJASHD asdjksddsskjk FIN"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -84,11 +81,8 @@
                     android:id="@+id/BtnRankingResult"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/button_redondejat"
                     android:text="@string/result_screen_btnRanking"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="30dp"/>
+                    style="@style/resultScreenButtons"/>
             </LinearLayout>
             <!--BUTTON CONTINUE-->
             <LinearLayout
@@ -100,11 +94,9 @@
                     android:id="@+id/BtnContinuarResult"
                     android:layout_width="300dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/button_redondejat"
                     android:text="@string/result_screen_btnContinuar"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="30dp"/>
+                    style="@style/resultScreenButtons"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -119,15 +111,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3">
+            android:layout_weight="2">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/result_screen_txtEstadistiques"
                 android:textSize="40dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:fontFamily="@font/mavenpro"
                 android:textStyle="bold"/>
         </LinearLayout>
         <!--TEXT NUM ENCERTS-->
@@ -156,30 +149,63 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/result_screen_txtCategoria"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="20dp"/>
+                style="@style/resultScreenSubtitolsNom"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/result_screen_txtEncerts"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="20dp"/>
+                style="@style/resultScreenSubtitolsNom"/>
         </LinearLayout>
         <!--LLISTA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5">
+            android:layout_weight="4"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/resultScreenTextGeneres"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/result_screen_txtGenereDrama"/>
+                <TextView
+                    style="@style/resultScreenTextGeneres"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/result_screen_txtGenereTerror"/>
+                <TextView
+                    style="@style/resultScreenTextGeneres"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/result_screen_txtGenereAnimacio"/>
+                <TextView
+                    style="@style/resultScreenTextGeneres"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/result_screen_txtGenereAccio"/>
+                <TextView
+                    style="@style/resultScreenTextGeneres"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/result_screen_txtGenereCienciaFiccio"/>
+            </LinearLayout>
             <ListView
                 android:id="@+id/LstStats"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

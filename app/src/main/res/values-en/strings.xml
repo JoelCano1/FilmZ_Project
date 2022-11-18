@@ -13,9 +13,9 @@
     <string name="difficult_screen_buttonTextFacil">EASY</string>
     <string name="difficult_screen_buttonTextMitja">MEDIUM</string>
     <string name="difficult_screen_buttonTextDificil">DIFFICULT</string>
-    <string name="difficult_screen_textDificultatFacil">DIFFICULTY EASY:\nRULES: \t20 seconds for question\n\t\t\t20 easy questions</string>
-    <string name="difficult_screen_textDificultatMitja">DIFFICULTY MEDIUM:\nRULES: \t15 seconds for question\n\t\t\t20 questions of medium level</string>
-    <string name="difficult_screen_textDificultatDificil">DIFFICULTY DIFFICULT:\nRULES: \t10 seconds for question\n\t\t\t20 difficult questions</string>
+    <string name="difficult_screen_textDificultatFacil">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *1</string>
+    <string name="difficult_screen_textDificultatMitja">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *1.5</string>
+    <string name="difficult_screen_textDificultatDificil">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *2</string>
     <string name="difficult_screen_buttonContinuar">PLAY</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTER</string>
@@ -38,7 +38,13 @@
     <string name="result_screen_txtEstadistiques">STATS</string>
     <string name="result_screen_txtCategoria">CATEGORY</string>
     <string name="result_screen_txtEncerts">HITS</string>
+    <string name="result_screen_txtGenereDrama">DRAMA</string>
+    <string name="result_screen_txtGenereTerror">TERROR</string>
+    <string name="result_screen_txtGenereAnimacio">ANIMATION</string>
+    <string name="result_screen_txtGenereAccio">ACTION</string>
+    <string name="result_screen_txtGenereCienciaFiccio">SCIENCE FICTION</string>
     <!--INTRO_SCREEN-->
+    <string name="intro_screen_textIntroduccio"><b>Welcome to FilmZ</b>\n\nAn enterprise that will make you stand out in the movie world with the help of dynamic and fun games.\nGet into this Game Quiz and learn and presume to your friends of movie knowledge.\nDo tou dare to start a path that can lead you to victory?</string>
     <string name="intro_screen_skip">Skip in </string>
     <string name="intro_screen_continuar">Next</string>
     <!--FINAL_SCREEN-->
