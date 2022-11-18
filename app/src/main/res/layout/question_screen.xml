@@ -17,7 +17,9 @@
         android:text="7"
         android:textColor="@color/black"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/lora"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +39,7 @@
             android:textSize="28sp"
             android:gravity="center"
             android:textStyle="bold"
+            android:fontFamily="@font/lora"
 
             />
         <LinearLayout
@@ -64,6 +67,7 @@
                 android:textSize="40sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
+                android:fontFamily="@font/lora"
                 />
 
         </LinearLayout>
@@ -82,6 +86,7 @@
             android:textSize="28sp"
             android:gravity="center"
             android:textStyle="bold"
+            android:fontFamily="@font/lora"
             />
 
     </LinearLayout>
@@ -91,6 +96,7 @@
         android:background="@drawable/image"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
+        android:fontFamily="@font/lora"
         >
         <TextView
             android:id="@+id/question"
@@ -101,7 +107,8 @@
             android:text="¿Que limpia LaRusso cuando el señor Miyagi le dice la famosa frase dar cera, pulir cera?"
             android:textColor="@color/black"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/lora" />
 
     </FrameLayout>
 
@@ -122,6 +129,8 @@
         android:textColor="@color/black"
         android:textAllCaps="false"
         android:textSize="23dp"
+        android:fontFamily="@font/lora"
+        android:textStyle="bold"
 
         android:background="@drawable/boton_redondeado"
 
@@ -139,6 +148,8 @@
             android:textAllCaps="false"
             android:textSize="23dp"
             android:background="@drawable/boton_redondselct"
+            android:fontFamily="@font/lora"
+            android:textStyle="bold"
         />
 
     <Button
@@ -153,6 +164,8 @@
         android:textAllCaps="false"
         android:textSize="23dp"
         android:background="@drawable/boton_redondeado"
+        android:fontFamily="@font/lora"
+        android:textStyle="bold"
         />
     </LinearLayout>
     <ImageButton
