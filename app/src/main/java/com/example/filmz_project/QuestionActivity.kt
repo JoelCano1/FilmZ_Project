@@ -101,17 +101,16 @@ class QuestionActivity : AppCompatActivity() {
         val respuesta1 = findViewById(R.id.respuesta1) as Button
         val respuesta2 = findViewById(R.id.respuesta2) as Button
         val respuesta3 = findViewById(R.id.respuesta3) as Button
-        val nombrePeli = findViewById(R.id.nombrePeli) as TextView
         val categoria = findViewById(R.id.categoria) as TextView
-        val numPregunta = findViewById(R.id.NumPreg) as TextView
+
+        //val numPregunta = findViewById(R.id.NumPreg) as TextView
 
         question.text = questionToShow.pregunta
         respuesta1.text = questionToShow.resposta1
         respuesta2.text = questionToShow.resposta2
         respuesta3.text = questionToShow.resposta3
-        nombrePeli.text = questionToShow.película
         categoria.text = questionToShow.categoria
-        numPregunta.text = numQuestion.toString()
+        //numPregunta.text = numQuestion.toString()
 
 
     }
@@ -179,10 +178,10 @@ class QuestionActivity : AppCompatActivity() {
 
 
         val intent = getIntent()
-        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
 
 
-        //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
+        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)

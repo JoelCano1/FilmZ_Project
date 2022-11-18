@@ -6,57 +6,36 @@
 
 
     <TextView
-        android:id="@+id/NumPreg"
-        android:layout_width="244dp"
+        android:id="@+id/categoria"
+        android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/num"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/border"
         android:gravity="center"
-        android:text="7"
+        android:text="Drama"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:fontFamily="@font/lora"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
+        android:layout_height="85dp"
+        android:orientation="vertical"
 
         >
-        <TextView
-            android:id="@+id/nombrePeli"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/border"
-            android:layout_marginLeft="200dp"
-            android:text="Karate kid"
-            android:textColor="@color/black"
-            android:textSize="28sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:fontFamily="@font/lora"
-
-            />
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
             <ProgressBar
                 android:id="@+id/ProgressBar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
+                android:layout_width="850dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
                 android:progressDrawable="@drawable/custom_progressbar"
-                android:scaleY="1"
+                android:scaleY="1.05"
+
                 />
             <TextView
                 android:id="@+id/timePreg"
@@ -64,39 +43,22 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="40sp"
+                android:textSize="45sp"
                 android:layout_gravity="center"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="2dp"
                 android:fontFamily="@font/lora"
                 />
 
         </LinearLayout>
 
 
-
-        <TextView
-            android:id="@+id/categoria"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/border"
-            android:layout_marginRight="200dp"
-            android:text="Drama"
-            android:textColor="@color/black"
-            android:textSize="28sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:fontFamily="@font/lora"
-            />
-
-    </LinearLayout>
     <FrameLayout
         android:layout_width="878dp"
         android:layout_height="150dp"
         android:background="@drawable/image"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
         android:fontFamily="@font/lora"
+        android:layout_marginTop="5dp"
         >
         <TextView
             android:id="@+id/question"
@@ -168,11 +130,12 @@
         android:textStyle="bold"
         />
     </LinearLayout>
+
     <ImageButton
         android:id="@+id/nextQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="13dp"
         android:background="@android:color/transparent"
         android:src="@drawable/nextbut"
         android:layout_gravity="center"/>
