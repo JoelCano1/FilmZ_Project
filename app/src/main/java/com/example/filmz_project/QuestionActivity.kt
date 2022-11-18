@@ -168,6 +168,7 @@ class QuestionActivity : AppCompatActivity() {
         //iniciamos contador y barra
         progressBar()
         timeQuestion()
+
         //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
         questions.removeAt(random)
         max--
@@ -191,6 +192,7 @@ class QuestionActivity : AppCompatActivity() {
 
 
         val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
+
         nextQuestion.setOnClickListener()
         {
             timer.cancel()
