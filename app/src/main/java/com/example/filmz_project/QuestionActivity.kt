@@ -25,8 +25,8 @@ class QuestionActivity : AppCompatActivity() {
 
         var numQuestion = 1
 
-        var yourCorrectQuestion = 0
-        var correctAnswer = false
+        var yourCorrectQuestion = -1
+        var correctAnswer = 0
     }
 
     fun progressBar() {
@@ -40,7 +40,7 @@ class QuestionActivity : AppCompatActivity() {
             .start()
     }
 
-    fun timeQuestion() {
+    fun timeQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton) {
 
         var time = findViewById(R.id.timePreg) as TextView
         var seconds = 21
@@ -54,7 +54,7 @@ class QuestionActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-
+                validateQuestion(button1 , button2 , button3 , valideteQuestion )
             }
         }.start()
     }
@@ -159,7 +159,7 @@ class QuestionActivity : AppCompatActivity() {
         return fullQuestion
     }
 
-    fun showRandomQuestion(questions: MutableList<Questions>) {
+    fun showRandomQuestion(questions: MutableList<Questions>, button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton) {
         var max = questions.size
         var random = 0
         do {
@@ -172,44 +172,89 @@ class QuestionActivity : AppCompatActivity() {
 
         //iniciamos contador y barra
         progressBar()
-        timeQuestion()
+        timeQuestion(button1 , button2 , button3 , valideteQuestion)
 
         //guardamos que respuesta es correcta
-        checkCorrectAnswer(questions[random])
+        setCorrectAnswer(questions[random])
+
         //borra la pregunta para que no vuelve a salir i reduce el random pq se ha reducido la lista
         questions.removeAt(random)
         max--
 
     }
-    fun checkCorrectAnswer(questionToCheck :Questions) {
+    fun setCorrectAnswer(questionToCheck :Questions) {
 
-        if (questionToCheck.resposta_correcte == yourCorrectQuestion)
-        {
-            correctAnswer = true
-        }
-
-
+        correctAnswer = questionToCheck.resposta_correcte
 
     }
+    fun validateQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton)
+    {
+        valideteQuestion.visibility = View.INVISIBLE
+        if (yourCorrectQuestion == correctAnswer)
+        {
+            when (yourCorrectQuestion)
+            {
+                1 -> {
+                    button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+                2 -> {
+                    button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+                3 -> {
+                    button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+            }
+        }else {
+            when (yourCorrectQuestion)
+            {
+                1 -> {
+                    button1.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                }
+                2 -> {
+                    button2.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                }
+                3 -> {
+                    button3.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                }
+            }
+
+            when (correctAnswer)
+            {
+                1 -> {
+                    button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+                2 -> {
+                    button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+                3 -> {
+                    button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                }
+            }
+
+        }
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
 
+        //boton validar, botones de respuesta y boton de siguiente pregunta
+        val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
+        val button1 = findViewById(R.id.respuesta1) as Button
+        val button2 = findViewById(R.id.respuesta2) as Button
+        val button3 = findViewById(R.id.respuesta3) as Button
+        val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
 
         val intent = getIntent()
         //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-
-
         val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
 
-        showRandomQuestion(loadedJSON)
-        //botones
-        val button1 = findViewById(R.id.respuesta1) as Button
-        val button2 = findViewById(R.id.respuesta2) as Button
-        val button3 = findViewById(R.id.respuesta3) as Button
+        showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
+
 
         button1.setOnClickListener()
         {
@@ -234,36 +279,25 @@ class QuestionActivity : AppCompatActivity() {
             button3.setBackgroundResource(R.drawable.boton_redondselct)
         }
 
-        //validar
-        val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
 
+        //validamos si la pregunta esta bien validada
         valideteQuestion.setOnClickListener()
         {
-            valideteQuestion.visibility = View.INVISIBLE
-            if (correctAnswer)
-            {
-                when (yourCorrectQuestion)
-                {
-                    1 -> {
-                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                    }
-                    2 -> {
-                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                    }
-                    3 -> {
-                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                    }
-                }
-            }
+            validateQuestion(button1 , button2 , button3 , valideteQuestion)
         }
 
-        //nextquestion
-        val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
+        //pasamos de pregunta
+
         nextQuestion.setOnClickListener()
         {
+            //reseteamos valores
             valideteQuestion.visibility = View.VISIBLE
-            correctAnswer = false
+            button1.setBackgroundResource(R.drawable.boton_redondeado)
+            button2.setBackgroundResource(R.drawable.boton_redondeado)
+            button3.setBackgroundResource(R.drawable.boton_redondeado)
             timer.cancel()
+            yourCorrectQuestion = -1
+            //sumamos una pregunta
             numQuestion++
 
             if (numQuestion > 20) {
@@ -271,7 +305,7 @@ class QuestionActivity : AppCompatActivity() {
                 //intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
                 startActivity(intent)
             } else {
-                showRandomQuestion(loadedJSON)
+                showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
             }
 
         }
