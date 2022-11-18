@@ -15,6 +15,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/login"/>
 
     </LinearLayout>
@@ -44,7 +45,8 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="30dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,7 +102,7 @@
             android:background="@drawable/button_redondejat"
             android:text="@string/login_screen_buton_iniciar_sessió"
             style="@style/resultScreenButtons"
-            android:textSize="40dp" />
+            android:textSize="30dp" />
 
     </LinearLayout>
 
