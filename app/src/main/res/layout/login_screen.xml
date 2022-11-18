@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+
     android:orientation="vertical">
 
 
@@ -30,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_screen_nom"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/quicksand"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -49,8 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_screen_contrasenya"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
+            android:fontFamily="@font/quicksand"
             android:textStyle="bold"
             android:layout_marginTop="5dp"/>
 
@@ -97,9 +99,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_redondejat"
             android:text="@string/login_screen_buton_iniciar_sessió"
-            android:textColor="@color/black"
-            android:textSize="40dp"
-            android:textStyle="bold" />
+            style="@style/resultScreenButtons"
+            android:textSize="40dp" />
 
     </LinearLayout>
 
@@ -114,7 +115,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_screen_text_iniciar_registre"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mavenpro"
             android:textSize="15dp"
             android:textStyle="bold"
             android:layout_gravity="center"/>
@@ -126,10 +128,10 @@
             android:layout_gravity="center"
             android:background="@drawable/button_redondejat"
             android:text="@string/login_screen_btn_obrir_registre"
+            style="@style/resultScreenButtons"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"/>
-
     </LinearLayout>
 
 </LinearLayout>
