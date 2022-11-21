@@ -248,8 +248,8 @@ class QuestionActivity : AppCompatActivity() {
         val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
 
         val intent = getIntent()
-        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
+        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
