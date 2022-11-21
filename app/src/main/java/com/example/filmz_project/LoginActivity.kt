@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val intent = Intent(this, DifficultActivity::class.java)
 
-                intent.putExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY,user)
+                intent.putExtra(Keys.constKeys.TO_DIFFICULTY,user)
 
                 startActivity(intent)
 
@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     applicationContext,
-                    "Usruario o contrasnya incorrectos",
+                    "Usuario o contraseña incorrectos",
                     Toast.LENGTH_SHORT
                 ).show()
 

@@ -152,7 +152,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun saveUser(context: Context, usuaris: MutableList<User>) {
-        val jsonFilePath = context.getFilesDir().toString() + "//JSONS/USUARIS_app.json"
+        val jsonFilePath = context.getFilesDir().toString() + "//JSONS/USUARIS_android.json"
         val jsonFile = FileWriter(jsonFilePath)
         var gson = Gson()
         var jsonElement = gson.toJson(usuaris)
