@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun getUsers(): MutableList<User> {
 
-        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_app.json"
+        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_android.json"
         val jsonFile = FileReader(jsonFilePath)
         val listUsersType = object : TypeToken<MutableList<User>>() {}.type
         val users: MutableList<User> = Gson().fromJson(jsonFile, listUsersType)
