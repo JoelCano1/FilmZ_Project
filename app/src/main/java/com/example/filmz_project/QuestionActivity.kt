@@ -17,16 +17,17 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var timer: CountDownTimer
 
     companion object {
-        var dramaCounter = 0;
-        var terrorCounter = 0;
-        var animationCounter = 0;
-        var sfCounter = 0;
-        var actionCounter = 0;
+        var dramaCounter = 0
+        var terrorCounter = 0
+        var animationCounter = 0
+        var sfCounter = 0
+        var actionCounter = 0
 
         var numQuestion = 1
 
         var yourCorrectQuestion = -1
         var correctAnswer = 0
+
     }
 
     fun progressBar() {
@@ -186,7 +187,6 @@ class QuestionActivity : AppCompatActivity() {
     fun setCorrectAnswer(questionToCheck :Questions) {
 
         correctAnswer = questionToCheck.resposta_correcte
-
     }
     fun validateQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton)
     {
@@ -205,6 +205,7 @@ class QuestionActivity : AppCompatActivity() {
                     button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                 }
             }
+
         }else {
             when (yourCorrectQuestion)
             {
@@ -303,7 +304,7 @@ class QuestionActivity : AppCompatActivity() {
 
             if (numQuestion > 20) {
                 val intent = Intent(this, ResultActivity::class.java)
-                //intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
+                //intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, correctAnswersGenero)
                 startActivity(intent)
             } else {
                 showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
