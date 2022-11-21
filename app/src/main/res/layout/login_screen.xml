@@ -90,15 +90,17 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="400dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="70dp">
 
         <Button
             android:id="@+id/BtnIniciarSessio"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
             android:background="@drawable/button_redondejat"
             android:text="@string/login_screen_buton_iniciar_sessió"
             style="@style/resultScreenButtons"
@@ -120,17 +122,19 @@
             android:textColor="@color/white"
             android:fontFamily="@font/mavenpro"
             android:textSize="15dp"
+            android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/BtnObrirRegistre"
-            android:layout_width="257dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/button_redondejat"
             android:text="@string/login_screen_btn_obrir_registre"
             style="@style/resultScreenButtons"
+            android:paddingHorizontal="20dp"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"/>
