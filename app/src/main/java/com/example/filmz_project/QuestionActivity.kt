@@ -213,7 +213,7 @@ class QuestionActivity : AppCompatActivity() {
                     button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                 }
             }
-
+            addCorrectCategory(currentQuestion)
         }else {
             when (yourCorrectQuestion)
             {
@@ -228,19 +228,35 @@ class QuestionActivity : AppCompatActivity() {
                 }
             }
 
-            when (correctAnswer)
+            if (yourCorrectQuestion == -1)
             {
-                1 -> {
-                    button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                when (correctAnswer)
+                {
+                    1 -> {
+                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    2 -> {
+                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    3 -> {
+                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
                 }
-                2 -> {
-                    button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                }
-                3 -> {
-                    button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+
+            }else {
+                when (correctAnswer)
+                {
+                    1 -> {
+                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    2 -> {
+                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    3 -> {
+                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
                 }
             }
-
         }
 
     }
@@ -261,7 +277,7 @@ class QuestionActivity : AppCompatActivity() {
                 sfCorrect++
             }
             "Acción" -> {
-                actionCounter++
+                actionCorrect++
             }
         }
 
@@ -281,10 +297,11 @@ class QuestionActivity : AppCompatActivity() {
         val button2 = findViewById(R.id.respuesta2) as Button
         val button3 = findViewById(R.id.respuesta3) as Button
         val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
+        val timeLabel = findViewById(R.id.timePreg) as TextView
 
         val intent = getIntent()
-        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        //val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
+        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -322,7 +339,9 @@ class QuestionActivity : AppCompatActivity() {
         {
             validateQuestion(button1 , button2 , button3 , valideteQuestion, loadedJSON[currentQuestion] )
             timer.cancel()
-            progressBar.progress = 0
+            progressBar.visibility = View.INVISIBLE
+            timeLabel.visibility = View.INVISIBLE
+
         }
 
         //pasamos de pregunta
@@ -334,12 +353,16 @@ class QuestionActivity : AppCompatActivity() {
             button2.setBackgroundResource(R.drawable.boton_redondeado)
             button3.setBackgroundResource(R.drawable.boton_redondeado)
             timer.cancel()
+            progressBar.visibility = View.VISIBLE
+            timeLabel.visibility = View.VISIBLE
             yourCorrectQuestion = -1
+
             //sumamos una pregunta
             numQuestion++
 
             if (numQuestion > 20) {
                 val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
+
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
