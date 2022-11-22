@@ -9,6 +9,8 @@ class Keys {
         const val DIFFICULT_TO_QUIZ = "PLAY"
         const val RANKING_TO_FINAL = "FINAL"
         const val FINAL_TO_DIFFICULTY = "REPLAY"
+        const val QUESTIONS_TO_RESULT = "USER"
+        const val QUESTIONS_TO_RESULT2 = "RESULTS"
 
     }
 }
