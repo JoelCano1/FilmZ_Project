@@ -15,7 +15,8 @@
         android:layout_weight="0.75"
         android:textColor="@color/white"
         android:textSize="80sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="@string/lenguage_screen_textIdioma"/>
 
     <LinearLayout
         android:id="@+id/FlagLayout"

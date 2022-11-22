@@ -17,16 +17,18 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var timer: CountDownTimer
 
     companion object {
-        var dramaCounter = 0;
-        var terrorCounter = 0;
-        var animationCounter = 0;
-        var sfCounter = 0;
-        var actionCounter = 0;
+        var dramaCounter = 0
+        var terrorCounter = 0
+        var animationCounter = 0
+        var sfCounter = 0
+        var actionCounter = 0
 
         var numQuestion = 1
 
         var yourCorrectQuestion = -1
         var correctAnswer = 0
+
+        var dramaCorrect = 0; var terrorCorrect = 0; var animationCorrect = 0; var sfCorrect = 0; var actionCorrect = 0;
     }
 
     fun progressBar() {
@@ -40,7 +42,7 @@ class QuestionActivity : AppCompatActivity() {
             .start()
     }
 
-    fun timeQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton) {
+    fun timeQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton, currentQuestion :Questions) {
 
         var time = findViewById(R.id.timePreg) as TextView
         var seconds = 21
@@ -54,7 +56,7 @@ class QuestionActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                validateQuestion(button1 , button2 , button3 , valideteQuestion )
+                validateQuestion(button1 , button2 , button3 , valideteQuestion, currentQuestion)
             }
         }.start()
     }
@@ -160,12 +162,13 @@ class QuestionActivity : AppCompatActivity() {
         return fullQuestion
     }
 
-    fun showRandomQuestion(questions: MutableList<Questions>, button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton) {
+    fun showRandomQuestion(questions: MutableList<Questions>, button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton) :Int{
         var max = questions.size
         var random = 0
         do {
 
-            random = Random.nextInt(0, max)
+            //random = Random.nextInt(0, max)
+            random = (Math.random()* (max-0)).toInt()
 
         } while (clasifyQuestions(questions[random]) && numQuestion < 20)
         //muestra la pregutnta
@@ -173,7 +176,7 @@ class QuestionActivity : AppCompatActivity() {
 
         //iniciamos contador y barra
         progressBar()
-        timeQuestion(button1 , button2 , button3 , valideteQuestion)
+        timeQuestion(button1 , button2 , button3 , valideteQuestion, questions[random])
 
         //guardamos que respuesta es correcta
         setCorrectAnswer(questions[random])
@@ -182,13 +185,14 @@ class QuestionActivity : AppCompatActivity() {
         questions.removeAt(random)
         max--
 
+        return random
     }
     fun setCorrectAnswer(questionToCheck :Questions) {
 
         correctAnswer = questionToCheck.resposta_correcte
-
     }
-    fun validateQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton)
+
+    fun validateQuestion(button1 : Button, button2 : Button, button3 : Button, valideteQuestion : ImageButton, currentQuestion :Questions)
     {
         valideteQuestion.visibility = View.INVISIBLE
         if (yourCorrectQuestion == correctAnswer)
@@ -197,6 +201,7 @@ class QuestionActivity : AppCompatActivity() {
             {
                 1 -> {
                     button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+
                 }
                 2 -> {
                     button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
@@ -205,6 +210,7 @@ class QuestionActivity : AppCompatActivity() {
                     button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                 }
             }
+
         }else {
             when (yourCorrectQuestion)
             {
@@ -235,10 +241,36 @@ class QuestionActivity : AppCompatActivity() {
         }
 
     }
+    fun addCorrectCategory (currentQuestion: Questions)
+    {
+        when (currentQuestion.categoria)
+        {
+            "Drama" -> {
+                dramaCorrect++
+            }
+            "Terror" -> {
+                terrorCorrect++
+            }
+            "Animación" -> {
+                animationCorrect++
+            }
+            "Ciencia Ficción" -> {
+                sfCorrect++
+            }
+            "Acción" -> {
+                actionCounter++
+            }
+        }
+
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
+
+
 
         //boton validar, botones de respuesta y boton de siguiente pregunta
         val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
@@ -254,8 +286,8 @@ class QuestionActivity : AppCompatActivity() {
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
 
-
-        showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
+        //guardamso la posicion de la pregunta que enseñamos por pantalla
+        var currentQuestion = showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
 
 
         button1.setOnClickListener()
@@ -285,7 +317,7 @@ class QuestionActivity : AppCompatActivity() {
         //validamos si la pregunta esta bien validada
         valideteQuestion.setOnClickListener()
         {
-            validateQuestion(button1 , button2 , button3 , valideteQuestion)
+            validateQuestion(button1 , button2 , button3 , valideteQuestion, loadedJSON[currentQuestion] )
         }
 
         //pasamos de pregunta
@@ -302,8 +334,10 @@ class QuestionActivity : AppCompatActivity() {
             numQuestion++
 
             if (numQuestion > 20) {
+                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
                 val intent = Intent(this, ResultActivity::class.java)
-                //intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
+                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
+                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
                 startActivity(intent)
             } else {
                 showRandomQuestion(loadedJSON, button1 , button2 , button3 , valideteQuestion)
