@@ -8,6 +8,7 @@
     <string name="login_screen_buton_iniciar_sessió">Iniciar Sessió</string>
     <string name="login_screen_text_iniciar_registre">Encara no tens cap compte?</string>
     <string name="login_screen_btn_obrir_registre">Registrar-se</string>
+    <string name="login_screen_toast_error">Usuari o Contrasenya incorrectes</string>
     <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">ESCULL LA DIFICULTAT</string>
     <string name="difficult_screen_buttonTextFacil">FÀCIL</string>
@@ -32,6 +33,15 @@
     <string name="register_screen_politicaCamp">Accepar política de seguretat</string>
     <string name="register_screen_btnCrear">CREAR</string>
     <string name="register_screen_btnIniciSessio">INICIA SESSIÓ</string>
+    <string name="register_screen_toast_edat_enter">El camp de l\'edat ha de ser un enter!</string>
+    <string name="register_screen_toast_contrasenya_requisits">La contrassenya ha de tenir:
+    ->Almenys 8 caràcters
+    ->Almenys 1 minúscula i 1 majuscula
+    ->Almenys 1 caràcter especial
+    ->Almenys 1 digit
+    </string>
+    <string name="register_screen_toast_repetir_contrasenya">Les contrasenyes no coincideixen</string>
+    <string name="register_screen_toast_usuari_existent">JA EXISTEIX UN USUARI AMB AQUEST NOM</string>
     <!--RESULT_SCREEN-->
     <string name="result_screen_btnRanking">RANKING</string>
     <string name="result_screen_btnContinuar">CONTINUAR</string>
