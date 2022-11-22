@@ -232,13 +232,13 @@ class QuestionActivity : AppCompatActivity() {
                 when (correctAnswer)
                 {
                     1 -> {
-                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button1.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                     2 -> {
-                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button2.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                     3 -> {
-                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button3.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                 }
 
