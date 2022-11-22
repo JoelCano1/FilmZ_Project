@@ -8,6 +8,7 @@
     <string name="login_screen_buton_iniciar_sessió">Iniciar Sessión</string>
     <string name="login_screen_text_iniciar_registre">¿Aún no tienes una cuenta?</string>
     <string name="login_screen_btn_obrir_registre">Registrarse</string>
+    <string name="login_screen_toast_error">Usuario o Contraseña incorrectos</string>
     <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">ESCOGE LA DIFICULTAD</string>
     <string name="difficult_screen_buttonTextFacil">FÁCIL</string>
@@ -32,6 +33,15 @@
     <string name="register_screen_politicaCamp">Aceptar política de seguridad</string>
     <string name="register_screen_btnCrear">CREAR</string>
     <string name="register_screen_btnIniciSessio">INICIA SESIÓN</string>
+    <string name="register_screen_toast_edat_enter">El campo de edad debe ser un número entero</string>
+    <string name="register_screen_toast_contrasenya_requisits">La contraseña ha de contener:
+    ->Al menos 8 carácteres
+    ->Al menos 1 minúscula y 1 mayúscula
+    ->Al menos 1 carácter especial
+    ->Al menos 1 dígito
+    </string>
+    <string name="register_screen_toast_repetir_contrasenya">Las contraseñas no coinciden</string>
+    <string name="register_screen_toast_usuari_existent">YA EXISTE UN USUARIO CON ESTE NOMBRE</string>
     <!--RESULT_SCREEN-->
     <string name="result_screen_btnRanking">RANKING</string>
     <string name="result_screen_btnContinuar">CONTINUAR</string>
