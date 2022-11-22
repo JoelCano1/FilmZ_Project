@@ -11,6 +11,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
 import java.io.FileWriter
+import java.security.Key
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun getUsers(): MutableList<User> {
-        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_app.json"
+        val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_android.json"
         val jsonFile = FileReader(jsonFilePath)
         val listUsuaris = object: TypeToken<MutableList<User>>() {}.type
         val usuaris: MutableList<User> = Gson().fromJson(jsonFile, listUsuaris)
@@ -48,13 +49,13 @@ class RegisterActivity : AppCompatActivity() {
         btnCrearUsuari.setOnClickListener() {
             if(revisarCampsBuits(campNom, campContra, campRepeatContra, campEdat, campRobot, campPolitica) == true) {
                 if (revisarCampEdat(campEdat) == false) {
-                    Toast.makeText(this, "El camp de l'edat ha de ser un enter!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, resources.getText(R.string.register_screen_toast_edat_enter), Toast.LENGTH_LONG).show()
                 } else {
                     if(aprovarContrasenya(campContra) == false) {
-                        Toast.makeText(this, "La contrassenya ha de tenir:\n->Almenys 8 caràcters\n->Almenys 1 minúscula i 1 majuscula\n->Almenys 1 caràcter especial\n->Almenys 1 digit", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, resources.getText(R.string.register_screen_toast_contrasenya_requisits), Toast.LENGTH_LONG).show()
                     } else {
                         if(revisarContrasenyaIguals(campContra, campRepeatContra) == false) {
-                            Toast.makeText(this, "Les contrasenyes no coincideixen", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, resources.getText(R.string.register_screen_toast_repetir_contrasenya), Toast.LENGTH_LONG).show()
                         } else {
                             var usuariRepetit = false
                             var count = 0
@@ -65,7 +66,7 @@ class RegisterActivity : AppCompatActivity() {
                                 count++
                             }
                             if (usuariRepetit == true) {
-                                Toast.makeText(this, "JA EXISTEIX UN USUARI AMB AQUEST NOM", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, resources.getText(R.string.register_screen_toast_usuari_existent), Toast.LENGTH_LONG).show()
                             } else {
                                 btnCrearUsuari.setOnClickListener() {
                                     //ESTUDIS
@@ -89,11 +90,10 @@ class RegisterActivity : AppCompatActivity() {
 
                                     saveUser(this, usuaris)
 
-                                    val intent = Intent(this, LoginActivity::class.java)
+                                    val intentToLog = Intent(this, LoginActivity::class.java)
                                     //Pasar usuari a IniciSessio
-                                    //intent.putExtra(Keys.constKeys.REGISTER_TO_LOGIN, usuaris)
-
-                                    startActivity(intent)
+                                    //intentToLog.putExtra(Keys.constKeys.REGISTER_TO_LOGIN, usuaris)
+                                    startActivity(intentToLog)
                                 }
                             }
                         }

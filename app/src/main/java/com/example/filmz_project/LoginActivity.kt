@@ -42,7 +42,8 @@ class LoginActivity : AppCompatActivity() {
 
         btnIniciarSessio.setOnClickListener() {
 
-            val x = userExists(usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString()
+            val x = userExists(
+                usersList, txtNomRegistre.text.toString(), txtContraRegistre.text.toString()
             )
 
             if (x >= 0) {
@@ -52,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val intent = Intent(this, DifficultActivity::class.java)
 
-                intent.putExtra(Keys.constKeys.TO_DIFFICULTY,user)
+                intent.putExtra(Keys.constKeys.TO_DIFFICULTY, user)
 
                 startActivity(intent)
 
@@ -60,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     applicationContext,
-                    "Usuario o contraseña incorrectos",
+                    resources.getText(R.string.login_screen_toast_error),
                     Toast.LENGTH_SHORT
                 ).show()
 
