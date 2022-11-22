@@ -15,6 +15,7 @@ import kotlin.random.Random
 
 class QuestionActivity : AppCompatActivity() {
     private lateinit var timer: CountDownTimer
+    private lateinit var progressBar: ProgressBar
 
     companion object {
         var dramaCounter = 0;
@@ -33,6 +34,7 @@ class QuestionActivity : AppCompatActivity() {
 
     fun progressBar() {
         val timeBar = findViewById(R.id.ProgressBar) as ProgressBar
+        progressBar = timeBar
         val currentProgressBar = 1000
         timeBar.progress = 0
         timeBar.max = 1000
@@ -319,6 +321,8 @@ class QuestionActivity : AppCompatActivity() {
         valideteQuestion.setOnClickListener()
         {
             validateQuestion(button1 , button2 , button3 , valideteQuestion, loadedJSON[currentQuestion] )
+            timer.cancel()
+            progressBar.progress = 0
         }
 
         //pasamos de pregunta
