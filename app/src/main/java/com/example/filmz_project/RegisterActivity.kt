@@ -20,7 +20,6 @@ class RegisterActivity : AppCompatActivity() {
         var usuaris = getUsers()
 
         crearUsuari(usuaris)
-        iniciarSessio()
     }
 
     private fun getUsers(): MutableList<User> {
@@ -158,14 +157,5 @@ class RegisterActivity : AppCompatActivity() {
         var jsonElement = gson.toJson(usuaris)
         jsonFile.write(jsonElement)
         jsonFile.close()
-    }
-
-    private fun iniciarSessio() {
-        val btnIniciSessio = findViewById<Button>(R.id.BtnIniciarSessioRegistre)
-
-        btnIniciSessio.setOnClickListener() {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+
     android:orientation="vertical">
     <!--TEXT REGISTRE-->
     <LinearLayout
@@ -15,7 +15,8 @@
             android:layout_height="match_parent"
             android:text="@string/register_screen_textRegistre"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lora"
             android:textSize="50dp"
             android:gravity="center"/>
     </LinearLayout>
@@ -51,7 +52,8 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_nomCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtNomRegistre"
@@ -87,7 +89,8 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_contrasenyaCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
 
                     <EditText
@@ -126,7 +129,8 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_repetirContrasenyaCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtRepetirContrasenyaRegistre"
@@ -170,7 +174,8 @@
                         android:paddingLeft="50dp"
                         android:text="@string/register_screen_edatCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtEdatRegistre"
@@ -213,7 +218,8 @@
                             android:paddingLeft="50dp"
                             android:text="@string/register_screen_sexeCamp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textSize="30dp"/>
                         <ImageView
                             android:layout_width="15dp"
@@ -241,9 +247,10 @@
                             android:paddingLeft="10dp"
                             android:text="M"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:buttonTint="@color/white"/>
                         <RadioButton
                             android:id="@+id/RdBtnFemaleRegistre"
                             android:layout_width="0dp"
@@ -252,9 +259,10 @@
                             android:paddingLeft="10dp"
                             android:text="F"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:buttonTint="@color/white"/>
                         <RadioButton
                             android:id="@+id/RdBtnAltreRegistre"
                             android:layout_width="0dp"
@@ -263,9 +271,10 @@
                             android:paddingLeft="10dp"
                             android:text="@string/register_screen_sexeCampRadBtn3"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:buttonTint="@color/white"/>
                     </RadioGroup>
                 </LinearLayout>
                 <!--CAMP ESTUDIS-->
@@ -288,7 +297,8 @@
                             android:paddingLeft="50dp"
                             android:text="@string/register_screen_estudiesCamp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textSize="30dp"/>
                         <ImageView
                             android:layout_width="15dp"
@@ -315,9 +325,10 @@
                             android:paddingLeft="10dp"
                             android:text="@string/register_screen_estudiesCampRadBtn1"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:buttonTint="@color/white"/>
                         <RadioButton
                             android:id="@+id/RdBtnNoEstudiaRegistre"
                             android:layout_width="0dp"
@@ -326,9 +337,10 @@
                             android:paddingLeft="10dp"
                             android:text="@string/register_screen_estudiesCampRadBtn2"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:buttonTint="@color/white"/>
 
                     </RadioGroup>
                 </LinearLayout>
@@ -357,8 +369,9 @@
                     android:layout_marginBottom="30dp"
                     android:text="@string/register_screen_robotCamp"
                     android:textSize="30dp"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/black"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/mavenpro"
+                    android:buttonTint="@color/white"/>
             </LinearLayout>
             <!--CAMP POLITICA-->
             <LinearLayout
@@ -372,13 +385,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_checkbox"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="40dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
                     android:text="@string/register_screen_politicaCamp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/mavenpro"
                     android:textSize="30dp" />
             </LinearLayout>
         </LinearLayout>
@@ -397,16 +411,6 @@
             android:background="@drawable/button_redondejat"
             android:text="@string/register_screen_btnCrear"
             android:textSize="45dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        <Button
-            android:id="@+id/BtnIniciarSessioRegistre"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_redondejat"
-            android:text="@string/register_screen_btnIniciSessio"
-            android:textSize="30dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
     </LinearLayout>
