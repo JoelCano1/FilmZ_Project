@@ -165,7 +165,8 @@ class QuestionActivity : AppCompatActivity() {
         var random = 0
         do {
 
-            random = Random.nextInt(0, max)
+            //random = Random.nextInt(0, max)
+            random = (Math.random()* (max-0)).toInt()
 
         } while (clasifyQuestions(questions[random]) && numQuestion < 20)
         //muestra la pregutnta
