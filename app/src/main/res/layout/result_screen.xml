@@ -37,9 +37,9 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/LblNomUser"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="NOM USUARI"
                     style="@style/resultScreenSubtitolsNom"/>
             </LinearLayout>
             <!--DESCRIPCIO-->
@@ -58,7 +58,6 @@
                     android:padding="30dp"
                     android:background="@drawable/boton_redondselct"
                     android:fontFamily="@font/quicksand"
-                    android:text="Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor \nquis n AAHAJSDAJSHDJASHD asdjksddsskjk FIN"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold"/>
@@ -130,6 +129,7 @@
             android:layout_weight="1"
             android:gravity="center">
             <TextView
+                android:id="@+id/LblPuntuacioFinal"
                 android:layout_width="250dp"
                 android:layout_height="70dp"
                 android:gravity="center"

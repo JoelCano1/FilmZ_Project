@@ -72,7 +72,7 @@ class ResultActivity : AppCompatActivity() {
         val lblDescripcioPersonatge = findViewById<TextView>(R.id.LblDescPersonatge)
         //Saber resultats dusuari (CATEGORIA I ENCERTS) --> Agafar de la llista personatges
 
-        //imgPersonatgeImatge.drawable = getFilesDir().toString() + ""
+        imgPersonatgeImatge.setImageResource(Integer.parseInt(personatgesCatala.get(1).rutaPers))
         lblDescripcioPersonatge.text = personatgesCatala.get(1).descripcioPers
     }
 
