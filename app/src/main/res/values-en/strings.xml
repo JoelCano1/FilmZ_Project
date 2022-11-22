@@ -8,6 +8,7 @@
     <string name="login_screen_buton_iniciar_sessió">Log in</string>
     <string name="login_screen_text_iniciar_registre">Do not have an account yet?</string>
     <string name="login_screen_btn_obrir_registre">Sing in</string>
+    <string name="login_screen_toast_error">The User or Password is incorrect</string>
     <!--DIFFICULT_SCREEN-->
     <string name="difficult_screen_textTitol">CHOOSE DIFFICULTY</string>
     <string name="difficult_screen_buttonTextFacil">EASY</string>
@@ -32,6 +33,15 @@
     <string name="register_screen_politicaCamp">Accept security policy</string>
     <string name="register_screen_btnCrear">CREATE</string>
     <string name="register_screen_btnIniciSessio">LOGIN</string>
+    <string name="register_screen_toast_edat_enter">The age has to be an integer</string>
+    <string name="register_screen_toast_contrasenya_requisits">The password must contain:
+    ->At least 8 characters
+    ->At least 1 lower case and 1 Upper case
+    ->At least 1 special character
+    ->At least 1 digit
+    </string>
+    <string name="register_screen_toast_repetir_contrasenya">The password doesn\'t match</string>
+    <string name="register_screen_toast_usuari_existent">THIS USER ALREADY EXISTS</string>
     <!--RESULT_SCREEN-->
     <string name="result_screen_btnRanking">RANKING</string>
     <string name="result_screen_btnContinuar">CONTINUE</string>
