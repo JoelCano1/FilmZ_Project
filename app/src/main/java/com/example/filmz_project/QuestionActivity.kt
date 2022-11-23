@@ -18,18 +18,18 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
 
     companion object {
-        var dramaCounter = 0;
-        var terrorCounter = 0;
-        var animationCounter = 0;
-        var sfCounter = 0;
-        var actionCounter = 0;
+        // contadores de preguntas mostradas por categoria
+        var dramaCounter = 0; var terrorCounter = 0; var animationCounter = 0; var sfCounter = 0; var actionCounter = 0;
 
+        //en que pregunta estamos y valor de esta pregunta
         var numQuestion = 1
         var currentQuestion : Questions? = null
 
+        //respuesta del usuario y respuesta correcta
         var yourCorrectQuestion = -1
         var correctAnswer = 0
 
+        //contadores de categorias acertadas
         var dramaCorrect = 0; var terrorCorrect = 0; var animationCorrect = 0; var sfCorrect = 0; var actionCorrect = 0;
     }
 
