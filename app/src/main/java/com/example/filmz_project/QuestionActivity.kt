@@ -302,8 +302,8 @@ class QuestionActivity : AppCompatActivity() {
         val timeLabel = findViewById(R.id.timePreg) as TextView
 
         val intent = getIntent()
-        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 2, null)
+        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        //val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -365,7 +365,6 @@ class QuestionActivity : AppCompatActivity() {
 
             if (numQuestion > 20) {
                 val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
-
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)

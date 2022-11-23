@@ -37,9 +37,9 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/LblUserName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="NOM USUARI"
                     style="@style/resultScreenSubtitolsNom"/>
             </LinearLayout>
             <!--DESCRIPCIO-->
@@ -130,11 +130,11 @@
             android:layout_weight="1"
             android:gravity="center">
             <TextView
+                android:id="@+id/LblEncertsTotals"
                 android:layout_width="250dp"
                 android:layout_height="70dp"
                 android:gravity="center"
                 android:background="@drawable/text_encerts"
-                android:text="18/20"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="40dp"/>
