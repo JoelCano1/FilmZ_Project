@@ -74,12 +74,12 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun posarNom(jugadorActual: User) {
-        val lblNomUser = findViewById<TextView>(R.id.LblUserName)
+        val lblNomUser = findViewById<TextView>(R.id.LblNomUser)
         lblNomUser.text = jugadorActual.nom
     }
 
     private fun posarEncertsTotals(encertsGenere: Array<Int>) {
-        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotals)
+        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotal)
         val sumEncerts = encertsGenere.sum();
         lblEncertsTotals.text = "$sumEncerts/20"
     }
@@ -99,7 +99,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun posarPersonatge(personatges: MutableList<Personatge>, encertsGenere: Array<Int>) {
-        algoritmeSaberPersonatge(personatges, encertsGenere)
+        //algoritmeSaberPersonatge(personatges, encertsGenere)
         val imgPersonatgeImatge = findViewById<ImageView>(R.id.ImgPersonatge)
         val lblDescripcioPersonatge = findViewById<TextView>(R.id.LblDescPersonatge)
         //Saber resultats dusuari (CATEGORIA I ENCERTS) --> Agafar de la llista personatges
@@ -120,10 +120,10 @@ class ResultActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                println("tots estan be agafar el TOT BÉ de personatges")
+                //println("tots estan be agafar el TOT BÉ de personatges")
             }
         } else {
-            println("tots estan malament agafar el CAP de personatges")
+            //println("tots estan malament agafar el CAP de personatges")
         }
     }
 
