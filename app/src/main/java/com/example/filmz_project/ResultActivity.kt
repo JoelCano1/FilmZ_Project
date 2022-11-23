@@ -67,11 +67,11 @@ class ResultActivity : AppCompatActivity() {
     }
     private fun omplirCamps(jugadorActual: User, encertsGenere: Array<Int>) {
         //POSAR NOM
-        val lblNomUser = findViewById<TextView>(R.id.LblUserName)
+        val lblNomUser = findViewById<TextView>(R.id.LblNomUser)
         lblNomUser.text = jugadorActual.nom
 
         //POSAR ENCERTS TOTALS
-        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotals)
+        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotal)
         val sumEncerts = encertsGenere.sum();
         lblEncertsTotals.text = "$sumEncerts/20"
 
