@@ -21,11 +21,11 @@ class QuestionActivity : AppCompatActivity() {
         // contadores de preguntas mostradas por categoria
         var dramaCounter = 0; var terrorCounter = 0; var animationCounter = 0; var sfCounter = 0; var actionCounter = 0;
 
-        //en que pregunta estamos y valor de esta pregunta
+        //en que pregunta estamos y el valor de esta pregunta
         var numQuestion = 1
         var currentQuestion : Questions? = null
 
-        //respuesta del usuario y respuesta correcta
+        //respuesta del usuario y respuesta correcta de la pregunta
         var yourCorrectQuestion = -1
         var correctAnswer = 0
 
