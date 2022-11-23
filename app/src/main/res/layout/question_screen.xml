@@ -14,12 +14,13 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/border"
         android:gravity="center"
-        android:text="Drama"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
         android:fontFamily="@font/lora"
-        android:visibility="invisible"
+
+
         />
 
     <RelativeLayout
@@ -44,7 +45,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="425dp"
+            android:gravity="center"
+            android:layout_marginLeft="410dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/lora"
             android:textColor="@color/white"
@@ -53,9 +55,9 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationShow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="415dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="390dp"
 
             android:backgroundTint="@color/white" />
 
