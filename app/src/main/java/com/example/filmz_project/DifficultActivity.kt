@@ -16,8 +16,6 @@ class DifficultActivity : AppCompatActivity() {
         var user = intent.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
 
         seleccioNivell(user)
-
-
     }
     private fun seleccioNivell(user:User) {
         val btnFacil = findViewById<Button>(R.id.BtnEasy)
