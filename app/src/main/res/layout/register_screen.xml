@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+
     android:orientation="vertical">
     <!--TEXT REGISTRE-->
     <LinearLayout
@@ -15,7 +15,8 @@
             android:layout_height="match_parent"
             android:text="@string/register_screen_textRegistre"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lora"
             android:textSize="50dp"
             android:gravity="center"/>
     </LinearLayout>
@@ -36,6 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
+                android:layout_marginLeft="40dp"
                 android:orientation="vertical">
                 <!--CAMP NOM-->
                 <LinearLayout
@@ -51,16 +53,17 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_nomCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtNomRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginBottom="40dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginRight="5dp"
                         android:background="#DCDCDC"
                         android:textColor="@color/black"
@@ -87,17 +90,18 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_contrasenyaCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
 
                     <EditText
                         android:id="@+id/EdtTxtContrasenyaRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginRight="5dp"
-                        android:layout_marginBottom="40dp"
                         android:layout_weight="3"
                         android:background="#DCDCDC"
                         android:inputType="textPassword"
@@ -126,16 +130,17 @@
                         android:paddingLeft="30dp"
                         android:text="@string/register_screen_repetirContrasenyaCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtRepetirContrasenyaRegistre"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginBottom="40dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginRight="5dp"
                         android:background="#DCDCDC"
                         android:inputType="textPassword"
@@ -149,28 +154,22 @@
                         android:layout_gravity="center"
                         android:background="@drawable/medical"/>
                 </LinearLayout>
-            </LinearLayout>
-            <!--CAMPS RIGHT-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:orientation="vertical">
-                <!--CAMP EDAT-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10sp">
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
-                        android:paddingLeft="50dp"
+                        android:paddingLeft="30dp"
                         android:text="@string/register_screen_edatCamp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/mavenpro"
                         android:textSize="30dp"/>
                     <EditText
                         android:id="@+id/EdtTxtEdatRegistre"
@@ -190,14 +189,12 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_gravity="center"
-                        android:layout_marginRight="20dp"
                         android:background="@drawable/medical"/>
                 </LinearLayout>
-                <!--CAMP SEXE-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3"
+                    android:layout_weight="1.5"
                     android:orientation="vertical">
                     <!--TEXT SEXE-->
                     <LinearLayout
@@ -210,15 +207,15 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:paddingLeft="50dp"
+                            android:paddingLeft="30dp"
                             android:text="@string/register_screen_sexeCamp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:textSize="30dp"/>
                         <ImageView
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:layout_marginRight="20dp"
                             android:background="@drawable/medical"/>
                     </LinearLayout>
 
@@ -227,7 +224,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="3"
-                        android:background="@drawable/rectangle_checkbox"
                         android:layout_marginLeft="50dp"
                         android:layout_marginRight="40dp"
                         android:layout_marginTop="20dp"
@@ -238,150 +234,105 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:paddingLeft="10dp"
                             android:text="M"
+                            android:textColor="@color/white"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:textStyle="bold"/>
                         <RadioButton
                             android:id="@+id/RdBtnFemaleRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:paddingLeft="10dp"
                             android:text="F"
+                            android:textColor="@color/white"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
+                            android:textStyle="bold"/>
                         <RadioButton
                             android:id="@+id/RdBtnAltreRegistre"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:fontFamily="@font/mavenpro"
                             android:paddingLeft="10dp"
                             android:text="@string/register_screen_sexeCampRadBtn3"
+                            android:textColor="@color/white"
                             android:textSize="30dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
-                    </RadioGroup>
-                </LinearLayout>
-                <!--CAMP ESTUDIS-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
-                    <!--TEXT ESTUDIS-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="2"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="50dp"
-                            android:text="@string/register_screen_estudiesCamp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:textSize="30dp"/>
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_marginRight="20dp"
-                            android:background="@drawable/medical"/>
-                    </LinearLayout>
-                    <!--GROUPBOX ESTUDIS-->
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="3"
-                        android:background="@drawable/rectangle_checkbox"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="horizontal">
-                        <RadioButton
-                            android:id="@+id/RdBtnEstudiaRegistre"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:paddingLeft="10dp"
-                            android:text="@string/register_screen_estudiesCampRadBtn1"
-                            android:textSize="30dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
-                        <RadioButton
-                            android:id="@+id/RdBtnNoEstudiaRegistre"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:paddingLeft="10dp"
-                            android:text="@string/register_screen_estudiesCampRadBtn2"
-                            android:textSize="30dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:buttonTint="@color/black"/>
-
+                            android:textStyle="bold" />
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <!--CAMPS ROBOT I POLITICA-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <!--CAMP ROBOT-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/CkBoxRobotRegistre"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_checkbox"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginRight="170dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="@string/register_screen_robotCamp"
-                    android:textSize="30dp"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/black"/>
-            </LinearLayout>
-            <!--CAMP POLITICA-->
+            <!--CAMPS RIGHT-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical"
                 android:gravity="center">
 
-                <CheckBox
-                    android:id="@+id/CkBoxPolicyRegistre"
+                <!--CAMPS ROBOT I POLITICA-->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_checkbox"
-                    android:buttonTint="@color/black"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="@string/register_screen_politicaCamp"
-                    android:textColor="@color/black"
-                    android:textSize="30dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--CAMP ROBOT-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/CkBoxRobotRegistre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/white"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="180dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:text="@string/register_screen_robotCamp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
+                            android:textSize="30dp"
+                            android:textStyle="bold"/>
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/medical"/>
+                    </LinearLayout>
+                    <!--CAMP POLITICA-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <CheckBox
+                            android:id="@+id/CkBoxPolicyRegistre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/white"
+                            android:layout_marginLeft="50dp"
+
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:text="@string/register_screen_politicaCamp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
+                            android:textSize="30dp"
+                            android:textStyle="bold"/>
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/medical"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
     <!--BUTTON CREAR-->
     <LinearLayout
@@ -397,16 +348,6 @@
             android:background="@drawable/button_redondejat"
             android:text="@string/register_screen_btnCrear"
             android:textSize="45dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        <Button
-            android:id="@+id/BtnIniciarSessioRegistre"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_redondejat"
-            android:text="@string/register_screen_btnIniciSessio"
-            android:textSize="30dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
     </LinearLayout>

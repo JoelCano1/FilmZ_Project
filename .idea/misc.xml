@@ -11,7 +11,6 @@
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/ranking_screen.xml" value="0.1" />
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/register_screen.xml" value="0.16" />
         <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.1" />
-        <entry key="..\:/Cole/DAM2/Projecte/Pelicules/FilmZ_Project/app/src/main/res/layout/toast_layout.xml" value="0.1" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/drawable/button_redondejat.xml" value="0.1" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/drawable/rectangle_checkbox.xml" value="0.1865" />
         <entry key="..\:/DAM2/PROJECTE/FilmZ_Project/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
@@ -32,7 +31,7 @@
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/difficult_screen.xml" value="0.75" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/final_screen.xml" value="0.75" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/intro_screen.xml" value="0.67" />
-        <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/lenguage_screen.xml" value="0.33" />
+        <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/lenguage_screen.xml" value="0.266051912568306" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/login_screen.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/logo_screen.xml" value="0.266051912568306" />
         <entry key="..\:/Users/cep.CEPNET0/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/question_screen.xml" value="0.5" />
@@ -47,6 +46,7 @@
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/boton_redondselct.xml" value="0.2175" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_redondejat.xml" value="0.1" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_saltar_intro.xml" value="0.1925" />
+        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/rectangle_checkbox.xml" value="0.2415" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/font/lora.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_difficult.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -59,7 +59,7 @@
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/question_screen.xml" value="0.536" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/ranking_item.xml" value="0.6" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/ranking_screen.xml" value="0.2" />
-        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/register_screen.xml" value="0.72" />
+        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/register_screen.xml" value="0.264" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/result_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.4" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/rigster_screen.xml" value="0.25416666666666665" />
