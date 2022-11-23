@@ -21,7 +21,6 @@ class RegisterActivity : AppCompatActivity() {
         var usuaris = getUsers()
 
         crearUsuari(usuaris)
-        iniciarSessio()
     }
 
     private fun getUsers(): MutableList<User> {
@@ -40,8 +39,6 @@ class RegisterActivity : AppCompatActivity() {
         val campSexeHome = findViewById<RadioButton>(R.id.RdBtnMaleRegistre)
         val campSexeDona = findViewById<RadioButton>(R.id.RdBtnFemaleRegistre)
         val campSexeAltre = findViewById<RadioButton>(R.id.RdBtnAltreRegistre)
-        val campEstudia = findViewById<RadioButton>(R.id.RdBtnEstudiaRegistre)
-        val campNoEstudia = findViewById<RadioButton>(R.id.RdBtnNoEstudiaRegistre)
         val campRobot = findViewById<CheckBox>(R.id.CkBoxRobotRegistre)
         val campPolitica = findViewById<CheckBox>(R.id.CkBoxPolicyRegistre)
         val btnCrearUsuari = findViewById<Button>(R.id.BtnCrearUsuari)
@@ -69,13 +66,6 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.makeText(this, resources.getText(R.string.register_screen_toast_usuari_existent), Toast.LENGTH_LONG).show()
                             } else {
                                 btnCrearUsuari.setOnClickListener() {
-                                    //ESTUDIS
-                                    var estudia = true
-                                    if (campEstudia.isChecked) {
-                                        estudia
-                                    } else if (campNoEstudia.isChecked) {
-                                        estudia = false
-                                    }
                                     //SEXE
                                     var sexe = 'H'
                                     if (campSexeHome.isChecked) {
@@ -86,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
                                         sexe = 'A'
                                     }
                                     //Guardar Objecte d'usuari en el JSON
-                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), estudia, sexe, 0, false, 2, null))
+                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), sexe, 0, false, 2, null))
 
                                     saveUser(this, usuaris)
 
@@ -158,14 +148,5 @@ class RegisterActivity : AppCompatActivity() {
         var jsonElement = gson.toJson(usuaris)
         jsonFile.write(jsonElement)
         jsonFile.close()
-    }
-
-    private fun iniciarSessio() {
-        val btnIniciSessio = findViewById<Button>(R.id.BtnIniciarSessioRegistre)
-
-        btnIniciSessio.setOnClickListener() {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

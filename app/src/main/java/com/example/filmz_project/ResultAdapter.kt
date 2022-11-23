@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 
-class ResultAdapter(context: Context, val layout: Int, val generes: MutableList<User>):
-    ArrayAdapter<User>(context, layout, generes) {
+class ResultAdapter(context: Context, val layout: Int, val encertsGenere: Array<Int>):
+    ArrayAdapter<Int>(context, layout, encertsGenere) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View
 
@@ -19,14 +19,11 @@ class ResultAdapter(context: Context, val layout: Int, val generes: MutableList<
             view =
                 LayoutInflater.from(getContext()).inflate(layout, parent, false)
         }
-        bindRanking(view,generes[position],position+1)
+        bindRanking(view,encertsGenere[position],position+1)
         return view
     }
 
-    fun bindRanking(view: View, user: User, position: Int){
+    fun bindRanking(view: View, encerts:Int, position: Int){
         val encerts = view.findViewById<TextView>(R.id.LblEncerts)
-
-
-
     }
 }

@@ -19,7 +19,10 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.result_screen)
 
         val intent = getIntent()
-        //var jugadorActual = intent.getSerializableExtra()
+        val jugadorActual = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT) as User
+        val encertsGenere = intent.getIntArrayExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
+
+        omplirCamps(jugadorActual, encertsGenere)
 
         // ↓ SABER EL CURRENT LANGUAGE DE LA APP ↓ //
         var lang = resources.getConfiguration().locale.getLanguage()
@@ -34,17 +37,12 @@ class ResultActivity : AppCompatActivity() {
             personatges = getPersonatgesAngles()
         }
 
-
-
-        val lstEncerts = findViewById<ListView>(R.id.LstStats)
-
-        // val adapter = ResultAdapter(this, R.layout.result_item, )
-        // lstEncerts.adapter = adapter
-
         posarPersonatge(personatges)
         veureRanking()
         continuar()
     }
+
+
 
     private fun getPersonatgesCatala(): MutableList<Personatge> {
         val jsonFilePath = getFilesDir().toString() + "/JSONS/PersCAT.json"
@@ -66,6 +64,21 @@ class ResultActivity : AppCompatActivity() {
         val listPersonatgesAngles = object: TypeToken<MutableList<Personatge>>() {}.type
         val personatgesAngles: MutableList<Personatge> = Gson().fromJson(jsonFile, listPersonatgesAngles)
         return personatgesAngles
+    }
+    private fun omplirCamps(jugadorActual: User, encertsGenere: Array<Int>) {
+        //POSAR NOM
+        val lblNomUser = findViewById<TextView>(R.id.LblUserName)
+        lblNomUser.text = jugadorActual.nom
+
+        //POSAR ENCERTS TOTALS
+        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotals)
+        val sumEncerts = encertsGenere.sum();
+        lblEncertsTotals.text = "$sumEncerts/20"
+
+        //POSAR ENCERTS PER GENERE
+        val lstEncerts = findViewById<ListView>(R.id.LstStats)
+        //val adapter = ResultAdapter(this, R.layout.result_item, encertsGenere)
+        //lstEncerts.adapter = adapter
     }
     private fun posarPersonatge(personatgesCatala: MutableList<Personatge>) {
         val imgPersonatgeImatge = findViewById<ImageView>(R.id.ImgPersonatge)
