@@ -37,6 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
+                android:layout_marginLeft="40dp"
                 android:orientation="vertical">
                 <!--CAMP NOM-->
                 <LinearLayout
@@ -157,7 +158,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10sp">
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -189,56 +191,44 @@
                         android:layout_gravity="center"
                         android:background="@drawable/medical"/>
                 </LinearLayout>
-            </LinearLayout>
-            <!--CAMPS RIGHT-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:orientation="vertical">
-
-
-                <!--CAMP SEXE-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
                     android:orientation="vertical">
                     <!--TEXT SEXE-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
                         android:orientation="horizontal">
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/mavenpro"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:paddingLeft="50dp"
+                            android:paddingLeft="30dp"
                             android:text="@string/register_screen_sexeCamp"
+                            android:textStyle="bold"
                             android:textColor="@color/white"
-                            android:textSize="30dp"
-                            android:textStyle="bold" />
-
+                            android:fontFamily="@font/mavenpro"
+                            android:textSize="30dp"/>
                         <ImageView
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:layout_marginRight="20dp"
-                            android:background="@drawable/medical" />
+                            android:background="@drawable/medical"/>
                     </LinearLayout>
 
                     <!--GROUPBOX SEXE-->
                     <RadioGroup
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
                         android:layout_marginLeft="50dp"
-                        android:layout_marginTop="20dp"
                         android:layout_marginRight="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:background="@drawable/rectangle_checkbox"
-                        android:orientation="horizontal"
-                        android:paddingVertical="20dp">
-
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
                         <RadioButton
                             android:id="@+id/RdBtnMaleRegistre"
                             android:layout_width="0dp"
@@ -250,8 +240,7 @@
                             android:text="M"
                             android:textColor="@color/white"
                             android:textSize="30dp"
-                            android:textStyle="bold" />
-
+                            android:textStyle="bold"/>
                         <RadioButton
                             android:id="@+id/RdBtnFemaleRegistre"
                             android:layout_width="0dp"
@@ -263,8 +252,7 @@
                             android:text="F"
                             android:textColor="@color/white"
                             android:textSize="30dp"
-                            android:textStyle="bold" />
-
+                            android:textStyle="bold"/>
                         <RadioButton
                             android:id="@+id/RdBtnAltreRegistre"
                             android:layout_width="0dp"
@@ -280,57 +268,71 @@
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <!--CAMPS ROBOT I POLITICA-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <!--CAMP ROBOT-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/CkBoxRobotRegistre"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_checkbox"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginRight="170dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="@string/register_screen_robotCamp"
-                    android:textSize="30dp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/mavenpro"
-                    android:buttonTint="@color/white"/>
-            </LinearLayout>
-            <!--CAMP POLITICA-->
+            <!--CAMPS RIGHT-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical"
                 android:gravity="center">
 
-                <CheckBox
-                    android:id="@+id/CkBoxPolicyRegistre"
+                <!--CAMPS ROBOT I POLITICA-->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_checkbox"
-                    android:buttonTint="@color/white"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="@string/register_screen_politicaCamp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/mavenpro"
-                    android:textSize="30dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--CAMP ROBOT-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/CkBoxRobotRegistre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/white"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="180dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:text="@string/register_screen_robotCamp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
+                            android:textSize="30dp"
+                            android:textStyle="bold"/>
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/medical"/>
+                    </LinearLayout>
+                    <!--CAMP POLITICA-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <CheckBox
+                            android:id="@+id/CkBoxPolicyRegistre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/white"
+                            android:layout_marginLeft="50dp"
+
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:text="@string/register_screen_politicaCamp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/mavenpro"
+                            android:textSize="30dp"
+                            android:textStyle="bold"/>
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/medical"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
     <!--BUTTON CREAR-->
     <LinearLayout
