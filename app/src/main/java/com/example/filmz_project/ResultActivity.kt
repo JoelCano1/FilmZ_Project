@@ -1,14 +1,11 @@
 package com.example.filmz_project
 
 import android.content.Intent
-import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.ListView
 import android.widget.TextView
-import androidx.core.os.ConfigurationCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
@@ -20,7 +17,7 @@ class ResultActivity : AppCompatActivity() {
 
         val intent = getIntent()
         val jugadorActual = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT) as User
-        val encertsGenere = intent.getIntArrayExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
+        val encertsGenere = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
 
         omplirCamps(jugadorActual, encertsGenere)
 
@@ -37,7 +34,7 @@ class ResultActivity : AppCompatActivity() {
             personatges = getPersonatgesAngles()
         }
 
-        posarPersonatge(personatges)
+        posarPersonatge(personatges, encertsGenere)
         veureRanking()
         continuar()
     }
@@ -67,26 +64,67 @@ class ResultActivity : AppCompatActivity() {
     }
     private fun omplirCamps(jugadorActual: User, encertsGenere: Array<Int>) {
         //POSAR NOM
-        val lblNomUser = findViewById<TextView>(R.id.LblNomUser)
-        lblNomUser.text = jugadorActual.nom
+        posarNom(jugadorActual)
 
         //POSAR ENCERTS TOTALS
-        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotal)
-        val sumEncerts = encertsGenere.sum();
-        lblEncertsTotals.text = "$sumEncerts/20"
+        posarEncertsTotals(encertsGenere)
 
         //POSAR ENCERTS PER GENERE
-        val lstEncerts = findViewById<ListView>(R.id.LstStats)
-        //val adapter = ResultAdapter(this, R.layout.result_item, encertsGenere)
-        //lstEncerts.adapter = adapter
+        posarEncertsGenere(encertsGenere)
     }
-    private fun posarPersonatge(personatgesCatala: MutableList<Personatge>) {
+
+    private fun posarNom(jugadorActual: User) {
+        val lblNomUser = findViewById<TextView>(R.id.LblUserName)
+        lblNomUser.text = jugadorActual.nom
+    }
+
+    private fun posarEncertsTotals(encertsGenere: Array<Int>) {
+        val lblEncertsTotals = findViewById<TextView>(R.id.LblEncertsTotals)
+        val sumEncerts = encertsGenere.sum();
+        lblEncertsTotals.text = "$sumEncerts/20"
+    }
+
+    private fun posarEncertsGenere(encertsGenere: Array<Int>) {
+        val MAX_PREGUNTES_GENERE = 4
+        val lblEncertsDrama = findViewById<TextView>(R.id.LblEncertsDrama)
+        val lblEncertsTerror = findViewById<TextView>(R.id.LblEncertsTerror)
+        val lblEncertsAnimacio = findViewById<TextView>(R.id.LblEncertsAnimacio)
+        val lblEncertsAccio = findViewById<TextView>(R.id.LblEncertsAccio)
+        val lblEncertsCienciaFiccio = findViewById<TextView>(R.id.LblEncertsCienciaFiccio)
+        lblEncertsDrama.text = "${encertsGenere[0]}/$MAX_PREGUNTES_GENERE"
+        lblEncertsTerror.text = "${encertsGenere[1]}/$MAX_PREGUNTES_GENERE"
+        lblEncertsAnimacio.text = "${encertsGenere[2]}/$MAX_PREGUNTES_GENERE"
+        lblEncertsAccio.text = "${encertsGenere[3]}/$MAX_PREGUNTES_GENERE"
+        lblEncertsCienciaFiccio.text = "${encertsGenere[4]}/$MAX_PREGUNTES_GENERE"
+    }
+
+    private fun posarPersonatge(personatges: MutableList<Personatge>, encertsGenere: Array<Int>) {
+        algoritmeSaberPersonatge(personatges, encertsGenere)
         val imgPersonatgeImatge = findViewById<ImageView>(R.id.ImgPersonatge)
         val lblDescripcioPersonatge = findViewById<TextView>(R.id.LblDescPersonatge)
         //Saber resultats dusuari (CATEGORIA I ENCERTS) --> Agafar de la llista personatges
 
-        imgPersonatgeImatge.setImageResource(Integer.parseInt(personatgesCatala.get(1).rutaPers))
-        lblDescripcioPersonatge.text = personatgesCatala.get(1).descripcioPers
+        //imgPersonatgeImatge.drawable = getFilesDir().toString() + ""
+        lblDescripcioPersonatge.text = personatges.get(1).descripcioPers
+    }
+
+    private fun algoritmeSaberPersonatge(personatges: MutableList<Personatge>, encertsGenere: Array<Int>) {
+        val totsIgualMalamanet = encertsGenere.toSet().size == 0
+        if (totsIgualMalamanet == false) {
+            val totsIgualBe = encertsGenere.toSet().size == 4
+            if (totsIgualBe == false) {
+                var millorGenere = 0
+                for (i: Int in encertsGenere) {
+                    if (encertsGenere[i] > encertsGenere[millorGenere]) {
+                        millorGenere = i
+                    }
+                }
+            } else {
+                println("tots estan be agafar el TOT BÉ de personatges")
+            }
+        } else {
+            println("tots estan malament agafar el CAP de personatges")
+        }
     }
 
     private fun veureRanking() {
