@@ -232,13 +232,13 @@ class QuestionActivity : AppCompatActivity() {
                 when (correctAnswer)
                 {
                     1 -> {
-                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button1.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                     2 -> {
-                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button2.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                     3 -> {
-                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        button3.setBackgroundResource(R.drawable.boton_redondeadoorange)
                     }
                 }
 
@@ -300,7 +300,7 @@ class QuestionActivity : AppCompatActivity() {
 
         val intent = getIntent()
         //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 3, null)
+        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
