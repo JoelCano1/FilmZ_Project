@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
+import com.airbnb.lottie.LottieAnimationView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
@@ -229,6 +230,10 @@ class QuestionActivity : AppCompatActivity() {
                     button3.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
                 }
             }
+            //animacion
+            val animationView = findViewById(R.id.animationShow) as LottieAnimationView
+            wrongAnimation(animationView, R.raw.wrong)
+
 
             if (yourCorrectQuestion == -1)
             {
@@ -303,7 +308,7 @@ class QuestionActivity : AppCompatActivity() {
 
         val intent = getIntent()
         //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        val jugadorActual = User("Juan", "123", 18,true, 'H', 148, true, 2, null)
+        val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -375,5 +380,12 @@ class QuestionActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun wrongAnimation(imageView : LottieAnimationView, animation : Int)
+    {
+        imageView.setAnimation(animation)
+        imageView.playAnimation()
+
     }
 }

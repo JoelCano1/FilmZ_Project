@@ -19,13 +19,14 @@
         android:textSize="35sp"
         android:textStyle="bold"
         android:fontFamily="@font/lora"
+        android:visibility="invisible"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:orientation="vertical"
-
+        android:orientation="horizontal"
+        android:gravity="center"
         >
             <ProgressBar
                 android:id="@+id/ProgressBar"
@@ -37,19 +38,28 @@
                 android:scaleY="1.05"
 
                 />
-            <TextView
-                android:id="@+id/timePreg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="45sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="2dp"
-                android:fontFamily="@font/lora"
-                />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/timePreg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="425dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/lora"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="415dp"
+
+            android:backgroundTint="@color/white" />
+
+        </RelativeLayout>
 
 
     <FrameLayout
@@ -168,6 +178,8 @@
         android:layout_marginTop="19dp"
         android:background="@android:color/transparent"
         android:src="@drawable/validarbut2" />
+
+
 
 </RelativeLayout>
     
