@@ -12,6 +12,8 @@ import com.airbnb.lottie.LottieAnimationView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
+import java.util.*
+import kotlin.concurrent.schedule
 import kotlin.random.Random
 
 class QuestionActivity : AppCompatActivity() {
@@ -211,38 +213,43 @@ class QuestionActivity : AppCompatActivity() {
         setVisbility()
         if (yourCorrectQuestion == correctAnswer)
         {
-            when (yourCorrectQuestion)
-            {
-                1 -> {
-                    button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
 
-                }
-                2 -> {
-                    button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                }
-                3 -> {
-                    button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                }
-            }
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.correct)
             addCorrectCategory()
-        }else {
-            when (yourCorrectQuestion)
-            {
-                1 -> {
-                    button1.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
-                }
-                2 -> {
-                    button2.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
-                }
-                3 -> {
-                    button3.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+            Timer("SettingUp", false).schedule(1010) {
+                when (yourCorrectQuestion)
+                {
+                    1 -> {
+                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+
+                    }
+                    2 -> {
+                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
+                    3 -> {
+                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                    }
                 }
             }
+        }else {
             //animacion incorrecto
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.wrong)
+
+            Timer("SettingUp", false).schedule(1010) {
+                when (yourCorrectQuestion) {
+                    1 -> {
+                        button1.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                    }
+                    2 -> {
+                        button2.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                    }
+                    3 -> {
+                        button3.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
+                    }
+                }
+            }
 
 
             if (yourCorrectQuestion == -1)
@@ -261,19 +268,21 @@ class QuestionActivity : AppCompatActivity() {
                 }
 
             }else {
-                when (correctAnswer)
-                {
-                    1 -> {
-                        button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                    }
-                    2 -> {
-                        button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
-                    }
-                    3 -> {
-                        button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                Timer("SettingUp", false).schedule(1010) {
+                    when (correctAnswer)
+                    {
+                        1 -> {
+                            button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        }
+                        2 -> {
+                            button2.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        }
+                        3 -> {
+                            button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
+                        }
                     }
                 }
-            }
+           }
         }
 
     }
