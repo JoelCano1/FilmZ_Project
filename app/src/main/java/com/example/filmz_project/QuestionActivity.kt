@@ -22,18 +22,26 @@ class QuestionActivity : AppCompatActivity() {
 
     companion object {
         // contadores de preguntas mostradas por categoria
-        var dramaCounter = 0; var terrorCounter = 0; var animationCounter = 0; var sfCounter = 0; var actionCounter = 0;
+        var dramaCounter = 0;
+        var terrorCounter = 0;
+        var animationCounter = 0;
+        var sfCounter = 0;
+        var actionCounter = 0;
 
         //en que pregunta estamos y el valor de esta pregunta
         var numQuestion = 1
-        var currentQuestion : Questions? = null
+        var currentQuestion: Questions? = null
 
         //respuesta del usuario y respuesta correcta de la pregunta
         var yourCorrectQuestion = -1
         var correctAnswer = 0
 
         //contadores de categorias acertadas
-        var dramaCorrect = 0; var terrorCorrect = 0; var animationCorrect = 0; var sfCorrect = 0; var actionCorrect = 0;
+        var dramaCorrect = 0;
+        var terrorCorrect = 0;
+        var animationCorrect = 0;
+        var sfCorrect = 0;
+        var actionCorrect = 0;
     }
 
     fun progressBar() {
@@ -48,7 +56,12 @@ class QuestionActivity : AppCompatActivity() {
             .start()
     }
 
-    fun timeQuestion(button1 : Button, button2 : Button, button3 : Button, animationView : LottieAnimationView ) {
+    fun timeQuestion(
+        button1: Button,
+        button2: Button,
+        button3: Button,
+        animationView: LottieAnimationView
+    ) {
 
         var time = findViewById(R.id.timePreg) as TextView
         var seconds = 21
@@ -62,7 +75,7 @@ class QuestionActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                validateQuestion(button1 , button2 , button3, animationView )
+                validateQuestion(button1, button2, button3, animationView)
             }
         }.start()
     }
@@ -124,7 +137,7 @@ class QuestionActivity : AppCompatActivity() {
         respuesta2.text = questionToShow.resposta2
         respuesta3.text = questionToShow.resposta3
         categoria.text = questionToShow.categoria
-        numPregunta.text = numQuestion.toString()+"/20"
+        numPregunta.text = numQuestion.toString() + "/20"
 
 
     }
@@ -168,13 +181,19 @@ class QuestionActivity : AppCompatActivity() {
         return fullQuestion
     }
 
-    fun showRandomQuestion(questions: MutableList<Questions>, button1 : Button, button2 : Button, button3 : Button,  animationView : LottieAnimationView) {
+    fun showRandomQuestion(
+        questions: MutableList<Questions>,
+        button1: Button,
+        button2: Button,
+        button3: Button,
+        animationView: LottieAnimationView
+    ) {
         var max = questions.size
         var random = 0
         do {
 
             //random = Random.nextInt(0, max)
-            random = (Math.random()* (max-0)).toInt()
+            random = (Math.random() * (max - 0)).toInt()
 
         } while (clasifyQuestions(questions[random]) && numQuestion < 20)
         //muestra la pregutnta
@@ -182,7 +201,7 @@ class QuestionActivity : AppCompatActivity() {
 
         //iniciamos contador y barra
         progressBar()
-        timeQuestion(button1 , button2 , button3, animationView)
+        timeQuestion(button1, button2, button3, animationView)
 
         //guardamos que respuesta es correcta
         setCorrectAnswer(questions[random])
@@ -194,13 +213,13 @@ class QuestionActivity : AppCompatActivity() {
         max--
     }
 
-    fun setCorrectAnswer(questionToCheck :Questions) {
+    fun setCorrectAnswer(questionToCheck: Questions) {
 
         correctAnswer = questionToCheck.resposta_correcte
     }
 
-    fun setVisbility()
-    {   val timeLabel = findViewById(R.id.timePreg) as TextView
+    fun setVisbility() {
+        val timeLabel = findViewById(R.id.timePreg) as TextView
         val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
 
         progressBar.visibility = View.INVISIBLE
@@ -208,18 +227,27 @@ class QuestionActivity : AppCompatActivity() {
         valideteQuestion.visibility = View.INVISIBLE
     }
 
-    fun validateQuestion(button1 : Button, button2 : Button, button3 : Button, animationView : LottieAnimationView)
-    {
-        setVisbility()
-        if (yourCorrectQuestion == correctAnswer)
-        {
+    fun setClickable(button1: Button, button2: Button, button3: Button) {
+        button1.isClickable = false
+        button2.isClickable = false
+        button3.isClickable = false
+    }
 
+    fun validateQuestion(
+        button1: Button,
+        button2: Button,
+        button3: Button,
+        animationView: LottieAnimationView
+    ) {
+        setVisbility()
+        setClickable(button1, button2, button3)
+
+        if (yourCorrectQuestion == correctAnswer) {
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.correct)
             addCorrectCategory()
             Timer("SettingUp", false).schedule(1010) {
-                when (yourCorrectQuestion)
-                {
+                when (yourCorrectQuestion) {
                     1 -> {
                         button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
 
@@ -232,7 +260,7 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }
             }
-        }else {
+        } else {
             //animacion incorrecto
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.wrong)
@@ -252,10 +280,8 @@ class QuestionActivity : AppCompatActivity() {
             }
 
 
-            if (yourCorrectQuestion == -1)
-            {
-                when (correctAnswer)
-                {
+            if (yourCorrectQuestion == -1) {
+                when (correctAnswer) {
                     1 -> {
                         button1.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
                     }
@@ -267,10 +293,9 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }
 
-            }else {
+            } else {
                 Timer("SettingUp", false).schedule(1010) {
-                    when (correctAnswer)
-                    {
+                    when (correctAnswer) {
                         1 -> {
                             button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                         }
@@ -282,14 +307,13 @@ class QuestionActivity : AppCompatActivity() {
                         }
                     }
                 }
-           }
+            }
         }
 
     }
-    fun addCorrectCategory ()
-    {
-        when (currentQuestion?.categoria)
-        {
+
+    fun addCorrectCategory() {
+        when (currentQuestion?.categoria) {
             "Drama" -> {
                 dramaCorrect++
             }
@@ -308,13 +332,11 @@ class QuestionActivity : AppCompatActivity() {
         }
 
 
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
-
 
 
         //boton validar, botones de respuesta y boton de siguiente pregunta
@@ -336,7 +358,7 @@ class QuestionActivity : AppCompatActivity() {
         val loadedJSON = loadQuestions(jugadorActual)
 
 
-        showRandomQuestion(loadedJSON, button1 , button2 , button3, animationView )
+        showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
 
 
         button1.setOnClickListener()
@@ -367,7 +389,7 @@ class QuestionActivity : AppCompatActivity() {
         valideteQuestion.setOnClickListener()
         {
 
-            validateQuestion(button1 , button2 , button3 , animationView)
+            validateQuestion(button1, button2, button3, animationView)
             timer.cancel()
 
 
@@ -382,6 +404,10 @@ class QuestionActivity : AppCompatActivity() {
             button3.setBackgroundResource(R.drawable.boton_redondeado)
             timer.cancel()
 
+            button1.isClickable = true
+            button2.isClickable = true
+            button3.isClickable = true
+
             valideteQuestion.visibility = View.VISIBLE
             animationView.visibility = View.INVISIBLE
             progressBar.visibility = View.VISIBLE
@@ -392,21 +418,21 @@ class QuestionActivity : AppCompatActivity() {
             numQuestion++
 
             if (numQuestion > 20) {
-                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
+                val correctCategory =
+                    arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
 
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
                 startActivity(intent)
             } else {
-                 showRandomQuestion(loadedJSON, button1 , button2 , button3, animationView)
+                showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
             }
 
         }
     }
 
-    private fun validateAnimation(imageView : LottieAnimationView, animation : Int)
-    {
+    private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
         imageView.playAnimation()
 
