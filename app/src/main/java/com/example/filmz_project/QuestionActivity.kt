@@ -212,7 +212,29 @@ class QuestionActivity : AppCompatActivity() {
         questions.removeAt(random)
         max--
     }
+    fun initializeVariables(){
+        // contadores de preguntas mostradas por categoria
+        dramaCounter = 0;
+        terrorCounter = 0;
+        animationCounter = 0;
+        sfCounter = 0;
+        actionCounter = 0;
 
+        //en que pregunta estamos y el valor de esta pregunta
+        numQuestion = 1
+
+
+        //respuesta del usuario y respuesta correcta de la pregunta
+         yourCorrectQuestion = -1
+         correctAnswer = 0
+
+        //contadores de categorias acertadas
+        dramaCorrect = 0;
+        terrorCorrect = 0;
+        animationCorrect = 0;
+        sfCorrect = 0;
+        actionCorrect = 0;
+    }
     fun setCorrectAnswer(questionToCheck: Questions) {
 
         correctAnswer = questionToCheck.resposta_correcte
@@ -338,6 +360,8 @@ class QuestionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
 
+        
+        initializeVariables()
 
         //boton validar, botones de respuesta y boton de siguiente pregunta
         val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
@@ -351,8 +375,8 @@ class QuestionActivity : AppCompatActivity() {
         val animationView = findViewById(R.id.animationShow) as LottieAnimationView
 
         val intent = getIntent()
-        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        //val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
+        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -423,12 +447,14 @@ class QuestionActivity : AppCompatActivity() {
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
                 startActivity(intent)
+
             } else {
                 showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
             }
 
         }
     }
+
 
     private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
