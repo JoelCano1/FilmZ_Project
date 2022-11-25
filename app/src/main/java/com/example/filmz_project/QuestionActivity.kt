@@ -356,10 +356,11 @@ class QuestionActivity : AppCompatActivity() {
 
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
-
 
         initializeVariables()
 
@@ -443,10 +444,10 @@ class QuestionActivity : AppCompatActivity() {
 
             if (numQuestion > 20) {
                 val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
-                startActivity(intent)
+                val intent2 = Intent(this, QuestioToResult::class.java)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
+                startActivity(intent2)
 
             } else {
                 showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
@@ -455,7 +456,10 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
-
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
         imageView.playAnimation()
