@@ -360,7 +360,7 @@ class QuestionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
 
-        
+
         initializeVariables()
 
         //boton validar, botones de respuesta y boton de siguiente pregunta
