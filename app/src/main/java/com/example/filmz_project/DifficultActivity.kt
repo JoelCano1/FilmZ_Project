@@ -11,9 +11,9 @@ class DifficultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
 
-        var intent = getIntent()
+        val intentLogin = getIntent()
 
-        var user = intent.getSerializableExtra(Keys.constKeys.TO_DIFFICULTY) as User
+        var user = intentLogin.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
 
         seleccioNivell(user)
     }
