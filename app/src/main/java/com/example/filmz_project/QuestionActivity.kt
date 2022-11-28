@@ -2,6 +2,7 @@ package com.example.filmz_project
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -131,6 +132,19 @@ class QuestionActivity : AppCompatActivity() {
         val categoria = findViewById(R.id.categoria) as TextView
 
         val numPregunta = findViewById(R.id.numPreg) as TextView
+
+        /*if (questionToShow.imgaudio != "") {
+            setContentView(R.layout.imatge_screen)
+            val screenImatge = findViewById(R.id.LayoutImatge) as FrameLayout
+            screenImatge.setOnClickListener() {
+                val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
+
+                //Posar imatge
+                //val imagePath = getFilesDir().toString() + "/IMG/" + nomRuta
+                //val bitmap = BitmapFactory.decodeFile(imagePath)
+                //imatgePregunta.setImageBitmap(bitmap)
+            }
+        }*/
 
         question.text = questionToShow.pregunta
         respuesta1.text = questionToShow.resposta1
@@ -356,10 +370,11 @@ class QuestionActivity : AppCompatActivity() {
 
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
-
 
         initializeVariables()
 
@@ -375,8 +390,8 @@ class QuestionActivity : AppCompatActivity() {
         val animationView = findViewById(R.id.animationShow) as LottieAnimationView
 
         val intent = getIntent()
-        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
+        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        //val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -442,11 +457,11 @@ class QuestionActivity : AppCompatActivity() {
             numQuestion++
 
             if (numQuestion > 20) {
-                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
-                startActivity(intent)
+                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, actionCorrect,sfCorrect)
+                val intent2 = Intent(this, QuestioToResult::class.java)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
+                startActivity(intent2)
 
             } else {
                 showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
@@ -455,7 +470,10 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
-
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
         imageView.playAnimation()

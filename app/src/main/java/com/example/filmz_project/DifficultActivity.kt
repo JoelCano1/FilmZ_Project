@@ -50,7 +50,7 @@ class DifficultActivity : AppCompatActivity() {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
 
         btnContinuar.setOnClickListener() {
-            val intent = Intent(this, QuestionActivity::class.java)
+            val intent = Intent(this, DiffToQuest::class.java)
             intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
             startActivity(intent)
         }
