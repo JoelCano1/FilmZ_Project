@@ -151,7 +151,7 @@ class QuestionActivity : AppCompatActivity() {
         respuesta2.text = questionToShow.resposta2
         respuesta3.text = questionToShow.resposta3
         categoria.text = questionToShow.categoria
-        numPregunta.text = numQuestion.toString() + "/20"
+        numPregunta.text = (numQuestion-1).toString() + "/20"
 
 
     }
@@ -161,33 +161,43 @@ class QuestionActivity : AppCompatActivity() {
         var fullQuestion = false
         when (questionShowed.categoria) {
             "Drama" -> {
-                dramaCounter++
-                if (dramaCounter > 4) {
+
+                if (dramaCounter == 4) {
                     fullQuestion = true
+                }else{
+                    dramaCounter++
                 }
             }
             "Terror" -> {
-                terrorCounter++
-                if (terrorCounter > 4) {
+
+                if (terrorCounter == 4) {
                     fullQuestion = true
+                }else{
+                    terrorCounter++
                 }
             }
             "Animación" -> {
-                animationCounter++
-                if (animationCounter > 4) {
+
+                if (animationCounter == 4) {
                     fullQuestion = true
+                }else{
+                    animationCounter++
                 }
             }
             "Ciencia Ficción" -> {
-                sfCounter++
-                if (sfCounter > 4) {
+
+                if (sfCounter == 4) {
                     fullQuestion = true
+                }else{
+                    sfCounter++
                 }
             }
             "Acción" -> {
-                actionCounter++
-                if (actionCounter > 4) {
+
+                if (actionCounter == 4) {
                     fullQuestion = true
+                }else{
+                    actionCounter++
                 }
             }
 
@@ -209,7 +219,7 @@ class QuestionActivity : AppCompatActivity() {
             //random = Random.nextInt(0, max)
             random = (Math.random() * (max - 0)).toInt()
 
-        } while (clasifyQuestions(questions[random]) && numQuestion < 20)
+        } while (clasifyQuestions(questions[random]) && numQuestion < 21)
         //muestra la pregutnta
         showQuestions(questions[random])
 
@@ -390,8 +400,8 @@ class QuestionActivity : AppCompatActivity() {
         val animationView = findViewById(R.id.animationShow) as LottieAnimationView
 
         val intent = getIntent()
-        var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
-        //val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
+        //var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
+        val jugadorActual = User("Juan", "123", 18, 'H', 148, true, 2, null)
 
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
@@ -456,8 +466,8 @@ class QuestionActivity : AppCompatActivity() {
             //sumamos una pregunta
             numQuestion++
 
-            if (numQuestion > 20) {
-                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, actionCorrect,sfCorrect)
+            if (numQuestion > 21) {
+                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
                 val intent2 = Intent(this, QuestioToResult::class.java)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
