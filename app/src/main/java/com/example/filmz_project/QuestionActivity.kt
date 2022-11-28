@@ -133,18 +133,18 @@ class QuestionActivity : AppCompatActivity() {
 
         val numPregunta = findViewById(R.id.numPreg) as TextView
 
-        /*if (questionToShow.imgaudio != "") {
+        if (questionToShow.imgaudio != "") {
             setContentView(R.layout.imatge_screen)
             val screenImatge = findViewById(R.id.LayoutImatge) as FrameLayout
             screenImatge.setOnClickListener() {
                 val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
 
                 //Posar imatge
-                //val imagePath = getFilesDir().toString() + "/IMG/" + nomRuta
-                //val bitmap = BitmapFactory.decodeFile(imagePath)
-                //imatgePregunta.setImageBitmap(bitmap)
+                val imagePath = getFilesDir().toString() + "/IMG/" + questionToShow.imgaudio
+                val bitmap = BitmapFactory.decodeFile(imagePath)
+                imatgePregunta.setImageBitmap(bitmap)
             }
-        }*/
+        }
 
         question.text = questionToShow.pregunta
         respuesta1.text = questionToShow.resposta1
