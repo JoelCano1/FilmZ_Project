@@ -457,7 +457,7 @@ class QuestionActivity : AppCompatActivity() {
             numQuestion++
 
             if (numQuestion > 20) {
-                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
+                val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, actionCorrect,sfCorrect)
                 val intent2 = Intent(this, QuestioToResult::class.java)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
