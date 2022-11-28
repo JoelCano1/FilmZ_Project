@@ -19,7 +19,7 @@ class IntroActivity() : AppCompatActivity() {
       val btnTempsRestant = findViewById<Button>(R.id.btnTempsRestant)
       var tempsSegons = IntroActivity.constants.minuts.toLong()
       var tempsMilisegons = tempsSegons * 1000
-      val intent = Intent(this,LoginActivity::class.java)
+      val intent = Intent(this,IntroToLogin::class.java)
 
       object: CountDownTimer(tempsMilisegons, 1000){
           override fun onTick(millisUntilFinished: Long) {
