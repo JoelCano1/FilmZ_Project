@@ -65,5 +65,7 @@
     <string name="imatge_screen_text">Presiona per continuar amb la pregunta</string>
     <!--ANIMACIO-QUIZ-->
     <string name="activity_diff_to_quest">PREPARANT EL TEU QUIZ</string>
-    <string name="activity_questio_to_result">CALCULANT RESULTATS</string>
+    <string name="activity_questio_to_result_text1">CALCULANT RESULTATS</string>
+    <string name="activity_questio_to_result_text2">Siusplau esperi...</string>
+
 </resources>

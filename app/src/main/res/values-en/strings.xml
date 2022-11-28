@@ -65,5 +65,6 @@
     <string name="imatge_screen_text">Press to continue with the question</string>
     <!--ANIMACIO-QUIZ-->
     <string name="activity_diff_to_quest">PREPARING YOUR QUIZ</string>
-    <string name="activity_questio_to_result">COMPUTING YOUR REUSULTS</string>
+    <string name="activity_questio_to_result_text1">COMPUTING YOUR RESULTS</string>
+    <string name="activity_questio_to_result_text2">Please wait...</string>
 </resources>
