@@ -22,7 +22,9 @@ class RankingActivity : AppCompatActivity() {
         val lstRanking = findViewById<ListView>(R.id.lstRanking)
         val btnContinuarRanking = findViewById<Button>(R.id.btnContinuarRanking)
 
-        val user = User("jugador actual",null,19,'h',1600,true,2,null);
+        intent = getIntent()
+        val user = intent.getSerializableExtra(Keys.constKeys.RESULT_TO_RANKING) as User
+        //val user = User("jugador actual",null,19,'h',1600,true,2,null);
         var ranking = getRanking(this)
         ranking.add(user)
         ranking.sortByDescending { it.puntuacio }

@@ -2,6 +2,7 @@ package com.example.filmz_project
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -115,6 +116,19 @@ class QuestionActivity : AppCompatActivity() {
         val categoria = findViewById(R.id.categoria) as TextView
 
         val numPregunta = findViewById(R.id.numPreg) as TextView
+
+        /*if (questionToShow.imgaudio != "") {
+            setContentView(R.layout.imatge_screen)
+            val screenImatge = findViewById(R.id.LayoutImatge) as FrameLayout
+            screenImatge.setOnClickListener() {
+                val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
+
+                //Posar imatge
+                //val imagePath = getFilesDir().toString() + "/IMG/" + nomRuta
+                //val bitmap = BitmapFactory.decodeFile(imagePath)
+                //imatgePregunta.setImageBitmap(bitmap)
+            }
+        }*/
 
         question.text = questionToShow.pregunta
         respuesta1.text = questionToShow.resposta1
