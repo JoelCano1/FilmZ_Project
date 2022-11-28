@@ -376,8 +376,6 @@ class QuestionActivity : AppCompatActivity() {
                 actionCorrect++
             }
         }
-
-
     }
 
 
@@ -487,6 +485,5 @@ class QuestionActivity : AppCompatActivity() {
     private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
         imageView.playAnimation()
-
     }
 }
