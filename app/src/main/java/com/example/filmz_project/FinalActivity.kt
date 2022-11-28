@@ -21,13 +21,10 @@ class FinalActivity : AppCompatActivity() {
             val intent =  Intent(this, DifficultActivity::class.java)
             intent.putExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY, user)
             startActivity(intent)
-
         }
 
         btnSortirApp.setOnClickListener() {
-
             finishAffinity();
-
         }
     }
 }

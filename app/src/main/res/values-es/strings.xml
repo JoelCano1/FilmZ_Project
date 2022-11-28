@@ -61,4 +61,6 @@
     <string name="final_screen_nom">Gracias por jugar</string>
     <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
     <string name="final_screen_btn_sortir">Salir</string>
+    <!--IMATGE_SCREEN-->
+    <string name="imatge_screen_text">Presiona para continuar con la pregunta</string>
 </resources>
