@@ -63,4 +63,7 @@
     <string name="final_screen_btn_sortir">Exit</string>
     <!--IMATGE_SCREEN-->
     <string name="imatge_screen_text">Press to continue with the question</string>
+    <!--ANIMACIO-QUIZ-->
+    <string name="activity_diff_to_quest">PREPARING YOUR QUIZ</string>
+    <string name="activity_questio_to_result">COMPUTING YOUR REUSULTS</string>
 </resources>

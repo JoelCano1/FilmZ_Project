@@ -13,7 +13,7 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/lora"
         android:gravity=""
-        android:text="COMPUTING YOUR REUSULTS"
+        android:text="@string/activity_questio_to_result"
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="bold" />
