@@ -17,11 +17,11 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.result_screen)
 
         val intent = getIntent()
-        //val jugadorActual = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT) as User
-        //val encertsGenere = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
+        val jugadorActual = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT) as User
+        val encertsGenere = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
 
-        val jugadorActual = User("Juan", "123", 18, 'H', 5, true, 2, null)
-        val encertsGenere = arrayOf(0, 0, 0, 0, 3)
+        //val jugadorActual = User("Juan", "123", 18, 'H', 5, true, 2, null)
+        //val encertsGenere = arrayOf(0, 0, 0, 0, 3)
 
         omplirCamps(jugadorActual, encertsGenere)
 
