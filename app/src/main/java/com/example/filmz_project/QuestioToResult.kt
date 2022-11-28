@@ -20,6 +20,7 @@ class QuestioToResult : AppCompatActivity() {
         val jugadorActual = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT) as User
         val encertsGenere = intent.getSerializableExtra(Keys.constKeys.QUESTIONS_TO_RESULT2) as Array<Int>
         //val correctCategory = arrayOf(1, 2, 3, 4, 5)
+        //a
 
         val intentTo = Intent(this,ResultActivity::class.java)
         intentTo.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
