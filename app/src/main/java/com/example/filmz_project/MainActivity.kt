@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val btnGoRanking = findViewById<Button>(R.id.btnGoRanking)
         val btnGoRegister = findViewById<Button>(R.id.btnGoRegister)
         val btnGoResult = findViewById<Button>(R.id.btnGoResult)
+        val btnGoIntroAnimation = findViewById<Button>(R.id.btnGoIntroAnimation)
 
 
 
@@ -69,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         }
         btnGoLogo.setOnClickListener(){
             val intent = Intent(this,LogoActivity::class.java)
+            startActivity(intent)
+        }
+        btnGoIntroAnimation.setOnClickListener()
+        {
+            val intent = Intent(this,IntroToLogin::class.java)
             startActivity(intent)
         }
     }
