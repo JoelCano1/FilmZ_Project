@@ -19,7 +19,7 @@ class FinalActivity : AppCompatActivity() {
             val user = intetToGet.getSerializableExtra(Keys.constKeys.RANKING_TO_FINAL) as User
 
             val intent =  Intent(this, DifficultActivity::class.java)
-            intent.putExtra(Keys.constKeys.TO_DIFFICULTY, user)
+            intent.putExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY, user)
             startActivity(intent)
         }
 

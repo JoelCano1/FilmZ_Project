@@ -226,7 +226,29 @@ class QuestionActivity : AppCompatActivity() {
         questions.removeAt(random)
         max--
     }
+    fun initializeVariables(){
+        // contadores de preguntas mostradas por categoria
+        dramaCounter = 0;
+        terrorCounter = 0;
+        animationCounter = 0;
+        sfCounter = 0;
+        actionCounter = 0;
 
+        //en que pregunta estamos y el valor de esta pregunta
+        numQuestion = 1
+
+
+        //respuesta del usuario y respuesta correcta de la pregunta
+         yourCorrectQuestion = -1
+         correctAnswer = 0
+
+        //contadores de categorias acertadas
+        dramaCorrect = 0;
+        terrorCorrect = 0;
+        animationCorrect = 0;
+        sfCorrect = 0;
+        actionCorrect = 0;
+    }
     fun setCorrectAnswer(questionToCheck: Questions) {
 
         correctAnswer = questionToCheck.resposta_correcte
@@ -348,10 +370,13 @@ class QuestionActivity : AppCompatActivity() {
 
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_screen)
 
+        initializeVariables()
 
         //boton validar, botones de respuesta y boton de siguiente pregunta
         val valideteQuestion = findViewById(R.id.validateQuestion) as ImageButton
@@ -433,10 +458,11 @@ class QuestionActivity : AppCompatActivity() {
 
             if (numQuestion > 20) {
                 val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
-                intent.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
-                startActivity(intent)
+                val intent2 = Intent(this, QuestioToResult::class.java)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
+                intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
+                startActivity(intent2)
+
             } else {
                 showRandomQuestion(loadedJSON, button1, button2, button3, animationView)
             }
@@ -444,6 +470,10 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun validateAnimation(imageView: LottieAnimationView, animation: Int) {
         imageView.setAnimation(animation)
         imageView.playAnimation()

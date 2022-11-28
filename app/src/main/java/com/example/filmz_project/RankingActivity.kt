@@ -42,6 +42,7 @@ class RankingActivity : AppCompatActivity() {
             saveRanking(this,ranking)
             val intent = Intent(this,FinalActivity::class.java)
             user.puntuacio=0
+            intent.putExtra(Keys.constKeys.RANKING_TO_FINAL, user)
             startActivity(intent)
         }
     }

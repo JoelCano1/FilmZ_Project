@@ -11,9 +11,9 @@ class DifficultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
 
-        var intent = getIntent()
+        val intentLogin = getIntent()
 
-        var user = intent.getSerializableExtra(Keys.constKeys.TO_DIFFICULTY) as User
+        var user = intentLogin.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
 
         seleccioNivell(user)
     }
@@ -50,7 +50,7 @@ class DifficultActivity : AppCompatActivity() {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
 
         btnContinuar.setOnClickListener() {
-            val intent = Intent(this, QuestionActivity::class.java)
+            val intent = Intent(this, DiffToQuest::class.java)
             intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
             startActivity(intent)
         }
