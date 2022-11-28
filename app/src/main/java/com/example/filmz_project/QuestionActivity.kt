@@ -136,13 +136,14 @@ class QuestionActivity : AppCompatActivity() {
         if (questionToShow.imgaudio != "") {
             setContentView(R.layout.imatge_screen)
             val screenImatge = findViewById(R.id.LayoutImatge) as FrameLayout
-            screenImatge.setOnClickListener() {
-                val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
+            val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
+            //Posar imatge
+            val imagePath = getFilesDir().toString() + "/IMG/" + questionToShow.imgaudio
+            val bitmap = BitmapFactory.decodeFile(imagePath)
+            imatgePregunta.setImageBitmap(bitmap)
 
-                //Posar imatge
-                val imagePath = getFilesDir().toString() + "/IMG/" + questionToShow.imgaudio
-                val bitmap = BitmapFactory.decodeFile(imagePath)
-                imatgePregunta.setImageBitmap(bitmap)
+            screenImatge.setOnClickListener() {
+                setContentView(R.layout.question_screen)
             }
         }
 
@@ -152,7 +153,6 @@ class QuestionActivity : AppCompatActivity() {
         respuesta3.text = questionToShow.resposta3
         categoria.text = questionToShow.categoria
         numPregunta.text = numQuestion.toString() + "/20"
-
 
     }
 
