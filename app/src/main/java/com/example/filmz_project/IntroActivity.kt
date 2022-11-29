@@ -20,14 +20,14 @@ class IntroActivity() : AppCompatActivity() {
       var tempsSegons = IntroActivity.constants.minuts.toLong()
       var tempsMilisegons = tempsSegons * 1000
       val intent = Intent(this,IntroToLogin::class.java)
-
+        // countdown timer per mostrar els segons restants per poder saltar la intro
       object: CountDownTimer(tempsMilisegons, 1000){
           override fun onTick(millisUntilFinished: Long) {
               val tempsSegons = (millisUntilFinished/1000).toInt()+1
               val string: String = getString(R.string.intro_screen_skip)
               btnTempsRestant.text = string +" "+ tempsSegons.toString()+"''"
           }
-
+            //Quan hagi acabat el contador et deixarà pasar a la seguent activity i deixarà l'opacitat del botò a 1
           override fun onFinish() {
               btnTempsRestant.alpha= 1F
               val string: String = getString(R.string.intro_screen_continuar)

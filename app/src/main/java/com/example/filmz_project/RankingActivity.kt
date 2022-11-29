@@ -63,7 +63,10 @@ class RankingActivity : AppCompatActivity() {
         jsonFile.write(jsonElement)
         jsonFile.close()
     }
-
+    /**
+     * Funció que ordena el ranking segons la puntuació,mostra només el top 5 i col·loca a l'usuari
+     * al final del ranking si no es troba en el top 5
+     * */
     fun formattingRanking(rankingParameter: MutableList<User>): MutableList<User> {
         var ranking = rankingParameter
         ranking.sortByDescending { it.puntuacio }
@@ -79,7 +82,9 @@ class RankingActivity : AppCompatActivity() {
         }
         return finalRanking
     }
-
+    /**
+     * Funció que recorre tota la llista del ranking i retorna la posició del jugador actual
+     * */
     fun jugadorActualPosicion(ranking: MutableList<User>): Int{
         var posicio: Int = 0
         var userActual: Boolean = false
@@ -96,6 +101,9 @@ class RankingActivity : AppCompatActivity() {
 
         return posicio
     }
+    /**
+     * Funció que asigna la posició en el ranking a tots els elements del ranking
+     * */
     fun asignarPosicio(ranking: MutableList<User>): MutableList<User> {
         var i: Int = 0
         for (item in ranking){
@@ -104,7 +112,9 @@ class RankingActivity : AppCompatActivity() {
         }
         return ranking
     }
-
+    /**
+     * Funció que reseteja tot el ranking per posar en false al jugador actual en el ranking general
+     * */
     fun resetRankingPlayer(ranking: MutableList<User>): MutableList<User> {
         for (item in ranking){
             item.jugadorActual=false;
