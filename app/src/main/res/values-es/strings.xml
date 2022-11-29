@@ -15,8 +15,8 @@
     <string name="difficult_screen_buttonTextMitja">MEDIANO</string>
     <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
     <string name="difficult_screen_textDificultatFacil">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *1</string>
-    <string name="difficult_screen_textDificultatMitja">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *1.5</string>
-    <string name="difficult_screen_textDificultatDificil">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *2</string>
+    <string name="difficult_screen_textDificultatMitja">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *2</string>
+    <string name="difficult_screen_textDificultatDificil">NORMAS COMUNES:\n- Número de preguntas: 20\n- Preguntas por genero: 6\n- Tiempo para responder las preguntas: 20 segundos\n- Cuando hayas seleccionado la respuesta y estés seguro, dale al botón ">"\n\nNORMAS DEPENDIENDO DE DIFICULTAD:\n- La puntuación se multiplicará *3</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTRO</string>
@@ -61,6 +61,9 @@
     <string name="final_screen_nom">Gracias por jugar</string>
     <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
     <string name="final_screen_btn_sortir">Salir</string>
+    <!--QUESTION_TO_RESULT-->
+    <string name="activity_questio_to_result_missatge">CALCULANDO TUS RESULTADOS</string>
+    <string name="activity_questio_to_result_espera">Porfavor espere...</string>
     <!--IMATGE_SCREEN-->
-    <string name="imatge_screen_text">Presiona para continuar con la pregunta</string>
+    <string name="imatge_screen_text">Presiona para poder responder la pregunta</string>
 </resources>

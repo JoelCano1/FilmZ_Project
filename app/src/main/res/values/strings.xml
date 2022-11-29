@@ -15,8 +15,8 @@
     <string name="difficult_screen_buttonTextMitja">MITJÀ</string>
     <string name="difficult_screen_buttonTextDificil">DIFÍCIL</string>
     <string name="difficult_screen_textDificultatFacil">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *1</string>
-    <string name="difficult_screen_textDificultatMitja">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *1.5</string>
-    <string name="difficult_screen_textDificultatDificil">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *2</string>
+    <string name="difficult_screen_textDificultatMitja">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *2</string>
+    <string name="difficult_screen_textDificultatDificil">NORMES COMUNS:\n- Número de preguntes: 20\n- Preguntes per genere: 6\n- Temps per respondre a les preguntes: 20 segons\n- Quan hagis seleccionat la resposta i estiguis segur, prem el botó ">"\n\nNORMES DEPENENT DE DIFICULTAT:\n- La puntuació es multiplicarà *3</string>
     <string name="difficult_screen_buttonContinuar">JUGAR</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTRE</string>
@@ -61,6 +61,9 @@
     <string name="final_screen_nom">Gràcies per jugar</string>
     <string name="final_screen_btn_tornar_a_jugar">Tornar a jugar</string>
     <string name="final_screen_btn_sortir">Sortir</string>
+    <!--QUESTION_TO_RESULT-->
+    <string name="activity_questio_to_result_missatge">CALCULANT ELS TEUS RESULTATS</string>
+    <string name="activity_questio_to_result_espera">Siusplau espera...</string>
     <!--IMATGE_SCREEN-->
-    <string name="imatge_screen_text">Presiona per continuar amb la pregunta</string>
+    <string name="imatge_screen_text">Presiona per poder respondre la pregunta</string>
 </resources>

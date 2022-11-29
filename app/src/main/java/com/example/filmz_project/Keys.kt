@@ -12,6 +12,6 @@ class Keys {
         const val RANKING_TO_FINAL = "FINAL"
         const val QUESTIONS_TO_RESULT = "USER"
         const val QUESTIONS_TO_RESULT2 = "RESULTS"
-
+        const val QUESTION_TO_IMAGE = "IMAGE"
     }
 }

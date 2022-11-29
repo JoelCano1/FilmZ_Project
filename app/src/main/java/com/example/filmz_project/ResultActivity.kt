@@ -306,7 +306,11 @@ class ResultActivity : AppCompatActivity() {
 
     private fun veureRanking(jugadorActual: User) {
         val btnRanking = findViewById<Button>(R.id.BtnRankingResult)
-
+        if (jugadorActual.difficult == 2) {
+            jugadorActual.puntuacio *= 2
+        } else if (jugadorActual.difficult == 3) {
+            jugadorActual.puntuacio *= 3
+        }
         btnRanking.setOnClickListener() {
             val intent = Intent(this, RankingActivity::class.java)
             intent.putExtra(Keys.constKeys.RESULT_TO_RANKING, jugadorActual)
