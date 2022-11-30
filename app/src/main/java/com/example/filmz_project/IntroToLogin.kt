@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import java.util.Timer
@@ -11,6 +12,11 @@ class IntroToLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro_to_login)
 
+        //audio play
+        val mediaPlayerAnimation = MediaPlayer.create(this,R.raw.carga);
+        mediaPlayerAnimation.start();
+        mediaPlayerAnimation.setLooping(true)
+
         val introToLoginAnimation = findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.introToLoginAnimation)
         introToLoginAnimation.setAnimation(R.raw.introtologin)
         introToLoginAnimation.playAnimation()
@@ -18,6 +24,7 @@ class IntroToLogin : AppCompatActivity() {
 
         Timer("SettingUp", false).schedule(2500) {
             startActivity(intent)
+            mediaPlayerAnimation.stop()
         }
 
 

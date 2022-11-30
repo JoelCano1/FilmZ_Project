@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import java.util.*
@@ -11,6 +12,10 @@ class DiffToQuest : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diff_to_quest)
 
+        //audio play
+        val mediaPlayerEfecto = MediaPlayer.create(this,R.raw.sonidoagua);
+        mediaPlayerEfecto.start();
+        mediaPlayerEfecto.setLooping(true)
 
         val animation = findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.diffToQuest)
         animation.setAnimation(R.raw.progressblue)
@@ -24,6 +29,8 @@ class DiffToQuest : AppCompatActivity() {
 
         Timer("SettingUp", false).schedule(3500) {
             startActivity(intentTo)
+            //audio stop
+            mediaPlayerEfecto.stop()
         }
     }
 }
