@@ -61,13 +61,11 @@
     <string name="final_screen_nom">Gràcies per jugar</string>
     <string name="final_screen_btn_tornar_a_jugar">Tornar a jugar</string>
     <string name="final_screen_btn_sortir">Sortir</string>
-    <!--QUESTION_TO_RESULT-->
-    <string name="activity_questio_to_result_missatge">CALCULANT ELS TEUS RESULTATS</string>
-    <string name="activity_questio_to_result_espera">Siusplau espera...</string>
     <!--IMATGE_SCREEN-->
     <string name="imatge_screen_text">Presiona per poder respondre la pregunta</string>
-    <!--ANIMACIO-QUIZ-->
+    <!--DIFF_TO_QUIZ-->
     <string name="activity_diff_to_quest">PREPARANT EL TEU QUIZ</string>
+    <!--QUESTION_TO_RESULT-->
     <string name="activity_questio_to_result_text1">CALCULANT RESULTATS</string>
     <string name="activity_questio_to_result_text2">Siusplau esperi...</string>
 </resources>

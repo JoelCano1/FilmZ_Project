@@ -61,13 +61,11 @@
     <string name="final_screen_nom">Gracias por jugar</string>
     <string name="final_screen_btn_tornar_a_jugar">Volver a jugar</string>
     <string name="final_screen_btn_sortir">Salir</string>
-    <!--QUESTION_TO_RESULT-->
-    <string name="activity_questio_to_result_missatge">CALCULANDO TUS RESULTADOS</string>
-    <string name="activity_questio_to_result_espera">Porfavor espere...</string>
     <!--IMATGE_SCREEN-->
     <string name="imatge_screen_text">Presiona para poder responder la pregunta</string>
-    <!--ANIMACIO-QUIZ-->
+    <!--DIFF_TO_QUIZ-->
     <string name="activity_diff_to_quest">PREPARANDO TU QUIZ</string>
+    <!--QUESTION_TO_RESULT-->
     <string name="activity_questio_to_result_text1">CALCULANDO TUS RESULTADOS</string>
     <string name="activity_questio_to_result_text2">Porfavor espere</string>
 </resources>
