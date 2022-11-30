@@ -42,7 +42,7 @@ class RankingActivity : AppCompatActivity() {
             var intent = Intent(this,FinalActivity::class.java)
             user.puntuacio=0
             user.jugadorActual=true
-            intent.putExtra(Keys.constKeys.RANKING_TO_FINAL, user)
+            intent.putExtra(Keys.constKeys.TO_FINAL, user)
             startActivity(intent)
         }
     }

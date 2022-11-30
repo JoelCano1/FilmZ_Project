@@ -1,14 +1,13 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.ImageButton
 import java.util.*
 
 class LenguageActivity : AppCompatActivity() {
@@ -30,6 +29,11 @@ class LenguageActivity : AppCompatActivity() {
         val englishFlag = findViewById(R.id.BtnEnglish) as ImageView
         val lblLenguaje = findViewById(R.id.lblLenguaje) as TextView
         val btnNext = findViewById(R.id.btonNextLeng) as ImageView
+
+        //audio play
+        val mediaPlayerLenguageActivity = MediaPlayer.create(this,R.raw.musicmenu);
+        mediaPlayerLenguageActivity.start();
+        mediaPlayerLenguageActivity.setLooping(true)
 
         spanishFlag.startAnimation(animation1)
         catalanFlag.startAnimation(animation1)
@@ -67,9 +71,7 @@ class LenguageActivity : AppCompatActivity() {
             catalanFlag.setImageResource(R.drawable.cat1black)
         }
 
-        continuar(btnNext)
-
-
+        continuar(btnNext, mediaPlayerLenguageActivity)
     }
 
     private fun setLocale(lang: String, loc: String)
@@ -80,12 +82,13 @@ class LenguageActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
     }
 
-    private fun continuar(btnNext: ImageView ) {
+    private fun continuar(btnNext: ImageView, mediaPlayerLenguageActivity: MediaPlayer) {
         btnNext.setOnClickListener(){
             val intent = Intent(this, IntroActivity::class.java)
             startActivity(intent)
             btnNext.setImageResource(R.drawable.nextbutclick)
-            
+            //audio stop
+            mediaPlayerLenguageActivity.stop()
         }
     }
 
