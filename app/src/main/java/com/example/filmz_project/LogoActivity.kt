@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
@@ -14,6 +15,11 @@ class LogoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.logo_screen)
         val imgLogo = findViewById<ImageView>(R.id.imgLogo)
+
+        //audio play
+        val mediaPlayerLogo = MediaPlayer.create(this,R.raw.intrologo);
+        mediaPlayerLogo.start();
+        mediaPlayerLogo.setLooping(true)
 
         imgLogo.animate()
             .alpha(1f)
@@ -29,14 +35,9 @@ class LogoActivity : AppCompatActivity() {
                         imgLogo.setVisibility(View.GONE)
                         val intent = Intent(this,LenguageActivity::class.java)
                         startActivity(intent)
+                        //audio stop
+                        mediaPlayerLogo.stop()
                     })
             })
-
-
-
-
-
-
-
     }
 }

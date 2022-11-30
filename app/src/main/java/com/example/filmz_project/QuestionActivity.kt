@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import es.claucookie.miniequalizerlibrary.EqualizerView
 import java.io.FileReader
 import java.util.*
 import kotlin.concurrent.schedule
@@ -186,7 +187,8 @@ class QuestionActivity : AppCompatActivity() {
         button2: Button,
         button3: Button,
         animationView: LottieAnimationView,
-        mediaPlayerPregunta: MediaPlayer
+        mediaPlayerPregunta: MediaPlayer,
+        equalizerView: EqualizerView
     ) {
         var max = questions.size
         var random = 0
@@ -198,19 +200,24 @@ class QuestionActivity : AppCompatActivity() {
         } while (clasifyQuestions(questions[random]) && numQuestion < 20)
         //muestra la pregutnta
         showQuestions(questions[random])
+
+        //cogemos la extension de la ruta de img o audio
         var extension = questions[random].imgaudio.takeLast(4)
         val EXTENSION_IMAGE = ".png"
         val EXTENSION_AUDIO = ".mp3"
-        //muestra la imagen de la pregunta en el caso de que haya una ruta en el campo imgaudio
+
+        //ponemos la imagen de la pregunta en el caso de que la extension sea .png
         if (extension == EXTENSION_IMAGE) {
-            val contingutPregunta = findViewById(R.id.LblTextPregunta) as TextView
             val imatgePregunta = findViewById(R.id.ImgPregunta) as ImageView
+            val contingutPregunta = findViewById(R.id.LblTextPregunta) as TextView
             val linearImatge = findViewById(R.id.LinearImatge) as LinearLayout
             val linearPregunta = findViewById(R.id.LinearPregunta) as LinearLayout
+
+            //muestra la imagen
             mostrarImatge(imatgePregunta, contingutPregunta, questions[random], linearImatge, linearPregunta)
 
-            //en el caso que se de sobre la imagen se mostrará la pregunta
-            imatgePregunta.setOnLongClickListener() {
+            //en el caso que se haga un long click en la imagen se mostrará la pregunta
+            linearImatge.setOnLongClickListener() {
                 linearImatge.visibility = View.INVISIBLE
                 linearPregunta.visibility = View.VISIBLE
                 //iniciamos contador y barra
@@ -218,8 +225,9 @@ class QuestionActivity : AppCompatActivity() {
                 timeQuestion(button1, button2, button3, animationView)
                 true
             }
+        //ponemos el audio de la pregunta en el caso de que la extensión sea .mp3
         } else if (extension == EXTENSION_AUDIO) {
-            posarAudioPregunta(questions[random], mediaPlayerPregunta)
+            posarAudioPregunta(questions[random], mediaPlayerPregunta, equalizerView)
             //iniciamos contador y barra
             progressBar()
             timeQuestion(button1, button2, button3, animationView)
@@ -258,12 +266,15 @@ class QuestionActivity : AppCompatActivity() {
         imatgePregunta.setImageBitmap(bitmap)
     }
 
-    private fun posarAudioPregunta(questionShowed: Questions, mediaPlayerPregunta: MediaPlayer) {
+    private fun posarAudioPregunta(questionShowed: Questions, mediaPlayerPregunta: MediaPlayer, equalizerView: EqualizerView) {
         var audioPath = getFilesDir().toString() + "/AUDIO/" + questionShowed.imgaudio
         mediaPlayerPregunta.setDataSource(audioPath)
         mediaPlayerPregunta.prepare()
         mediaPlayerPregunta.start()
         mediaPlayerPregunta.setLooping(true)
+        //equalizer view activar
+        equalizerView.visibility = View.VISIBLE
+        equalizerView.animateBars()
     }
 
     fun initializeVariables(){
@@ -385,7 +396,6 @@ class QuestionActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     fun addCorrectCategory() {
@@ -435,7 +445,8 @@ class QuestionActivity : AppCompatActivity() {
         val loadedJSON = loadQuestions(jugadorActual)
 
         var mediaPlayerPregunta = MediaPlayer()
-        showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta)
+        val equalizerView = findViewById(R.id.equalizer_view) as EqualizerView
+        showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView)
 
 
         button1.setOnClickListener()
@@ -477,6 +488,8 @@ class QuestionActivity : AppCompatActivity() {
                 mediaPlayerPregunta.setLooping(false)
                 mediaPlayerPregunta.stop()
                 mediaPlayerPregunta = MediaPlayer()
+                equalizerView.stopBars()
+                equalizerView.visibility = View.INVISIBLE
             }
             //reseteamos valores
             button1.setBackgroundResource(R.drawable.boton_redondeado)
@@ -505,7 +518,7 @@ class QuestionActivity : AppCompatActivity() {
                 startActivity(intent2)
 
             } else {
-                showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta)
+                showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView)
             }
 
         }

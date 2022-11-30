@@ -145,8 +145,18 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+                <es.claucookie.miniequalizerlibrary.EqualizerView
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/equalizer_view"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="45dp"
+                    android:visibility="invisible"
+                    custom:foregroundColor="@color/white"
+                    custom:animDuration="3500"/>
+
 
                 <ImageButton
                     android:id="@+id/nextQuestion"

@@ -323,7 +323,7 @@ class ResultActivity : AppCompatActivity() {
 
         btnContinuar.setOnClickListener() {
             val intent = Intent(this, FinalActivity::class.java)
-            intent.putExtra(Keys.constKeys.RESULT_TO_FINAL, jugadorActual)
+            intent.putExtra(Keys.constKeys.TO_FINAL, jugadorActual)
             startActivity(intent)
         }
     }
