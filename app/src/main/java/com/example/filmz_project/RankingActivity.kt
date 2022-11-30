@@ -9,6 +9,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ListView
+import android.widget.TextView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
@@ -21,28 +22,27 @@ class RankingActivity : AppCompatActivity() {
 
         val lstRanking = findViewById<ListView>(R.id.lstRanking)
         val btnContinuarRanking = findViewById<Button>(R.id.btnContinuarRanking)
-
         intent = getIntent()
-        val user = intent.getSerializableExtra(Keys.constKeys.RESULT_TO_RANKING) as User
+        var user = intent.getSerializableExtra(Keys.constKeys.RESULT_TO_RANKING) as User
         //val user = User("jugador actual",null,19,'h',1600,true,2,null);
         var ranking = getRanking(this)
         ranking.add(user)
         ranking.sortByDescending { it.puntuacio }
-        val finalRanking = formattingRanking(ranking)
+        var finalRanking = formattingRanking(ranking)
 
-
-        val adapter = RankingAdapter(this,R.layout.ranking_item,finalRanking)
+        var adapter = RankingAdapter(this,R.layout.ranking_item,finalRanking)
         lstRanking.adapter=adapter;
-        val animation : Animation = AnimationUtils.loadAnimation(this,R.anim.move_down)
+        var animation : Animation = AnimationUtils.loadAnimation(this,R.anim.move_down)
         lstRanking.startAnimation(animation)
         btnContinuarRanking.startAnimation(animation)
 
         btnContinuarRanking.setOnClickListener(){
             ranking=resetRankingPlayer(ranking)
             saveRanking(this,ranking)
-            val intent = Intent(this,FinalActivity::class.java)
+            var intent = Intent(this,FinalActivity::class.java)
             user.puntuacio=0
-            intent.putExtra(Keys.constKeys.RANKING_TO_FINAL, user)
+            user.jugadorActual=true
+            intent.putExtra(Keys.constKeys.TO_FINAL, user)
             startActivity(intent)
         }
     }

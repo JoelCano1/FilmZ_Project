@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,48 +12,61 @@ class DifficultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
 
+        //Posar audio
+        val mediaPlayerDifficultActivity = MediaPlayer.create(this,R.raw.musicmenu);
+        mediaPlayerDifficultActivity.start();
+        mediaPlayerDifficultActivity.setLooping(true)
+
         val intentLogin = getIntent()
 
-        var user = intentLogin.getSerializableExtra(Keys.constKeys.LOGIN_TO_DIFFICULTY) as User
+        var user = intentLogin.getSerializableExtra(Keys.constKeys.TO_DIFFICULT) as User
 
-        seleccioNivell(user)
+        seleccioNivell(user, mediaPlayerDifficultActivity)
     }
-    private fun seleccioNivell(user:User) {
+    private fun seleccioNivell(user:User, mediaPlayerDifficultActivity: MediaPlayer) {
+        val SPEED_EASY = 0.7f
+        val SPEED_MEDIUM = 1f
+        val SPEED_HARD = 1.3f
+
         val btnFacil = findViewById<Button>(R.id.BtnEasy)
         val btnMitja = findViewById<Button>(R.id.BtnMedium)
         val btnDificil = findViewById<Button>(R.id.BtnDificult)
         val lblDescripcioDificultat = findViewById<TextView>(R.id.LblDescDif)
 
         btnFacil.setOnClickListener() {
+            mediaPlayerDifficultActivity.setPlaybackParams(mediaPlayerDifficultActivity.getPlaybackParams().setSpeed(SPEED_EASY))
             lblDescripcioDificultat.text = resources.getText(R.string.difficult_screen_textDificultatFacil)
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnFacil.backgroundTintList = this.getColorStateList(R.color.verd)
             user.difficult = 1
-            continuar(user)
+            continuar(user, mediaPlayerDifficultActivity)
         }
         btnMitja.setOnClickListener() {
+            mediaPlayerDifficultActivity.setPlaybackParams(mediaPlayerDifficultActivity.getPlaybackParams().setSpeed(SPEED_MEDIUM))
             lblDescripcioDificultat.text = resources.getText(R.string.difficult_screen_textDificultatMitja)
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnMitja.backgroundTintList = this.getColorStateList(R.color.taronja)
             user.difficult = 2
-            continuar(user)
+            continuar(user, mediaPlayerDifficultActivity)
         }
         btnDificil.setOnClickListener() {
+            mediaPlayerDifficultActivity.setPlaybackParams(mediaPlayerDifficultActivity.getPlaybackParams().setSpeed(SPEED_HARD))
             lblDescripcioDificultat.text = resources.getText((R.string.difficult_screen_textDificultatDificil))
             oscurecerButtons(btnFacil, btnMitja, btnDificil)
             btnDificil.backgroundTintList = this.getColorStateList(R.color.vermell)
             user.difficult = 3
-            continuar(user)
+            continuar(user, mediaPlayerDifficultActivity)
         }
-        continuar(user)
+        continuar(user, mediaPlayerDifficultActivity)
     }
-    private fun continuar(user: User) {
+    private fun continuar(user: User, mediaPlayerDifficultActivity: MediaPlayer) {
         val btnContinuar = findViewById<Button>(R.id.BtnContinuarDificultat)
 
         btnContinuar.setOnClickListener() {
             val intent = Intent(this, DiffToQuest::class.java)
             intent.putExtra(Keys.constKeys.DIFFICULT_TO_QUIZ, user)
             startActivity(intent)
+            mediaPlayerDifficultActivity.stop()
         }
     }
     private fun oscurecerButtons(btnFacil: Button, btnMitja: Button, btnDificil: Button) {

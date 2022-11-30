@@ -13,10 +13,10 @@
     <string name="difficult_screen_textTitol">CHOOSE DIFFICULTY</string>
     <string name="difficult_screen_buttonTextFacil">EASY</string>
     <string name="difficult_screen_buttonTextMitja">MEDIUM</string>
-    <string name="difficult_screen_buttonTextDificil">DIFFICULT</string>
+    <string name="difficult_screen_buttonTextDificil">HARD</string>
     <string name="difficult_screen_textDificultatFacil">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *1</string>
-    <string name="difficult_screen_textDificultatMitja">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *1.5</string>
-    <string name="difficult_screen_textDificultatDificil">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *2</string>
+    <string name="difficult_screen_textDificultatMitja">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *2</string>
+    <string name="difficult_screen_textDificultatDificil">COMMON RULES:\n- Number of questions: 20\n- Questions by genre: 6\n- Time to answer the questions: 20 seconds\n- When you have selected the answer and you are sure, click the button ">"\n\nRULES DEPENDING ON THE DIFFICULTY:\n- The score will be multiplied *3</string>
     <string name="difficult_screen_buttonContinuar">PLAY</string>
     <!--REGISTER_SCREEN-->
     <string name="register_screen_textRegistre">REGISTER</string>
@@ -61,8 +61,11 @@
     <string name="final_screen_nom">Thanks for playing</string>
     <string name="final_screen_btn_tornar_a_jugar">Try again</string>
     <string name="final_screen_btn_sortir">Exit</string>
+    <!--QUESTION_TO_RESULT-->
+    <string name="activity_questio_to_result_missatge">COMPUTING YOUR RESULTS</string>
+    <string name="activity_questio_to_result_espera">Please wait...</string>
     <!--IMATGE_SCREEN-->
-    <string name="imatge_screen_text">Press to continue with the question</string>
+    <string name="imatge_screen_text">Press to be able to answer the question</string>
     <!--ANIMACIO-QUIZ-->
     <string name="activity_diff_to_quest">PREPARING YOUR QUIZ</string>
     <string name="activity_questio_to_result_text1">COMPUTING YOUR RESULTS</string>
