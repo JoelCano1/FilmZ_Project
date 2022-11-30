@@ -22,6 +22,9 @@ class IntroToLogin : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+    }
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
     }
 }

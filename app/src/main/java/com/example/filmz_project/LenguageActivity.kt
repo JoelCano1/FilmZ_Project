@@ -92,6 +92,11 @@ class LenguageActivity : AppCompatActivity() {
         }
     }
 
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
+
 
 
 }

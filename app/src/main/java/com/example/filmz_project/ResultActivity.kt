@@ -336,5 +336,10 @@ class ResultActivity : AppCompatActivity() {
             intent.putExtra(Keys.constKeys.TO_FINAL, jugadorActual)
             startActivity(intent)
         }
+
+    }
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
     }
 }

@@ -26,4 +26,8 @@ class DiffToQuest : AppCompatActivity() {
             startActivity(intentTo)
         }
     }
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
 }

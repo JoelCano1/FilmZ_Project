@@ -110,4 +110,8 @@ class LoginActivity : AppCompatActivity() {
         return toReturn
 
     }
+    //desactivamos la funcion de volver
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
 }
