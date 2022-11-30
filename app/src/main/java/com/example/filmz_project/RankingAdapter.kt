@@ -34,6 +34,8 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
         val rankingPosition = view.findViewById<TextView>(id.rankingPosition)
         val rankingElement = view.findViewById<LinearLayout>(id.rankingElement)
 
+        //Condicional que posara un fons al element del ranking del jugador actual ,
+        // en cas que no un element no sigui l'element actual el fons serà transparent.
         if(user.jugadorActual)
         {
             rankingElement.setBackgroundColor(Color.parseColor("#E34C42"));
@@ -43,7 +45,7 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
             rankingElement.setBackgroundColor(Color.TRANSPARENT);
         }
         rankingPosition.text = user.posicionRanking.toString()
-
+        //when que establirà una imatge determinada per cada una de les tres posicions del ranking
         val rankingInfo = view.findViewById<LinearLayout>(id.txtRanking)
         when(position)
         {
