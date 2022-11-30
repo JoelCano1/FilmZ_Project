@@ -128,6 +128,16 @@ class ResultActivity : AppCompatActivity() {
         var posicio: Int? = null
         var maxEncerts = 0
 
+        //Posar color depenent de respostes correctes
+        val lblEncertsTotals = findViewById(R.id.LblEncertsTotal) as TextView
+        if (respostesCorrectes < 5) {
+            lblEncertsTotals.backgroundTintList = this.getColorStateList(R.color.vermell)
+        } else if (respostesCorrectes < 15) {
+            lblEncertsTotals.backgroundTintList = this.getColorStateList(R.color.taronja)
+        } else {
+            lblEncertsTotals.backgroundTintList = this.getColorStateList(R.color.verd)
+        }
+
         if (respostesCorrectes == 0) {
             for (personatge in personatges) {
                 if (personatge.nomPers == "Cap") {
