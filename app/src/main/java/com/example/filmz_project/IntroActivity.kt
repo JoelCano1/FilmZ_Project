@@ -17,9 +17,12 @@ class IntroActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.intro_screen)
 
+        intent = getIntent()
+        var musPosition = intent.getSerializableExtra(Keys.constKeys.AUDIO) as Int
         //audio play
-        val mediaPlayerIntro = MediaPlayer.create(this,R.raw.musicmenu);
-        mediaPlayerIntro.start();
+        val mediaPlayerIntro = MediaPlayer.create(this, R.raw.musicmenu)
+        mediaPlayerIntro.seekTo(musPosition)
+        mediaPlayerIntro.start()
         mediaPlayerIntro.setLooping(true)
 
         val btnTempsRestant = findViewById<Button>(R.id.btnTempsRestant)

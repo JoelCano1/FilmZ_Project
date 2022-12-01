@@ -26,7 +26,5 @@ class IntroToLogin : AppCompatActivity() {
             startActivity(intent)
             mediaPlayerAnimation.stop()
         }
-
-
     }
 }

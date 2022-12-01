@@ -15,6 +15,7 @@ class DiffToQuest : AppCompatActivity() {
         //audio play
         val mediaPlayerEfecto = MediaPlayer.create(this,R.raw.sonidoagua);
         mediaPlayerEfecto.start();
+        mediaPlayerEfecto.setVolume(0.25f, 0.25f)
         mediaPlayerEfecto.setLooping(true)
 
         val animation = findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.diffToQuest)

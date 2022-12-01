@@ -84,11 +84,13 @@ class LenguageActivity : AppCompatActivity() {
 
     private fun continuar(btnNext: ImageView, mediaPlayerLenguageActivity: MediaPlayer) {
         btnNext.setOnClickListener(){
-            val intent = Intent(this, IntroActivity::class.java)
-            startActivity(intent)
-            btnNext.setImageResource(R.drawable.nextbutclick)
             //audio stop
             mediaPlayerLenguageActivity.stop()
+            var musPosition = mediaPlayerLenguageActivity.currentPosition
+            val intent = Intent(this, IntroActivity::class.java)
+            intent.putExtra(Keys.constKeys.AUDIO, musPosition)
+            startActivity(intent)
+            btnNext.setImageResource(R.drawable.nextbutclick)
         }
     }
 

@@ -10,5 +10,7 @@ class Keys {
         const val RESULT_TO_RANKING = "RANKING"
         const val QUESTIONS_TO_RESULT = "USER"
         const val QUESTIONS_TO_RESULT2 = "RESULTS"
+        const val AUDIO = "AUDIO"
+        const val AUDIO_LOGIN = "AUDIO_LOGIN"
     }
 }

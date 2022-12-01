@@ -12,14 +12,15 @@ class DifficultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.difficult_screen)
 
-        //Posar audio
-        val mediaPlayerDifficultActivity = MediaPlayer.create(this,R.raw.musicmenu);
-        mediaPlayerDifficultActivity.start();
-        mediaPlayerDifficultActivity.setLooping(true)
-
         val intentLogin = getIntent()
 
         var user = intentLogin.getSerializableExtra(Keys.constKeys.TO_DIFFICULT) as User
+        var musicPos = intentLogin.getSerializableExtra(Keys.constKeys.AUDIO_LOGIN) as Int
+        //Posar audio
+        val mediaPlayerDifficultActivity = MediaPlayer.create(this,R.raw.musicmenu)
+        mediaPlayerDifficultActivity.seekTo(musicPos)
+        mediaPlayerDifficultActivity.start()
+        mediaPlayerDifficultActivity.setLooping(true)
 
         seleccioNivell(user, mediaPlayerDifficultActivity)
     }
