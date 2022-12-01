@@ -1,6 +1,7 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -16,11 +17,20 @@ class IntroActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.intro_screen)
 
-      val btnTempsRestant = findViewById<Button>(R.id.btnTempsRestant)
-      var tempsSegons = IntroActivity.constants.minuts.toLong()
-      var tempsMilisegons = tempsSegons * 1000
-      val intent = Intent(this,IntroToLogin::class.java)
-        // countdown timer per mostrar els segons restants per poder saltar la intro
+        intent = getIntent()
+        var musPosition = intent.getSerializableExtra(Keys.constKeys.AUDIO) as Int
+        //audio play
+        val mediaPlayerIntro = MediaPlayer.create(this, R.raw.musicmenu)
+        mediaPlayerIntro.seekTo(musPosition)
+        mediaPlayerIntro.start()
+        mediaPlayerIntro.setLooping(true)
+
+        val btnTempsRestant = findViewById<Button>(R.id.btnTempsRestant)
+        var tempsSegons = IntroActivity.constants.minuts.toLong()
+        var tempsMilisegons = tempsSegons * 1000
+        val intent = Intent(this,IntroToLogin::class.java)
+
+      // countdown timer per mostrar els segons restants per poder saltar la intro
       object: CountDownTimer(tempsMilisegons, 1000){
           override fun onTick(millisUntilFinished: Long) {
               val tempsSegons = (millisUntilFinished/1000).toInt()+1
@@ -35,6 +45,7 @@ class IntroActivity() : AppCompatActivity() {
 
               btnTempsRestant.setOnClickListener(){
                   startActivity(intent)
+                  mediaPlayerIntro.stop()
               }
           }
       }.start()

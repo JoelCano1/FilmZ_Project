@@ -1,14 +1,14 @@
 package com.example.filmz_project
 
 import android.content.Intent
+import android.media.MediaPlayer
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import org.mindrot.jbcrypt.BCrypt
 import java.io.FileReader
 
 class LoginActivity : AppCompatActivity() {
@@ -16,6 +16,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
+
+        //audio play
+        val mediaPlayerLogin = MediaPlayer.create(this, R.raw.musicmenu)
+        mediaPlayerLogin.start()
+        mediaPlayerLogin.setLooping(true)
 
         val txtNomRegistre = findViewById(R.id.TxtNomRegistre) as EditText
         val txtContraRegistre = findViewById(R.id.TxtContraRegistre) as EditText
@@ -51,12 +56,13 @@ class LoginActivity : AppCompatActivity() {
                 val user = usersList[x]
                 user.jugadorActual = true;
 
+                //Stop audio
+                mediaPlayerLogin.stop()
+                var musicPos = mediaPlayerLogin.currentPosition
                 val intent = Intent(this, DifficultActivity::class.java)
-
                 intent.putExtra(Keys.constKeys.TO_DIFFICULT, user)
-
+                intent.putExtra(Keys.constKeys.AUDIO_LOGIN, musicPos)
                 startActivity(intent)
-
             } else {
 
                 Toast.makeText(
@@ -95,7 +101,8 @@ class LoginActivity : AppCompatActivity() {
         var i = 0
 
         do {
-            if (userName == list[i].nom && Blowfish.checkPassword(list[i].contrasenya,password)) {
+
+            if (userName == list[i].nom && password == list[i].contrasenya) {
 
                 toReturn = i;
                 cont = false
@@ -113,5 +120,4 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         //super.onBackPressed()
     }
-
 }
