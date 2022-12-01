@@ -1,14 +1,14 @@
 package com.example.filmz_project
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.mindrot.jbcrypt.BCrypt
 import java.io.FileReader
 
 class LoginActivity : AppCompatActivity() {
@@ -95,8 +95,7 @@ class LoginActivity : AppCompatActivity() {
         var i = 0
 
         do {
-
-            if (userName == list[i].nom && password == list[i].contrasenya) {
+            if (userName == list[i].nom && Blowfish.checkPassword(list[i].contrasenya,password)) {
 
                 toReturn = i;
                 cont = false
@@ -114,4 +113,5 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         //super.onBackPressed()
     }
+
 }

@@ -2,16 +2,16 @@ package com.example.filmz_project
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.FileUtils
+import android.text.Editable
 import android.text.TextUtils
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.mindrot.jbcrypt.BCrypt
 import java.io.FileReader
 import java.io.FileWriter
-import java.security.Key
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +76,8 @@ class RegisterActivity : AppCompatActivity() {
                                         sexe = 'A'
                                     }
                                     //Guardar Objecte d'usuari en el JSON
-                                    usuaris.add(User(campNom.text.toString(), campContra.text.toString(), Integer.parseInt(campEdat.text.toString()), sexe, 0, false, 2, null))
+                                    var hashPassword= Blowfish.Encrypt(campContra.text.toString())
+                                    usuaris.add(User(campNom.text.toString(),hashPassword, Integer.parseInt(campEdat.text.toString()), sexe, 0, false, 2, null))
 
                                     saveUser(this, usuaris)
 
@@ -149,4 +150,5 @@ class RegisterActivity : AppCompatActivity() {
         jsonFile.write(jsonElement)
         jsonFile.close()
     }
+
 }
