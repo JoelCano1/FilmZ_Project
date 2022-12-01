@@ -10,6 +10,7 @@ import android.widget.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
+import org.mindrot.jbcrypt.BCrypt
 
 class LoginActivity : AppCompatActivity() {
 
@@ -102,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
 
         do {
 
-            if (userName == list[i].nom && password == list[i].contrasenya) {
+            if (userName == list[i].nom && Blowfish.checkPassword(list[i].contrasenya,password)) {
 
                 toReturn = i;
                 cont = false
