@@ -25,12 +25,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        /*------ POSEM L'IDIOMA DEFAULT COM A CATALÀ ------*/
-        val locale = Locale("ca", "ES")
-        val config = resources.configuration
-        config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
-        /*-------------------------------------------------*/
 
         btnGoIntro.setOnClickListener(){
             val intent = Intent(this,IntroActivity::class.java)

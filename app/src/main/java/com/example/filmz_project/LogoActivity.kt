@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 
 class LogoActivity : AppCompatActivity() {
@@ -16,6 +17,13 @@ class LogoActivity : AppCompatActivity() {
         setContentView(R.layout.logo_screen)
         val imgLogo = findViewById<ImageView>(R.id.imgLogo)
 
+        /*------ POSEM L'IDIOMA DEFAULT COM A CATALÀ ------*/
+        val locale = Locale("ca", "ES")
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+        /*-------------------------------------------------*/
+        
         //audio play
         val mediaPlayerLogo = MediaPlayer.create(this,R.raw.intrologo);
         mediaPlayerLogo.start();
