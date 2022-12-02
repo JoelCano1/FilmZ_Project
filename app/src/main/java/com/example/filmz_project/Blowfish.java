@@ -2,7 +2,6 @@ package com.example.filmz_project;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-
 public class Blowfish {
     private static int workload = 10;
 

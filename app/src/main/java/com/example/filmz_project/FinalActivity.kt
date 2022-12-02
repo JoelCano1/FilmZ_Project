@@ -20,6 +20,7 @@ class FinalActivity : AppCompatActivity() {
 
             val intent =  Intent(this, DifficultActivity::class.java)
             intent.putExtra(Keys.constKeys.TO_DIFFICULT, user)
+            intent.putExtra(Keys.constKeys.AUDIO_LOGIN, 0)
             startActivity(intent)
         }
 
