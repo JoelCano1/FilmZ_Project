@@ -62,7 +62,7 @@
     <string name="final_screen_btn_tornar_a_jugar">Try again</string>
     <string name="final_screen_btn_sortir">Exit</string>
     <!--IMATGE_SCREEN-->
-    <string name="imatge_screen_text">Press to be able to answer the question</string>
+    <string name="imatge_screen_text">Keep press to be able to answer the question</string>
     <!--DIFF_TO_QUIZ-->
     <string name="activity_diff_to_quest">PREPARING YOUR QUIZ</string>
     <!--QUESTION_TO_RESULT-->

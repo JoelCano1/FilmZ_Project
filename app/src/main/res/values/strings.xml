@@ -62,7 +62,7 @@
     <string name="final_screen_btn_tornar_a_jugar">Tornar a jugar</string>
     <string name="final_screen_btn_sortir">Sortir</string>
     <!--IMATGE_SCREEN-->
-    <string name="imatge_screen_text">Presiona per poder respondre la pregunta</string>
+    <string name="imatge_screen_text">Manten per poder respondre la pregunta</string>
     <!--DIFF_TO_QUIZ-->
     <string name="activity_diff_to_quest">PREPARANT EL TEU QUIZ</string>
     <!--QUESTION_TO_RESULT-->
