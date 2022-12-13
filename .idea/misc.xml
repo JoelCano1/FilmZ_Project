@@ -51,6 +51,7 @@
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/boton_redondeado.xml" value="0.2175" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/boton_redondselct.xml" value="0.2175" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_redondejat.xml" value="0.1" />
+        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_redondejat_invert.xml" value="0.2125" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/drawable/button_saltar_intro.xml" value="0.1925" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/font/lora.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/activity_difficult.xml" value="0.25416666666666665" />
@@ -67,10 +68,13 @@
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/ranking_screen.xml" value="0.2" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/register_screen.xml" value="0.4" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/result_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.4" />
+        <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/result_screen.xml" value="0.6" />
         <entry key="..\:/Users/molin/Documents/GitHub/FilmZ_Project/app/src/main/res/layout/rigster_screen.xml" value="0.25416666666666665" />
       </map>
     </option>
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

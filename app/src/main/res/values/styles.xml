@@ -21,6 +21,13 @@
         <item name="fontFamily">@font/robotoslab</item>
         <item name="android:textSize">30dp</item>
     </style>
+    <style name="resultScreenButtonsInverted">
+        <item name="android:background">@drawable/button_redondejat_invert</item>
+        <item name="android:textColor">#ffcc1c</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/robotoslab</item>
+        <item name="android:textSize">30dp</item>
+    </style>
     <style name="quizQuestion">
         <item name="android:gravity">center</item>
         <item name="android:fontFamily">@font/lora</item>

@@ -16,7 +16,6 @@ class LogoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.logo_screen)
         val imgLogo = findViewById<ImageView>(R.id.imgLogo)
-
         /*------ POSEM L'IDIOMA DEFAULT COM A CATALÀ ------*/
         val locale = Locale("ca", "ES")
         val config = resources.configuration
