@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
@@ -40,6 +42,27 @@ class RegisterActivity : AppCompatActivity() {
         val campRobot = findViewById<CheckBox>(R.id.CkBoxRobotRegistre)
         val campPolitica = findViewById<CheckBox>(R.id.CkBoxPolicyRegistre)
         val btnCrearUsuari = findViewById<Button>(R.id.BtnCrearUsuari)
+
+        campNom.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
+        campContra.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
+        campRepeatContra.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
+        campEdat.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
 
         btnCrearUsuari.setOnClickListener() {
             if(revisarCampsBuits(campNom, campContra, campRepeatContra, campEdat, campRobot, campPolitica) == true) {
@@ -91,6 +114,12 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun hideKeyboard(view: View) {
+        val inputMethodManager: InputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0)
     }
 
     private fun revisarCampsBuits(campNom: EditText, campContra: EditText, campRepeatContra: EditText, campEdat: EditText, campRobot: CheckBox, campPolitica: CheckBox): Boolean{

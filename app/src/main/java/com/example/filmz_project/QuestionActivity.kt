@@ -198,8 +198,7 @@ class QuestionActivity : AppCompatActivity() {
         button3: Button,
         animationView: LottieAnimationView,
         mediaPlayerPregunta: MediaPlayer,
-        equalizerView: EqualizerView,
-        mediaPlayerQuiz: MediaPlayer
+        equalizerView: EqualizerView
     ) {
         var max = questions.size
         var random = 0
@@ -238,7 +237,7 @@ class QuestionActivity : AppCompatActivity() {
             }
         //ponemos el audio de la pregunta en el caso de que la extensión sea .mp3
         } else if (extension == EXTENSION_AUDIO) {
-            posarAudioPregunta(questions[random], mediaPlayerPregunta, equalizerView, mediaPlayerQuiz)
+            posarAudioPregunta(questions[random], mediaPlayerPregunta, equalizerView)
             //iniciamos contador y barra
             progressBar()
             timeQuestion(button1, button2, button3, animationView)
@@ -277,8 +276,7 @@ class QuestionActivity : AppCompatActivity() {
         imatgePregunta.setImageBitmap(bitmap)
     }
 
-    private fun posarAudioPregunta(questionShowed: Questions, mediaPlayerPregunta: MediaPlayer, equalizerView: EqualizerView, mediaPlayerQuiz: MediaPlayer) {
-        mediaPlayerQuiz.pause()
+    private fun posarAudioPregunta(questionShowed: Questions, mediaPlayerPregunta: MediaPlayer, equalizerView: EqualizerView) {
         var audioPath = getFilesDir().toString() + "/AUDIO/" + questionShowed.imgaudio
         mediaPlayerPregunta.setDataSource(audioPath)
         mediaPlayerPregunta.prepare()
@@ -344,8 +342,10 @@ class QuestionActivity : AppCompatActivity() {
         if (yourCorrectQuestion == correctAnswer) {
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.correct)
+            var mediaPlayerCorrecte = MediaPlayer.create(this,R.raw.correcte)
             addCorrectCategory()
             Timer("SettingUp", false).schedule(1010) {
+                mediaPlayerCorrecte.start()
                 when (yourCorrectQuestion) {
                     1 -> {
                         button1.setBackgroundResource(R.drawable.boton_redondeadocrrct)
@@ -363,8 +363,10 @@ class QuestionActivity : AppCompatActivity() {
             //animacion incorrecto
             animationView.visibility = View.VISIBLE
             validateAnimation(animationView, R.raw.wrong)
+            var mediaPlayerIncorrecte = MediaPlayer.create(this,R.raw.incorrecte)
 
             Timer("SettingUp", false).schedule(1010) {
+                mediaPlayerIncorrecte.start()
                 when (yourCorrectQuestion) {
                     1 -> {
                         button1.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
@@ -453,17 +455,12 @@ class QuestionActivity : AppCompatActivity() {
         var jugadorActual = intent.getSerializableExtra(Keys.constKeys.DIFFICULT_TO_QUIZ) as User
         //val jugadorActual = User("Juan", "123", 18, 'H', 0, true, 2, null)
 
-        //Posar musica quiz
-        var mediaPlayerQuiz = MediaPlayer.create(this,R.raw.musicaquiz);
-        mediaPlayerQuiz.start();
-        mediaPlayerQuiz.setLooping(true)
-
         //cargamos el json una vez
         val loadedJSON = loadQuestions(jugadorActual)
 
         var mediaPlayerPregunta = MediaPlayer()
         val equalizerView = findViewById(R.id.equalizer_view) as EqualizerView
-        showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView, mediaPlayerQuiz)
+        showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView)
 
 
         button1.setOnClickListener()
@@ -507,7 +504,6 @@ class QuestionActivity : AppCompatActivity() {
                 mediaPlayerPregunta = MediaPlayer()
                 equalizerView.stopBars()
                 equalizerView.visibility = View.INVISIBLE
-                mediaPlayerQuiz.start()
             }
             //reseteamos valores
             button1.setBackgroundResource(R.drawable.boton_redondeado)
@@ -534,10 +530,9 @@ class QuestionActivity : AppCompatActivity() {
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT2, correctCategory)
                 startActivity(intent2)
-                mediaPlayerQuiz.stop()
 
             } else {
-                showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView, mediaPlayerQuiz)
+                showRandomQuestion(loadedJSON, button1, button2, button3, animationView, mediaPlayerPregunta, equalizerView)
             }
 
         }

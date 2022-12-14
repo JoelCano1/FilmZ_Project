@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.FileReader
-import org.mindrot.jbcrypt.BCrypt
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,6 +29,17 @@ class LoginActivity : AppCompatActivity() {
         val btnMostrarContraRegistre = findViewById(R.id.BtnMostrarContraRegistre) as ImageButton
         val btnIniciarSessio = findViewById(R.id.BtnIniciarSessio) as Button
         val btnObrirRegistre = findViewById(R.id.BtnObrirRegistre) as Button
+
+        txtNomRegistre.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
+        txtContraRegistre.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        })
 
         val usersList = getUsers()
 
@@ -85,7 +97,13 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun getUsers(): MutableList<User> {
+    private fun hideKeyboard(view: View) {
+        val inputMethodManager: InputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0)
+    }
+
+    private fun getUsers(): MutableList<User> {
 
         val jsonFilePath = getFilesDir().toString() + "/JSONS/USUARIS_android.json"
         val jsonFile = FileReader(jsonFilePath)
@@ -95,7 +113,7 @@ class LoginActivity : AppCompatActivity() {
         return users
     }
 
-    fun userExists(list: MutableList<User>, userName: String, password: String): Int {
+    private fun userExists(list: MutableList<User>, userName: String, password: String): Int {
 
         var toReturn = -1
         var cont = true
