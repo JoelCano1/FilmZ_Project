@@ -33,7 +33,20 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
     fun bindRanking(view: View, user: User,position: Int){
         val rankingPosition = view.findViewById<TextView>(id.rankingPosition)
         val rankingElement = view.findViewById<LinearLayout>(id.rankingElement)
+        var rankingLinearPos = view.findViewById<LinearLayout>(R.id.linearRankingPos)
 
+        if(user.posicionRanking!! in 1..9)
+        {
+            rankingLinearPos.setPadding(47,0,0,7)
+        }
+        else if (user.posicionRanking!! in 10..99)
+        {
+            rankingLinearPos.setPadding(35,0,0,7)
+        }
+        else
+        {
+            rankingLinearPos.setPadding(23,0,0,7)
+        }
         //Condicional que posara un fons al element del ranking del jugador actual ,
         // en cas que no un element no sigui l'element actual el fons serà transparent.
         if(user.jugadorActual)

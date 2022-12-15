@@ -125,7 +125,7 @@ class QuestionActivity : AppCompatActivity() {
 
     fun showQuestions(questionToShow: Questions) {
 
-        val question = findViewById(R.id.question) as TextView
+                val question = findViewById(R.id.question) as TextView
         val respuesta1 = findViewById(R.id.respuesta1) as Button
         val respuesta2 = findViewById(R.id.respuesta2) as Button
         val respuesta3 = findViewById(R.id.respuesta3) as Button
