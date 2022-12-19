@@ -329,6 +329,10 @@ class QuestionActivity : AppCompatActivity() {
         button2.isClickable = false
         button3.isClickable = false
     }
+    fun setClickableNext(clickable: Boolean){
+        val nextQuestion = findViewById(R.id.nextQuestion) as ImageButton
+        nextQuestion.isClickable = clickable
+    }
 
     fun validateQuestion(
         button1: Button,
@@ -338,6 +342,7 @@ class QuestionActivity : AppCompatActivity() {
     ) {
         setVisbility()
         setClickable(button1, button2, button3)
+        setClickableNext(false)
 
         if (yourCorrectQuestion == correctAnswer) {
             animationView.visibility = View.VISIBLE
@@ -358,6 +363,7 @@ class QuestionActivity : AppCompatActivity() {
                         button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                     }
                 }
+                setClickableNext(true)
             }
         } else {
             //animacion incorrecto
@@ -378,6 +384,7 @@ class QuestionActivity : AppCompatActivity() {
                         button3.setBackgroundResource(R.drawable.boton_redondeadoincrrct)
                     }
                 }
+                setClickableNext(true)
             }
 
 
@@ -407,9 +414,11 @@ class QuestionActivity : AppCompatActivity() {
                             button3.setBackgroundResource(R.drawable.boton_redondeadocrrct)
                         }
                     }
+                    setClickableNext(true)
                 }
             }
         }
+
     }
 
     fun addCorrectCategory() {
@@ -490,6 +499,7 @@ class QuestionActivity : AppCompatActivity() {
         //validamos si la pregunta esta bien validada
         valideteQuestion.setOnClickListener()
         {
+            setClickableNext(false)
             validateQuestion(button1, button2, button3, animationView)
             timer.cancel()
         }
