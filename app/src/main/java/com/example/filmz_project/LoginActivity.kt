@@ -90,6 +90,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnObrirRegistre.setOnClickListener() {
 
+            mediaPlayerLogin.pause()
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
 

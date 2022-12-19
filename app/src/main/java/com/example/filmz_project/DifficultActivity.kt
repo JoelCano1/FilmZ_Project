@@ -21,6 +21,7 @@ class DifficultActivity : AppCompatActivity() {
         mediaPlayerDifficultActivity.seekTo(musicPos)
         mediaPlayerDifficultActivity.start()
         mediaPlayerDifficultActivity.setLooping(true)
+        user.difficult = 2
 
         seleccioNivell(user, mediaPlayerDifficultActivity)
     }
