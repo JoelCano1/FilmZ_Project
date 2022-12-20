@@ -43,7 +43,7 @@ class RankingAdapter(context: Context, val layout: Int, val ranking: MutableList
         {
             rankingLinearPos.setPadding(35,0,0,7)
         }
-        else
+        else if(user.posicionRanking!! in 100..999)
         {
             rankingLinearPos.setPadding(23,0,0,7)
         }

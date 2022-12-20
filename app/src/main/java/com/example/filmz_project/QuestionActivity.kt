@@ -138,7 +138,7 @@ class QuestionActivity : AppCompatActivity() {
         respuesta2.text = questionToShow.resposta2
         respuesta3.text = questionToShow.resposta3
         categoria.text = questionToShow.categoria
-        numPregunta.text = (numQuestion-1).toString() + "/20"
+        numPregunta.text = (numQuestion).toString() + "/20"
 
     }
 
@@ -534,7 +534,7 @@ class QuestionActivity : AppCompatActivity() {
             //sumamos una pregunta
             numQuestion++
 
-            if (numQuestion > 21) {
+            if (numQuestion > 20) {
                 val correctCategory = arrayOf(dramaCorrect, terrorCorrect, animationCorrect, sfCorrect, actionCorrect)
                 val intent2 = Intent(this, QuestioToResult::class.java)
                 intent2.putExtra(Keys.constKeys.QUESTIONS_TO_RESULT, jugadorActual)
